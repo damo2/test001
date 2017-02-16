@@ -15,6 +15,7 @@ public class AboutusActivity extends BaseActivity {
     private String title;
     private Button btnUpdate;
 
+
     @Override
     protected void initToolbar() {
         // TODO Auto-generated method stub
