@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/rl_item_coupon"
+        android:layout_width="@dimen/coupon_item2_W"
+        android:layout_height="@dimen/coupon_item2_H"
+        android:layout_toRightOf="@+id/tv_item_coupon_left"
+        android:background="@color/text_orange"
+        android:padding="@dimen/coupon_item2_padding" >
+
+        <TextView
+            android:id="@+id/tv_item_coupon_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_item_coupon_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/coupon_item2_valueTotop"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/tv_item_coupon_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/rl_item_coupon"
+        android:layout_alignTop="@+id/rl_item_coupon"
+        android:scaleType="centerCrop"
+        android:src="@drawable/coupon_lac_1" />
+
+</RelativeLayout>

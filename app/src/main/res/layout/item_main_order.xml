@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_default"
+    android:paddingBottom="@dimen/default_4"
+    android:paddingLeft="@dimen/default_12"
+    android:paddingRight="@dimen/default_12"
+    android:paddingTop="@dimen/default_4" >
+
+    <RelativeLayout
+        android:id="@+id/rl_item_mainOrder_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_8" >
+
+        <TextView
+            android:id="@+id/tv_item_mainOrder_date"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_item_mainOrder_totalDay"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/default_padding_Top16Left8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_item_mainOrder_top"
+        android:background="@drawable/d_bg_round_white_xs" >
+
+        <ImageView
+            android:id="@+id/iv_item_mainOrder_icon"
+            android:layout_width="@dimen/main_order_icon_wh"
+            android:layout_height="@dimen/main_order_icon_wh"
+            android:src="@drawable/icon_bill_cash" />
+
+        <TextView
+            android:id="@+id/tv_item_mainOrder_type"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_8"
+            android:layout_toRightOf="@+id/iv_item_mainOrder_icon"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_item_mainOrder_money"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/tv_item_mainOrder_time"
+            style="@style/text_default_s_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_item_mainOrder_type"
+            android:layout_below="@+id/tv_item_mainOrder_type"
+            android:layout_marginTop="@dimen/default_8" />
+
+        <TextView
+            android:id="@+id/tv_item_mainOrder_refund"
+            style="@style/text_default_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_item_mainOrder_time"
+            android:layout_alignParentRight="true"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

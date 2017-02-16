@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_default" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_orderdetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay">
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_orderdetail_bottom"
+        android:layout_below="@+id/toolbar_orderdetail" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/orderdetail_card_margin"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/orderdetail_card_Radius"
+                app:cardElevation="@dimen/orderdetail_card_Elevation" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/d_line_bottom_grays_whitebg"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/orderdetail_card_top_padd_TB"
+                        android:paddingTop="@dimen/orderdetail_card_top_padd_TB" >
+
+                        <TextView
+                            style="@style/text_default_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/orderdetail_totalMoney" />
+
+                        <TextView
+                            android:id="@+id/tv_orderdetail_totalMoney"
+                            style="@style/text_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/orderdetail_card_totalToTop"
+                            android:text="0"
+                            android:textSize="32sp" />
+                    </LinearLayout>
+
+                    <com.shwm.freshmallpos.myview.MyListViewScroll
+                        android:id="@+id/lv_orderdetail_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/d_line_bottom_grays_whitebg"
+                        android:divider="@color/transparent"
+                        android:dividerHeight="2dp"
+                        android:listSelector="@color/transparent"
+                        android:paddingBottom="@dimen/default_8"
+                        android:paddingTop="@dimen/default_8" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_orderditail_showFood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/default_12"
+                        android:paddingLeft="@dimen/default_12"
+                        android:paddingRight="@dimen/default_12"
+                        android:paddingTop="@dimen/default_12" >
+
+                        <TextView
+                            style="@style/text_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/orderdetail_food" >
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/tv_orderdetail_foodnum"
+                            style="@style/text_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/default_8"
+                            android:layout_toLeftOf="@+id/iv_orderdetail_more"
+                            android:text="" >
+                        </TextView>
+
+                        <ImageView
+                            android:id="@+id/iv_orderdetail_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/selector_iv_more" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_orderdetail_foodinfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <include
+                            android:id="@+id/include_orderdetail_foodtop"
+                            layout="@layout/v_fooddetail_top" />
+
+                        <com.shwm.freshmallpos.myview.MyListViewScroll
+                            android:id="@+id/lv_orderdetail_food"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/d_line_top_grays_whitebg"
+                            android:divider="@color/transparent"
+                            android:dividerHeight="0dp"
+                            android:listSelector="@color/transparent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_orderdetail_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/default_8"
+        android:paddingLeft="@dimen/orderdetail_bootom_LR"
+        android:paddingRight="@dimen/orderdetail_bootom_LR"
+        android:paddingTop="@dimen/default_8" >
+
+        <Button
+            android:id="@+id/btn_orderdetail_print"
+            style="@style/button_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/default_4"
+            android:layout_weight="1"
+            android:background="@drawable/selector_bg_round_bgdefault_s"
+            android:paddingBottom="@dimen/default_8"
+            android:paddingTop="@dimen/default_8"
+            android:text="@string/orderdetail_print"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_orderdetail_moneyReturn"
+            style="@style/button_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_4"
+            android:layout_weight="1"
+            android:background="@drawable/selector_bg_round_orange_s"
+            android:paddingBottom="@dimen/default_8"
+            android:paddingTop="@dimen/default_8"
+            android:text="@string/orderdetail_montyReturn"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

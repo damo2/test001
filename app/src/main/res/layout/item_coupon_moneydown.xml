@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/tv_item_coupon_moneydown_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/couponset_item_H"
+        android:layout_marginRight="@dimen/couponset_marginTopRight"
+        android:layout_marginTop="@dimen/couponset_marginTopRight"
+        android:layout_toRightOf="@+id/tv_item_coupon_image"
+        android:background="@color/coupon_moneydown"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="24dp" />
+
+    <ImageView
+        android:id="@+id/tv_item_coupon_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_item_coupon_moneydown_text"
+        android:layout_alignTop="@+id/tv_item_coupon_moneydown_text"
+        android:scaleType="centerCrop"
+        android:src="@drawable/coupon_lac_2" />
+
+    <ImageView
+        android:id="@+id/iv_item_coupon_moneydown_del"
+        android:layout_width="@dimen/couponset_del_HW"
+        android:layout_height="@dimen/couponset_del_HW"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/default_4"
+        android:src="@drawable/ic_delete_member" />
+
+</RelativeLayout>

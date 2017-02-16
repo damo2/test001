@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/whiteRipple" >
+
+    <item>
+        <selector>
+            <item
+                android:drawable="@drawable/d_line_bottom_grays_whitesbg"
+                android:state_pressed="true">
+            </item>
+            <item
+                android:drawable="@drawable/d_line_bottom_grays_whitebg"
+                android:state_pressed="false">
+            </item>
+            <item android:drawable="@drawable/d_line_bottom_grays_whitebg"/>
+        </selector>
+    </item>
+
+</ripple>

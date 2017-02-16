@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.shwm.freshmallincome.MainActivity" >
+
+    <!-- 添加菜单项 -->
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/app_name"/>
+
+    <!-- 添加子菜单 -->
+    <item android:title="@string/app_name">
+        <menu>
+            <!-- 单项选择 -->
+            <group android:checkableBehavior="single" >
+                <item
+                    android:id="@+id/color_red"
+                    android:checked="true"
+                    android:title="@string/app_name"/>
+                <item
+                    android:id="@+id/color_bule"
+                    android:title="@string/app_name"/>
+                <item
+                    android:id="@+id/color_greed"
+                    android:title="@string/app_name"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>

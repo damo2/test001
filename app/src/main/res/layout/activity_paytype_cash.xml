@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_default"
+    android:orientation="vertical"
+    android:weightSum="2" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_cashReceipt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay" >
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/default_8"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/tv_paytype_cash_yingshoujine"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/default_16"
+            android:text="@string/paytype_cash_moneyReceivable" />
+
+        <TextView
+            android:id="@+id/tv_paytype_cash_moneyReceivable"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/default_12"
+            android:text=""
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_paytype_cash_shishoujine"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/default_16"
+            android:layout_weight="1"
+            android:background="@drawable/d_line_top_grays_whitebg"
+            android:paddingLeft="@dimen/default_8"
+            android:paddingRight="@dimen/default_8" >
+
+            <TextView
+                android:id="@+id/tv_paytype_cash_shishoujine"
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/paytype_cash_moneyPaid" />
+
+            <TextView
+                android:id="@+id/tv_paytype_cash_moneyPaid"
+                style="@style/text_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_paytype_cash_shishoujine"
+                android:gravity="right"
+                android:text=""
+                android:textSize="28sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/d_line_top_grays_whitebg"
+            android:paddingLeft="@dimen/default_8"
+            android:paddingRight="@dimen/default_8" >
+
+            <TextView
+                android:id="@+id/tv_paytype_cash_zhaolinjine"
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/paytype_cash_moneyChange" />
+
+            <TextView
+                android:id="@+id/tv_paytype_cash_moneyChange"
+                style="@style/text_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_paytype_cash_zhaolinjine"
+                android:gravity="right"
+                android:text=""
+                android:textSize="28sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/default_8"
+        android:layout_weight="1"
+        android:background="@color/white" >
+
+        <TableLayout
+            android:id="@+id/table_orderno_num"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/line_gray"
+            android:orientation="vertical"
+            android:padding="0.5dp" >
+
+            <TableRow android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/btn_paytype_cash_7"
+                        style="@style/CashOrder_Codeno_NUM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="7" />
+
+                    <Button
+                        android:id="@+id/btn_paytype_cash_8"
+                        style="@style/CashOrder_Codeno_NUM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="8" />
+
+                    <Button
+                        android:id="@+id/btn_paytype_cash_9"
+                        style="@style/CashOrder_Codeno_NUM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="9" />
+
+                    <Button
+                        android:id="@+id/btn_paytype_cash_del"
+                        style="@style/CashOrder_Codeno_NUM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="←" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow android:layout_weight="1" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/btn_paytype_cash_4"
+                        style="@style/CashOrder_Codeno_NUM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="4" />
+
+                    <Button
+                        android:id="@+id/btn_paytype_cash_5"
+                        style="@style/CashOrder_Codeno_NUM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="5" />
+
+                    <Button
+                        android:id="@+id/btn_paytype_cash_6"
+                        style="@style/CashOrder_Codeno_NUM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="6" />
+
+                    <Button
+                        android:id="@+id/btn_paytype_cash_clear"
+                        style="@style/CashOrder_Codeno_NUM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="C" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow android:layout_weight="2" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <TableLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:orientation="vertical"
+                        android:stretchColumns="*" >
+
+                        <TableRow android:layout_weight="1" >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal" >
+
+                                <Button
+                                    android:id="@+id/btn_paytype_cash_1"
+                                    style="@style/CashOrder_Codeno_NUM"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="1" />
+
+                                <Button
+                                    android:id="@+id/btn_paytype_cash_2"
+                                    style="@style/CashOrder_Codeno_NUM"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="2" />
+
+                                <Button
+                                    android:id="@+id/btn_paytype_cash_3"
+                                    style="@style/CashOrder_Codeno_NUM"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="3" />
+                            </LinearLayout>
+                        </TableRow>
+
+                        <TableRow android:layout_weight="1" >
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal" >
+
+                                <Button
+                                    android:id="@+id/btn_paytype_cash_00"
+                                    style="@style/CashOrder_Codeno_NUM"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="00" />
+
+                                <Button
+                                    android:id="@+id/btn_paytype_cash_0"
+                                    style="@style/CashOrder_Codeno_NUM"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="0" />
+
+                                <Button
+                                    android:id="@+id/btn_paytype_cash_point"
+                                    style="@style/CashOrder_Codeno_NUM"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="." />
+                            </LinearLayout>
+                        </TableRow>
+                    </TableLayout>
+
+                    <Button
+                        android:id="@+id/btn_paytype_cash_ok"
+                        style="@style/CashOrder_Codeno_NUM"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_bg_orange"
+                        android:text="收款"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_paytype_cash_receiptType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

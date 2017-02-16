@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_business_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay">
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/rl_businessaddress_choose"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/businessaddress_H"
+        android:background="@drawable/d_line_bottom_grays_whitebg"
+        android:paddingLeft="@dimen/businessaddress_padding_LR"
+        android:paddingRight="@dimen/businessaddress_padding_LR" >
+
+        <TextView
+            android:id="@+id/tv_businessaddress_xuanzhe"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/businessaddress_choose" />
+
+        <ImageButton
+            android:id="@+id/ibtn_businessaddress_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_bg_white"
+            android:paddingLeft="@dimen/default_8"
+            android:paddingRight="@dimen/default_8"
+            android:src="@drawable/ic_dingwei" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edt_businessaddress_addr"
+        style="@style/edt_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_16"
+        android:background="@drawable/d_line_bottom_grays_whitebg"
+        android:gravity="top|left"
+        android:hint="请输入地址"
+        android:padding="@dimen/businessaddress_padding_LR"
+        android:singleLine="false" />
+
+</LinearLayout>

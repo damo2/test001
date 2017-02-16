@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_cash_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay" >
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_cash_product_bottom"
+        android:layout_below="@+id/toolbar_cash_product"
+        android:orientation="horizontal" >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_cash_product_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@color/bg_default" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefreshlayout_cash_product"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5" >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_cash_product_right"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_cash_product_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/d_line_top_grays_whitebg"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_cash_product_edtCancel"
+            style="@style/button_default"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/cash_foodmanage_bottomBtnHeight"
+            android:layout_marginBottom="@dimen/cash_foodmanage_bottomBtnMargin"
+            android:layout_marginLeft="@dimen/cash_foodmanage_bottomBtnToLeftRight"
+            android:layout_marginRight="@dimen/cash_foodmanage_bottomBtnMargin"
+            android:layout_marginTop="@dimen/cash_foodmanage_bottomBtnMargin"
+            android:layout_weight="1"
+            android:background="@drawable/selector_bg_round_bgdefault_s"
+            android:text="@string/cash_foodmanage_bottom_editAll" />
+
+        <Button
+            android:id="@+id/btn_cash_product_addDelete"
+            style="@style/button_default"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/cash_foodmanage_bottomBtnHeight"
+            android:layout_marginBottom="@dimen/cash_foodmanage_bottomBtnMargin"
+            android:layout_marginLeft="@dimen/cash_foodmanage_bottomBtnMargin"
+            android:layout_marginRight="@dimen/cash_foodmanage_bottomBtnToLeftRight"
+            android:layout_marginTop="@dimen/cash_foodmanage_bottomBtnMargin"
+            android:layout_weight="1"
+            android:background="@drawable/selector_bg_round_orange_s"
+            android:text="@string/cash_foodmanage_bottom_addFood"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

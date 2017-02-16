@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/ll_cashTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_cash_top_height"
+        android:background="@color/top_bar_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_main_cash_left_cash"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/main_cash_top_textDreawPadding"
+            android:drawableTop="@drawable/icon_cashier"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/main_cash_top_padding"
+            android:text="@string/main_cash_cashier"
+            android:textColor="@color/main_cash_top_textyellow" />
+
+        <TextView
+            android:id="@+id/tv_main_cash_right_order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/main_cash_top_textDreawPadding"
+            android:drawableTop="@drawable/icon_order"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/main_cash_top_padding"
+            android:text="@string/main_cash_order"
+            android:textColor="@color/main_cash_top_textyellow" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_cash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_cashTop"
+        android:layout_marginTop="@dimen/main_cash_gridview_marinTop" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

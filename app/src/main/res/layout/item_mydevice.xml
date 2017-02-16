@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/ll_item_mydevice_rename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/default_8"
+        android:layout_toLeftOf="@+id/btn_bluetooth_connection"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/default_8" >
+
+        <ImageView
+            android:id="@+id/iv_item_mydevice_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_device_manage_default_icon" />
+
+        <TextView
+            android:id="@+id/tv_item_mydevice_name"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_8"
+            android:text="小米手机-以配对" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_bluetooth_connection"
+        style="@style/button_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/default_8"
+        android:background="@drawable/d_line_green_whitebg"
+        android:padding="@dimen/default_8"
+        android:text="连接"
+        android:textColor="@color/bg_green"
+        android:textSize="12sp" />
+
+</RelativeLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/default_8" >
+
+    <ImageView
+        android:id="@+id/iv_item_foodnamage_img"
+        android:layout_width="@dimen/cash_foodmanage_foodImgWH"
+        android:layout_height="@dimen/cash_foodmanage_foodImgWH"
+        android:src="@drawable/icon_bill_wechat" />
+
+    <LinearLayout
+        android:id="@+id/ll_item_foodinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/default_8"
+        android:layout_toRightOf="@+id/iv_item_foodnamage_img"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_item_foodmanage_foodname"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/hello_world" />
+
+        <TextView
+            android:id="@+id/tv_item_foodmanage_foodprice"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_8"
+            android:singleLine="true"
+            android:text="@string/hello_world"
+            android:textColor="@color/text_orange" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/cashOrder_food_weight_edt_W"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_item_foodnamage_img"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/default_4"
+        android:gravity="center_vertical|right" >
+
+        <LinearLayout
+            android:id="@+id/rl_item_cashOrder_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_4"
+            android:paddingTop="@dimen/default_4" >
+
+            <ImageView
+                android:id="@+id/iv_item_cashOrder_addNum"
+                android:layout_width="@dimen/cashOrder_foodAddSubImg_WH"
+                android:layout_height="@dimen/cashOrder_foodAddSubImg_WH"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/default_4"
+                android:padding="@dimen/cashOrder_foodAddSubImg_padding"
+                android:src="@drawable/ic_jiahao_cheng" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_item_cashOrder_addnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/rl_item_cashOrder_add"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_4"
+            android:paddingTop="@dimen/default_4" >
+
+            <ImageView
+                android:id="@+id/iv_item_cashOrder_subNum"
+                android:layout_width="@dimen/cashOrder_foodAddSubImg_WH"
+                android:layout_height="@dimen/cashOrder_foodAddSubImg_WH"
+                android:padding="@dimen/cashOrder_foodAddSubImg_padding"
+                android:src="@drawable/ic_jianhao_cheng" />
+
+            <TextView
+                android:id="@+id/tv_item_cashOrder_num"
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_4"
+                android:layout_marginRight="@dimen/default_4"
+                android:gravity="center"
+                android:minEms="1"
+                android:text="0"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_item_cashOrder_addweight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/tv_item_cashOrder_weight"
+                style="@style/edt_default"
+                android:layout_width="@dimen/cashOrder_food_weight_edt_W"
+                android:layout_height="wrap_content"
+                android:background="@drawable/d_line_gray_whitebg"
+                android:cursorVisible="true"
+                android:gravity="center_vertical|left"
+                android:inputType="numberDecimal"
+                android:paddingBottom="@dimen/default_8"
+                android:paddingLeft="@dimen/default_8"
+                android:paddingTop="@dimen/default_8"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_item_cashOrder_del"
+                android:layout_width="@dimen/cashOrder_foodAddSubImg_WH"
+                android:layout_height="@dimen/cashOrder_foodAddSubImg_WH"
+                android:layout_alignRight="@+id/tv_item_cashOrder_weight"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/default_2"
+                android:padding="@dimen/cashOrder_foodAddSubImg_padding"
+                android:src="@drawable/ic_delete_member" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_item_foodmanage_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/selecot_select_a" />
+
+    <Button
+        android:id="@+id/btn_item_foodmanage_weight"
+        style="@style/button_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/default_8"
+        android:text="称重"
+        android:textSize="12sp" />
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_popup_copon"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent5" >
+
+    <LinearLayout
+        android:id="@+id/ll_popup_coupon_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_popup_coupon_addMember"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/coupon_item_H"
+            android:background="@drawable/selector_bg_white"
+            android:drawableLeft="@drawable/ic_my_member"
+            android:drawablePadding="@dimen/default_8"
+            android:drawableRight="@drawable/icon_arrow"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/default_8"
+            android:paddingRight="@dimen/default_8"
+            android:text="@string/coupon_addMember" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/bg_default" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_popup_coupon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_8"
+            android:background="@color/white" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_popup_coupon_hide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_popup_coupon_content" />
+
+</RelativeLayout>

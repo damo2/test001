@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/bg_default" >
+
+    <item android:drawable="@color/coupon_add">
+    </item>
+
+</ripple>

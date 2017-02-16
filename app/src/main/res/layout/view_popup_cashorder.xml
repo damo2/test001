@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <View
+        android:id="@+id/view_cashOrder_dismiss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sv_cashOrder" />
+
+    <ScrollView
+        android:id="@+id/sv_cashOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_cashOrder_bottom" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:id="@+id/rl_cashOrder_bottom_gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" >
+
+                <RelativeLayout
+                    android:id="@+id/rl_cashOrder_gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <View
+                        android:id="@+id/view_cashOrder_gone_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/cashOrder_cart_gone_clear_H" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_cashOrder_gone_top"
+                        android:background="@drawable/d_line_top_grays_whitebg" >
+
+                        <TextView
+                            android:id="@+id/tv_cashOrder_clearList"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/cashOrder_cart_gone_clear_H"
+                            android:layout_alignParentRight="true"
+                            android:drawableLeft="@drawable/ic_placeorder_clear_cart"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/default_8"
+                            android:paddingRight="@dimen/default_8"
+                            android:text="@string/cashOrder_botm_clearList"
+                            android:textColor="@color/text_gray" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/cashOrder_bottom_cartW"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true" >
+
+                        <ImageView
+                            android:id="@+id/btn_cashOrder_cart_gone"
+                            style="@style/button_default"
+                            android:layout_width="@dimen/cashOrder_bottom_catWH"
+                            android:layout_height="@dimen/cashOrder_bottom_catWH"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/default_8"
+                            android:layout_marginTop="@dimen/default_2"
+                            android:src="@drawable/ic_placeorder_cart" />
+
+                        <TextView
+                            android:id="@+id/tv_cashOrder_numSum_popup"
+                            style="@style/text_default"
+                            android:layout_width="@dimen/cashOrder_bottom_cart_iconnum_WH"
+                            android:layout_height="@dimen/cashOrder_bottom_cart_iconnum_WH"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/red_point"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_cashOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_cashOrder_gone"
+                    android:background="@drawable/d_line_top_grays_whitebg" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_cashOrder_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/d_line_top_grays_whitebg"
+        android:padding="@dimen/default_4" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/cashOrder_bottom_priceToLeftTwo"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_cashOrder_heji"
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cashOrder_bottom_sumT"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_cashOrder_priceSum_popup"
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_4"
+                android:text="0.00"
+                android:textColor="@color/text_orange"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_cashOrer_tosubmitOrder_popup"
+            style="@style/button_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_bg_round_orange_s"
+            android:padding="@dimen/cashOrder_bottom_btnPadding"
+            android:text="@string/cashOrder_bottom_chooseOk"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_orderrefund_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay" >
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_orderrefund_top"
+        android:layout_margin="@dimen/orderdetail_card_margin"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/orderdetail_card_Radius"
+        app:cardElevation="@dimen/orderdetail_card_Elevation" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="@dimen/montyReturn_card_paddingBottom"
+            android:paddingTop="@dimen/montyReturn_card_paddingTop" >
+
+            <ImageView
+                android:id="@+id/iv_orderrefund_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_payment_success" />
+
+            <TextView
+                android:id="@+id/tv_orderrefund_money"
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_orderrefund_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/default_16"
+                android:textColor="@color/text_orange"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_orderrefund_refundover"
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_orderrefund_money"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/default_16"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/default_8"
+        android:paddingLeft="@dimen/default_8"
+        android:paddingRight="@dimen/default_8" >
+
+        <Button
+            android:id="@+id/btn_orderrefund_print"
+            style="@style/button_default"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btnSubmit_height"
+            android:background="@drawable/selector_bg_round_white_s"
+            android:text="@string/montyReturn_print" />
+
+        <Button
+            android:id="@+id/btn_orderrefund_return"
+            style="@style/button_default"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btnSubmit_height"
+            android:layout_marginTop="@dimen/default_8"
+            android:background="@drawable/selector_bg_round_orange_s"
+            android:text="@string/montyReturn_return"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

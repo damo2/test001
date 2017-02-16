@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_default"
+    android:orientation="vertical" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_accountset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay" >
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/account_item_H"
+        android:layout_marginTop="@dimen/account_item_paddingLR"
+        android:background="@drawable/d_line_bottom_grays_whitebg"
+        android:paddingLeft="@dimen/account_item_paddingLR"
+        android:paddingRight="@dimen/account_item_paddingLR" >
+
+        <TextView
+            android:id="@+id/tv_accountset_accountLogin"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="@string/accountset_accountLogin" />
+
+        <TextView
+            android:id="@+id/tv_accountset_username"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/default_8"
+            android:layout_toRightOf="@+id/tv_accountset_accountLogin"
+            android:gravity="center_vertical|right"
+            android:singleLine="true"
+            android:textColor="@color/text_gray" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_accountset_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/account_item_H"
+        android:background="@drawable/d_line_bottom_grays_whitebg"
+        android:paddingLeft="@dimen/account_item_paddingLR"
+        android:paddingRight="@dimen/account_item_paddingLR" >
+
+        <TextView
+            android:id="@+id/tv_accountset_nick"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:text="@string/accountset_nick" />
+
+        <TextView
+            android:id="@+id/tv_accountset_nickname"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/default_8"
+            android:layout_toRightOf="@+id/tv_accountset_nick"
+            android:drawableRight="@drawable/icon_arrow"
+            android:gravity="center_vertical|right"
+            android:singleLine="true"
+            android:textColor="@color/text_gray" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_accountset_changepassword"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/account_item_H"
+        android:background="@drawable/d_line_bottom_grays_whitebg"
+        android:paddingLeft="@dimen/account_item_paddingLR"
+        android:paddingRight="@dimen/account_item_paddingLR" >
+
+        <TextView
+            android:id="@+id/tv_accountset_changePwd"
+            style="@style/text_default"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/icon_arrow"
+            android:gravity="center_vertical"
+            android:text="@string/accountset_changePwd" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_accountset_exit"
+        style="@style/button_default"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btnSubmit_height"
+        android:layout_margin="@dimen/account_item_paddingLR"
+        android:background="@drawable/selector_bg_round_orange_s"
+        android:text="@string/accountset_exitLogin"
+        android:textColor="@color/white" />
+
+</LinearLayout>

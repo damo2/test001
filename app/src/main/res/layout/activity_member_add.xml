@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_memberadd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay"></android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/ll_memberadd_one"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/edt_memberadd_tel"
+            style="@style/edt_default"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:hint="@string/member_add_telhint"
+            android:inputType="number"
+            android:maxLength="11"
+            android:text=""
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_memberadd_next"
+            style="@style/button_default"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btnSubmit_height"
+            android:layout_margin="@dimen/default_16"
+            android:background="@drawable/selector_bg_round_orange_s"
+            android:text="@string/next"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_memberadd_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/memberadd_Tel_H"
+            android:background="@drawable/d_line_top_grays_whitebg"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/memberadd_paddingLR"
+            android:paddingRight="@dimen/memberadd_paddingLR">
+
+            <TextView
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|left"
+                android:text="@string/member_add_tel" />
+
+            <TextView
+                android:id="@+id/tv_memberadd_tel"
+                style="@style/text_default_s_gray"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|right"
+                android:maxLines="1"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/memberadd_H"
+            android:background="@drawable/d_line_top_grays_whitebg"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/memberadd_paddingLR"
+            android:paddingRight="@dimen/memberadd_paddingLR">
+
+            <TextView
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|left"
+                android:text="@string/member_add_name" />
+
+            <EditText
+                android:id="@+id/edt_memberadd_name"
+                style="@style/edt_default"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:gravity="center_vertical|right"
+                android:hint="@string/member_add_nameHint"
+                android:inputType="text"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/memberadd_H"
+            android:background="@drawable/d_line_top_grays_whitebg"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/memberadd_paddingLR"
+            android:paddingRight="@dimen/memberadd_paddingLR">
+
+            <TextView
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|left"
+                android:text="@string/member_add_cardNo" />
+
+            <EditText
+                android:id="@+id/edt_memberadd_cardNo"
+                style="@style/edt_default"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:gravity="center_vertical|right"
+                android:hint="@string/member_add_cardNoHint"
+                android:inputType="number"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/memberadd_H"
+            android:background="@drawable/d_line_top_grays_whitebg"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/memberadd_paddingLR"
+            android:paddingRight="@dimen/memberadd_paddingLR">
+
+            <TextView
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|left"
+                android:text="@string/member_add_cardType" />
+
+            <EditText
+                android:id="@+id/edt_memberadd_cardType"
+                style="@style/edt_default"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:gravity="center_vertical|right"
+                android:hint="@string/member_add_cardTypeHint"
+                android:inputType="text"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/memberadd_H"
+            android:background="@drawable/d_line_top_grays_whitebg"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/memberadd_paddingLR"
+            android:paddingRight="@dimen/memberadd_paddingLR">
+
+            <TextView
+                style="@style/text_default"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|left"
+                android:text="@string/member_add_discount" />
+
+            <EditText
+                android:id="@+id/edt_memberadd_discount"
+                style="@style/edt_default"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:gravity="center_vertical|right"
+                android:hint="@string/member_add_discountHint"
+                android:inputType="numberDecimal"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/d_line_top_grays_whitebg"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/memberadd_paddingLR"
+            android:paddingRight="@dimen/memberadd_paddingLR"
+            android:id="@+id/view_memberAdd_desc">
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/memberadd_H"
+            android:gravity="center_vertical|left"
+            android:text="@string/member_add_desc" />
+            <TextView
+                android:id="@+id/tv_memberAdd_desc"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/memberadd_H"
+                android:drawableRight="@drawable/icon_arrow"
+                android:gravity="center_vertical|right"
+                android:maxEms="12"
+                android:ellipsize="end"
+                android:layout_marginLeft="@dimen/default_8"
+                android:text="@string/member_add_desc" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/cash_foodmanage_classHeight" >
+
+    <TextView
+        android:id="@+id/tv_item_foodmanage_classesname"
+        style="@style/text_default"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tv_item_foodmanage_num"
+        style="@style/text_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/default_4"
+        android:background="@drawable/red_point"
+        android:gravity="center"
+        android:minEms="1"
+        android:minHeight="@dimen/redpoint_WHmin"
+        android:minWidth="@dimen/redpoint_WHmin"
+        android:text=""
+        android:textColor="@color/white" />
+
+</RelativeLayout>

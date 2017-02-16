@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_default" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_my"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme" >
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_my" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_my_userinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8"
+                android:background="@drawable/selector_bg_white"
+                android:clickable="true"
+                android:padding="@dimen/mainmy_top_padding" >
+
+                <ImageView
+                    android:id="@+id/iv_my_img"
+                    android:layout_width="@dimen/mainmy_top_img_WH"
+                    android:layout_height="@dimen/mainmy_top_img_WH"
+                    android:src="@drawable/ic_manage_member_desk" />
+
+                <TextView
+                    android:id="@+id/tv_my_nickname"
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_my_img"
+                    android:layout_marginLeft="@dimen/default_8"
+                    android:layout_toRightOf="@+id/iv_my_img"
+                    android:singleLine="true"
+                    android:text="" />
+
+                <TextView
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iv_my_img"
+                    android:layout_alignLeft="@+id/tv_my_nickname"
+                    android:background="@drawable/d_line_round_red"
+                    android:paddingBottom="@dimen/default_2"
+                    android:paddingLeft="@dimen/default_6"
+                    android:paddingRight="@dimen/default_6"
+                    android:paddingTop="@dimen/default_2"
+                    android:text="未认证"
+                    android:textColor="@color/text_red"
+                    android:textSize="10sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/iv_my_more"
+                    android:src="@drawable/ic_shop_code" />
+
+                <ImageView
+                    android:id="@+id/iv_my_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_arrow" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_my_accountset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_16"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_bg_white" >
+
+                    <TextView
+                        style="@style/text_main_my_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_bg_white"
+                        android:drawableLeft="@drawable/ic_my_member"
+                        android:text="@string/mianmy_item_accountManage" />
+
+                    <TextView
+                        android:id="@+id/tv_my_username"
+                        style="@style/text_main_my_item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/selector_bg_white"
+                        android:drawableRight="@drawable/icon_arrow"
+                        android:gravity="right|center_vertical"
+                        android:text=""
+                        android:textColor="@color/text_gray" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_my_cashiermanage"
+                    style="@style/text_main_my_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_bg_white"
+                    android:drawableLeft="@drawable/ic_my_cashier_manage"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:text="@string/mianmy_item_posManage" />
+
+                <TextView
+                    android:id="@+id/tv_my_devicemanage"
+                    style="@style/text_main_my_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_bg_white"
+                    android:drawableLeft="@drawable/ic_my_device_manage"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:text="@string/mianmy_item_deviceManage" />
+
+                <TextView
+                    android:id="@+id/tv_my_cashfeed"
+                    style="@style/text_main_my_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_bg_white"
+                    android:drawableLeft="@drawable/ic_my_cash_feed"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:text="@string/mianmy_item_poswuliao" />
+
+                <TextView
+                    android:id="@+id/tv_my_feeBusiness"
+                    style="@style/text_main_my_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_16"
+                    android:background="@drawable/selector_bg_white"
+                    android:drawableLeft="@drawable/ic_my_cashier_fee"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:text="@string/mianmy_item_feeBusiness" />
+
+                <TextView
+                    android:id="@+id/tv_my_cashSet"
+                    style="@style/text_main_my_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_bg_white"
+                    android:drawableLeft="@drawable/ic_my_cash_settings"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:text="@string/mianmy_item_posSet" />
+
+                <TextView
+                    android:id="@+id/tv_my_aboutWe"
+                    style="@style/text_main_my_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_16"
+                    android:background="@drawable/selector_bg_white"
+                    android:drawableLeft="@drawable/ic_my_about"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:text="@string/mianmy_item_aboutWe" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

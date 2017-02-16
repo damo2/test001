@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">新鲜收银</string>
+    <string name="hello_world">Hello world!Hello world!Hello world!Hello world!</string>
+    <string name="main_tab_cash">收银</string>
+    <string name="main_tab_order">流水</string>
+    <string name="main_tab_my">我的</string>
+
+    <!-- update -->
+    <string name="update_version">检测更新</string>
+    <string name="update_statu">新鲜收银更新</string>
+    <string name="update_nonew">当前为最新版本：</string>
+    <string name="update_current">当前版本为：</string>
+    <string name="update_new">最新版本为：</string>
+    <string name="update_down">立即更新</string>
+    <string name="update_install">立即安装</string>
+    <string name="update_again">重新下载安装</string>
+    <!-- title -->
+    <string name="title_mainOrder">账单流水</string>
+    <string name="title_mainMy">我的</string>
+    <string name="title_cash_foodmanage">商品管理</string>
+    <string name="title_cash_order">开单</string>
+    <string name="title_cash_receipt">收款</string>
+    <string name="search_title">搜索</string>
+    <string name="title_ordersubmit">收款</string>
+    <string name="title_foodedit">编辑</string>
+    <string name="title_foodadd">添加</string>
+    <string name="title_classesmanage_one">分类管理</string>
+    <string name="title_classesmanage_choose">分类管理</string>
+    <string name="title_code_foodedit">扫描商品条码</string>
+    <string name="title_member_main">会员</string>
+    <string name="title_member_mainAddMember">添加会员</string>
+    <string name="title_member_add">新增会员</string>
+    <string name="title_reg_code">注册</string>
+    <string name="title_accountset">账号设置</string>
+    <string name="title_changepassword">设置新密码</string>
+    <string name="title_couponset">优惠折扣设置</string>
+    <string name="title_paytype_cash">现金收款</string>
+    <string name="title_devicemanage">设备管理</string>
+    <string name="title_deviceadd">添加设备</string>
+    <string name="title_aboutus">关于我们</string>
+    <string name="title_mapchoose">选择地址</string>
+    <string name="title_businessmanage">店铺管理</string>
+    <string name="title_businessaddressChange">门店地址</string>
+    <string name="title_businessnameChange">修改店铺名称</string>
+    <string name="title_nicknameChange">修改昵称</string>
+    <string name="title_paycashOver">完成支付</string>
+    <string name="title_refundOver">完成退款</string>
+    <string name="title_paytype_wechat">微信收款</string>
+    <string name="title_business_codeQR">店铺二维码</string>
+    <string name="title_memberDesc">会员备注</string>
+    <!-- toolbar -->
+    <string name="toolbar_chooseCoupon">选择优惠</string>
+    <string name="toolbar_chooseCoupon_cancel">取消</string>
+    <string name="toolbar_order_search">筛选</string>
+    <!--  -->
+    <string name="fail">失败</string>
+    <string name="success">成功</string>
+    <string name="sure">确定</string>
+    <string name="confirm">确定</string>
+    <string name="add">添加</string>
+    <string name="delete">删除</string>
+    <string name="edit">编辑</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="next">下一步</string>
+    <string name="weight">称重</string>
+    <string name="tig">提示</string>
+    <string name="know">知道了</string>
+    <!-- dialog -->
+    <string name="login_loading">登录中...</string>
+    <string name="camera_camcel_scancode_title">照相权限被禁止，无法使用扫码功能!</string>
+    <string name="camera_camcel_light_title">照相权限被禁止，无法使用闪光灯功能!</string>
+    <string name="camera_camcel_photo_title">照相权限被禁止，无法使用相机功能!</string>
+    <string name="storage_camcel_coupon_title">文件读写权限被禁止，无法使用优惠劵功能!</string>
+    <string name="is_exit_edit">是否退出编辑?</string>
+    <string name="is_exit_cash">是否结束本次收银?</string>
+    <!-- 提示信息 -->
+    <string name="statu_success">成功</string>
+    <string name="statu_fail">失败</string>
+    <string name="statu_exception">异常</string>
+    <string name="statu_noNet">请连接网络后重试</string>
+    <string name="statu_fail_info_statu"> %1$s\n%2$s</string>
+    <string name="btn_sure">确定</string>
+    <string name="btn_cancel">取消</string>
+    <string name="execute_asyncTask">onPostExecute hashmap is null</string>
+    <string name="loading">加载中...</string>
+    <string name="loadover">加载完成</string>
+    <string name="loadoverAll">全部加载完成</string>
+    <string name="loadfail">加载失败</string>
+    <string name="permission_nocamera">没有打开相机权限</string>
+    <string name="permission_noStorage">没有读取权限</string>
+    <string name="permission_noLocation">没有定位权限</string>
+    <!-- 请求 -->
+    <string name="request_exception">网络请求异常</string>
+    <string name="request_fail">网络请求失败</string>
+    <string name="request_timeout">网络请求超时</string>
+    <!-- 登录 -->
+    <string name="log_username_hint">输入用户名</string>
+    <string name="log_password_hint">输入密码</string>
+    <string name="log_login">登录</string>
+    <string name="log_reg">新用户注册</string>
+    <string name="log_namepwd_error">用户名或密码错误</string>
+    <string name="log_login_pwd_noformat">密码最好为英文字符或数字</string>
+    <string name="log_login_pwd_nosize">密码最好大于6个字符</string>
+    <!-- 注册 -->
+    <string name="log_regin_mobi_hint">请输入您的手机号</string>
+    <string name="log_regin_code_hint">请输入短信验证码</string>
+    <string name="log_regin_btn_getcode">获取验证码</string>
+    <string name="log_regin_password_hint">请输入密码</string>
+    <string name="log_regin_storename_hint">请输入店铺名称</string>
+    <string name="log_regin_storedesc_hint">请输入店铺描述</string>
+    <string name="log_regin_storeaddr_hint">请输入店铺地址</string>
+    <string name="log_regin_storeContacts_hint">请输入店铺联系人</string>
+    <string name="log_regin_btn_reg">注册</string>
+    <string name="log_regin_btn_regSuc">注册成功</string>
+    <string name="log_regin_sendcodesuc">发送验证码成功</string>
+    <string name="log_regin_regsuc">发送验证码成功</string>
+    <string name="log_regin_codeError">验证码错误</string>
+
+    <!--  -->
+    <string name="main_cash_cashier">收款</string>
+    <string name="main_cash_order">开单</string>
+    <string name="main_cash_gv_product">商品管理</string>
+    <string name="main_cash_gv_myincome">我的收入</string>
+    <string name="main_cash_gv_message">消息</string>
+    <string name="main_cash_gv_taika">台卡</string>
+    <string name="main_cash_gv_member">会员</string>
+    <string name="main_cash_gv_coupon">优惠劵</string>
+    <string name="main_cash_gv_activity">活动</string>
+
+    <!-- 商品管理 -->
+    <string name="cash_foodmanage_top_classesmanage">分类管理</string>
+    <string name="cash_foodmanage_bottom_editAll">批量编辑</string>
+    <string name="cash_foodmanage_bottom_addFood">新增商品</string>
+    <string name="cash_foodmanage_bottom_cancel">取消</string>
+    <string name="cash_foodmanage_bottom_delete">删除</string>
+
+    <!-- 开单 -->
+    <string name="cashOrder_bottom_chooseOk">选好了</string>
+    <string name="cashOrder_bottom_sumT">合计：</string>
+    <string name="cashOrder_tab_chooseFood">选择商品</string>
+    <string name="cashOrder_tab_codeFood">扫码选择</string>
+    <string name="cashOrder_tab_nocodeFood">无码商品</string>
+    <string name="cashOrder_botm_clearList">清空列表</string>
+    <string name="cashOrder_code_tip">请将商品条形码放入中间进行扫描</string>
+    <string name="cashOrder_code_codeEdit">请输入条码</string>
+    <string name="cashOrder_code_price">请直接输入商品金额</string>
+    <string name="cashOrder_codeno_foodname">无码商品%1$s</string>
+    <string name="cashOrder_code_moneyfail">商品单价必须大于0</string>
+    <string name="cashOrder_code_maxmoney">不能超过最大值%1$s</string>
+    <string name="cashOrder_code_no">找不到此商品</string>
+    <string name="cashOrder_code_scanfail">扫描失败</string>
+    <string name="cashOrder_code_null">请输入条形码</string>
+    <string name="cashOrder_code_existCart">%1$s购物车已存在该商品</string>
+    <string name="cashOrder_code_addCart">%1$s以添加到购物车</string>
+    <string name="cashOrder_code_fail">查找失败</string>
+    <string name="cashOrder_cart_no">请选择商品</string>
+    <string name="cashOrder_weight_hint">请输入商品重量</string>
+    <string name="cashOrder_cart_clear">是否清空购物车?</string>
+
+    <!-- 收款 -->
+    <string name="cashReceipt_yhje">优惠金额：</string>
+    <string name="cashReceipt_ysje">应收金额：</string>
+    <string name="cashReceipt_default">0.00</string>
+    <string name="cashReceipt_zore">请输入金额</string>
+    <!-- 收款  提交订单 -->
+    <string name="orderSubmit_yingshou">应收：</string>
+    <string name="orderSubmit_shoukuan">收款</string>
+    <string name="orderSubmit_num">数量：</string>
+    <string name="orderSubmit_sum">合计：</string>
+    <string name="orderSubmit_foodname">商品名称</string>
+    <string name="orderSubmit_foodprice">单价</string>
+    <string name="orderSubmit_foodnum">数量</string>
+    <string name="orderSubmit_foodMoney">金额</string>
+    <string name="orderSubmit_coupon_discountMember">会员%1$s折</string>
+    <string name="orderSubmit_coupon_moneydown">整单减%1$s</string>
+    <string name="orderSubmit_coupon_discount">整单%1$s折</string>
+
+    <!-- 商品管理 -->
+    <string name="foodmanage_nochoose">请选择要删除的商品</string>
+    <string name="foodmanage_delsure">确定删除以下商品吗?\n  %1$s</string>
+    <string name="foodmanage_delSuccess">删除成功</string>
+
+    <!-- 编辑 -->
+    <string name="foodedit_foodname">商品名称</string>
+    <string name="foodedit_foodname_hint">商品名称(限15个字)</string>
+    <string name="foodedit_foodcode">商品条码</string>
+    <string name="foodedit_foodcode_hint">商品条码</string>
+    <string name="foodedit_foodclass">选择分类</string>
+    <string name="foodedit_price">零售价</string>
+    <string name="foodedit_price_hint">商品单价</string>
+    <string name="foodedit_priceMember">会员价</string>
+    <string name="foodedit_priceMember_hints">会员价</string>
+    <string name="foodedit_unit">单位</string>
+    <string name="foodedit_unit_hint">单位</string>
+    <string name="foodedit_numsum">库存</string>
+    <string name="foodedit_numsum_hint">库存</string>
+    <string name="foodedit_type">类型</string>
+    <string name="foodedit_from">来源</string>
+    <string name="foodedit_from_hint">来源</string>
+    <string name="foodedit_desc">描述</string>
+    <string name="foodedit_desc_hint">描述</string>
+    <string name="foodedit_toast_noname">请输入商品名称</string>
+    <string name="foodedit_toast_noprice">请输入商品价格</string>
+    <string name="foodedit_toast_nounit">请输入商品单位</string>
+    <string name="foodmanage_addImageFail">添加图片失败</string>
+    <string name="foodedit_upimg_suc">图片上传成功</string>
+    <string name="foodedit_edt_suc">编辑成功</string>
+    <string name="foodedit_add_suc">添加成功</string>
+    <string name="foodedit_addimg">添加商品图片</string>
+    <string name="foodedit_type_defaule">普通商品</string>
+    <string name="foodedit_type_weight">称重商品</string>
+    <!-- 分类管理 -->
+    <string name="classesmanage_edit">编辑</string>
+    <string name="classesmanage_add">新增分类</string>
+    <string name="classesmanage_toast_noname">请输入类型名称</string>
+    <string name="classesmanage_addClassesDialogtitle">新增分类</string>
+    <string name="classesmanage_editClassesDialogtitle">编辑分类</string>
+    <string name="classesmanage_sub">下一级</string>
+    <string name="classes_del_nolast">此分类有子分类不能删除</string>
+    <!-- 会员 -->
+    <string name="member_add">会员办理</string>
+    <string name="member_add_telhint">请输入办理会员的手机号</string>
+    <string name="member_add_tel">手机号</string>
+    <string name="member_add_name">姓名</string>
+    <string name="member_add_nameHint">请输入会员姓名</string>
+    <string name="member_add_cardNo">卡号</string>
+    <string name="member_add_cardNoHint">请输入卡号</string>
+    <string name="member_add_cardType">卡类型</string>
+    <string name="member_add_cardTypeHint">请输入会员卡类型</string>
+    <string name="member_add_desc">备注</string>
+    <string name="member_add_discount">折扣</string>
+    <string name="member_add_discountHint">请输入折扣,最大为10</string>
+    <string name="member_add_tel_fail">请输入正确格式的手机号</string>
+    <string name="member_add_name_fail">请输入姓名</string>
+    <string name="member_add_cardno_fail">请输入卡号</string>
+    <string name="member_add_cardtype_fail">请输入卡类型</string>
+    <string name="member_add_discount_null">请输入折扣</string>
+    <string name="member_add_discount_max">折扣不能大于10</string>
+    <string name="member_add_moneydown_max">减单不能大于9999</string>
+    <!-- 流水 -->
+    <string name="order_totalDay">收入%1$s</string>
+    <string name="order_nodata">暂无流水</string>
+    <!-- 订单详情 -->
+    <string name="orderdetail_totalMoney">交易金额</string>
+    <string name="orderdetail_food">商品详情</string>
+    <string name="orderdetail_print">打印小票</string>
+    <string name="orderdetail_montyReturn">现金退款</string>
+    <!-- 完成退款 -->
+    <string name="montyReturn_overcash">退款完成</string>
+    <string name="montyReturn_print">打印退款小票</string>
+    <string name="montyReturn_return">回到首页</string>
+    <!-- 支付完成 -->
+    <string name="payover_overcash">完成收款</string>
+    <string name="payover_printTicker">打印购物小票</string>
+    <string name="payover_cashGo">继续收银</string>
+    <!-- 我的 -->
+    <string name="mianmy_item_accountManage">账号设置</string>
+    <string name="mianmy_item_posManage">收营员管理</string>
+    <string name="mianmy_item_deviceManage">设备管理</string>
+    <string name="mianmy_item_poswuliao">收银物料</string>
+    <string name="mianmy_item_feeBusiness">交易费率</string>
+    <string name="mianmy_item_posSet">收银设置</string>
+    <string name="mianmy_item_aboutWe">关于我们</string>
+    <!-- 账号设置 -->
+    <string name="accountset_accountLogin">登录账号</string>
+    <string name="accountset_nick">昵称</string>
+    <string name="accountset_changePwd">修改密码</string>
+    <string name="accountset_exitLogin">退出登录</string>
+    <!-- 修改密码 -->
+    <string name="changepassword_old_hint">原始密码</string>
+    <string name="changepassword_new_hint">新密码（数字和字母组合）</string>
+    <string name="changepassword_new2_hint">请再次输入新密码</string>
+    <string name="changepassword_submit">确定修改</string>
+    <!-- 优惠 -->
+    <string name="coupon_addMember">添加会员</string>
+    <string name="coupon_scanCoupon">扫描优惠劵</string>
+    <string name="coupon_popup_discount">整单折扣</string>
+    <string name="coupon_popup_moneydown">整单减价</string>
+    <!-- 优惠折扣设置 -->
+    <string name="couponset_discount">整单折扣</string>
+    <string name="couponset_moneydown">整单减价</string>
+    <string name="couponset_add">+优惠劵</string>
+    <string name="couponset_add_discount">新增整单折扣</string>
+    <string name="couponset_add_discount_hint">如九五折输入数字9.5</string>
+    <string name="couponset_add_moneydown">新增整单减价</string>
+    <string name="couponset_add_moneydown_hint">请输入减价金额</string>
+    <string name="couponset_add_discount_10">折扣必须小于10折</string>
+    <string name="couponset_add_exist">已存在</string>
+    <string name="couponset_openclose">优惠折扣设置</string>
+    <!-- 现金收款 -->
+    <string name="paytype_cash_moneyReceivable">应收金额</string>
+    <string name="paytype_cash_moneyPaid">实收金额</string>
+    <string name="paytype_cash_moneyChange">找零金额</string>
+    <string name="paytype_cash_moneyNo">实收金额不足</string>
+    <!-- 收款方式 -->
+    <string name="paytype_taib">二维码台币</string>
+    <string name="paytype_wechat">微信</string>
+    <string name="paytype_alipay">支付宝</string>
+    <string name="paytype_cash">现金</string>
+    <!-- 收入 -->
+    <string name="income_today">今日收入</string>
+    <string name="income_week">近7天收入</string>
+    <string name="income_month">近30天收入</string>
+    <string name="income_week_trend">近7天收入趋势</string>
+    <!-- 蓝牙 -->
+    <string name="bluetooth_notsupported">您的设备不支持蓝牙</string>
+
+    <!-- 关于我们 -->
+    <string name="aboutus_tag">本产品由上海为梦信息科技有限公司开发运营</string>
+    <string name="aboutus_copyright">Copyright©2012-2017</string>
+    <string name="aboutus_companyname">上海为梦信息科技有限公司</string>
+    <string name="aboutus_update">检测更新</string>
+
+    <!-- 定位 -->
+    <string name="amap_localtion_addrnow">当前位置</string>
+    <string name="amap_localtion_addrSearchno">获取不到地址</string>
+    <string name="amap_localtion_addrSearchfail">获取地址失败</string>
+    <string name="amap_localtion_sure">确定位置</string>
+    <!-- 店铺管理 -->
+    <string name="businessmanage_logo">门店LOGO</string>
+    <string name="businessmanage_name">门店名称</string>
+    <string name="businessmanage_renzheng">门店认证</string>
+    <string name="businessmanage_taika">门店台卡</string>
+    <string name="businessmanage_business">绑定的网店</string>
+    <string name="businessmanage_addr">门店地址</string>
+    <string name="businessmanage_renzheng_no">未认证</string>
+    <string name="businessaddress_choose">选择地址</string>
+    <string name="businessmanage_name_nonull">不能为空</string>
+    <!-- 微信支付 -->
+    <string name="wechatpay_money">应收金额</string>
+    <string name="wechatpay_getcode">收款码收款</string>
+    <string name="wechatpay_scancode">扫一扫收款</string>
+    <string name="wechatpay_code_tag">让顾客扫一扫收款码向我付款</string>
+    <string name="wechatpay_scancode_tag">请顾客出示付款码,将顾客付款码扫描</string>
+    <string name="wechatpay_paySuc">收款成功</string>
+    <string name="wechatpay_sucInfo">应结金额%1$s支付金额%2$s</string>
+
+    <!--编辑内容-->
+    <string name="edit_content">请输入内容</string>
+
+</resources>

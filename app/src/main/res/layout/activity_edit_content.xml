@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_edit_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shwm.freshmallpos.activity.EditContentActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:inputType="text"
+        android:id="@+id/edt_content"
+        android:hint="@string/edit_content"
+        android:textSize="14sp"
+        android:gravity="top|left"
+        android:layout_marginTop="@dimen/default_8"
+        android:layout_below="@+id/toolbar_editContent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/white"
+        android:padding="@dimen/default_16"
+         />
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/toolbar_editContent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>

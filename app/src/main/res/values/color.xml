@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    
+    <color name="white">#FEFEFE</color>
+    <color name="text_default">#333333</color>
+    <color name="text_gray">#888888</color>
+    <color name="text_hint">#BBBBBB</color>
+    <color name="text_orange">#F49922</color>
+    <color name="text_red">#FF4444</color>
+    <color name="white_pressed">#80FFFFFF</color>
+    <color name="whiteRipple">#EEEEEE</color>
+    <color name="bg_default">#EEEEEE</color>
+    <color name="bg_defaultPressed">#DDDDDD</color>
+    <color name="bg_defaultRipple">#FFE7BA</color>
+    <color name="bg_orange">#EE9922</color>
+    <color name="bg_orangePressed">#DD8811</color>
+    <color name="bg_orangeRipple">#EEEEEE</color>
+    <color name="bg_orange80">#33EE9922</color>
+    <color name="bg_red">#FF4444</color>
+    <color name="bg_gray">#CCCCCC</color>
+    <color name="bg_bluel">#3598AB</color>
+    <color name="bg_green">#1d953f</color>
+    <color name="top_bar_bg">#424959</color>
+    <color name="top_bar_pressed">#80AAAAAA</color>
+    <color name="top_bar_pressedUn">#00000000</color>
+    <color name="line_gray">#80EEEEEE</color>
+    <color name="main_tab_text_selectyellow">#EE9900</color>
+    <color name="main_tab_text_noselectgray">#888888</color>
+    <color name="main_cash_top_textyellow">#FFDD66</color>
+    <color name="cashorder_codeno_numselect">#33EE9922</color>
+    <!-- 透明 -->
+    <color name="transparent0">#00000000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="transparent5">#80000000</color>
+
+    <!--  -->
+    <color name="coupon_moneydown">#EEB047</color>
+    <color name="coupon_discount">#F95755</color>
+    <color name="coupon_add">#C7C6C6</color>
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_member_member"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ordersubmit_member_H"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/ordersubmit_member_paddingLR" >
+
+    <TextView
+        android:id="@+id/tv_member_memberName"
+        style="@style/text_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text=""
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_member_memberMobi"
+        style="@style/text_default_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/ordersubmit_member_paddingLR"
+        android:layout_toRightOf="@+id/tv_member_memberName"
+        android:text=""
+        android:textSize="14sp" />
+
+    <ImageButton
+        android:id="@+id/ibtn_member_memberDel"
+        style="@style/imagebutton_default"
+        android:layout_width="@dimen/ordersubmit_member_del_WH"
+        android:layout_height="@dimen/ordersubmit_member_del_WH"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@color/transparent"
+        android:padding="@dimen/default_8"
+        android:src="@drawable/ic_delete_member" />
+
+</RelativeLayout>

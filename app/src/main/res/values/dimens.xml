@@ -1,0 +1,172 @@
+<resources>
+
+    <dimen name="navigation_icon_size">48dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_bootom_tab_height">56dp</dimen>
+    <dimen name="tool_bar_rightTextPadding">8dp</dimen>
+    <dimen name="line_weight">1dp</dimen>
+    <dimen name="main_tab_paddingTop">8dp</dimen>
+    <dimen name="default_2">2dp</dimen>
+    <dimen name="default_4">4dp</dimen>
+    <dimen name="default_6">6dp</dimen>
+    <dimen name="default_8">8dp</dimen>
+    <dimen name="default_12">12dp</dimen>
+    <dimen name="default_16">16dp</dimen>
+    <dimen name="btnSubmit_height">48dp</dimen>
+    <dimen name="redpoint_WHmin">20dp</dimen>
+    <!-- item -->
+    <dimen name="item_parent_paddingTopBottom">8dp</dimen>
+    <dimen name="item_parent_paddingLeftRight">12dp</dimen>
+    <!-- login -->
+    <dimen name="btn_submit_reg_log">8dp</dimen>
+    <dimen name="log_btn_name_pwd_space">16dp</dimen>
+    <dimen name="log_top_bg_h">200dp</dimen>
+    <!-- regin -->
+    <dimen name="regin_item_H">40dp</dimen>
+    <!-- main_cash -->
+    <dimen name="main_cash_top_height">200dp</dimen>
+    <dimen name="main_cash_top_textDreawPadding">6dp</dimen>
+    <dimen name="main_cash_top_padding">12dp</dimen>
+    <dimen name="main_cash_gridview_marinTop">16dp</dimen>
+    <dimen name="main_cash_gridview_padding">8dp</dimen>
+    <dimen name="main_cash_gridview_imgWidthHeight">56dp</dimen>
+    <dimen name="main_cash_gridview_imgToTextMagin">8dp</dimen>
+    <!-- cash_foodmanage -->
+    <dimen name="cash_foodmanage_classHeight">56dp</dimen>
+    <dimen name="cash_foodmanage_foodImgWH">72dp</dimen>
+    <dimen name="cash_foodmanage_bottomBtnToLeftRight">24dp</dimen>
+    <dimen name="cash_foodmanage_bottomBtnHeight">40dp</dimen>
+    <dimen name="cash_foodmanage_bottomBtnMargin">8dp</dimen>
+
+    <!-- 开单 -->
+    <dimen name="cashOrder_tabLayout_Height">48dp</dimen>
+    <dimen name="cashOrder_bottom_btnPadding">8dp</dimen>
+    <dimen name="cashOrder_bottom_priceToLeft">60dp</dimen>
+    <dimen name="cashOrder_bottom_priceToLeftTwo">16dp</dimen>
+    <dimen name="cashOrder_bottom_catWH">48dp</dimen>
+    <dimen name="cashOrder_bottom_cart_iconnum_WH">24dp</dimen>
+    <dimen name="cashOrder_bottom_cartW">80dp</dimen>
+    <dimen name="cashOrder_bottom_list_maxHeight">320dp</dimen>
+    <dimen name="cashOrder_code_bottom_top_H">32dp</dimen>
+    <dimen name="cashOrder_code_edt_H">48dp</dimen>
+    <dimen name="cashOrder_code_edt_ToLight">8dp</dimen>
+    <dimen name="cashOrder_code_edtToLeft">20dp</dimen>
+    <dimen name="cashOrder_code_lightToRight">30dp</dimen>
+    <dimen name="cashOrder_code_edtLightToTop">16dp</dimen>
+    <dimen name="cashOrder_codeno_edt_H">48dp</dimen>
+    <dimen name="cashOrder_codeno_num_H">80dp</dimen>
+    <dimen name="cashOrder_foodAddSubImg_WH">28dp</dimen>
+    <dimen name="cashOrder_foodAddSubImg_padding">1dp</dimen>
+    <dimen name="cashOrder_cart_gone_clear_H">48dp</dimen>
+    <dimen name="cashOrder_food_weight_edt_W">90dp</dimen>
+    <dimen name="cashOrder_cart_bottom_Hmin">40dp</dimen>
+
+    <!-- 收款 -->
+    <dimen name="cashReceipt_numtop_H">36dp</dimen>
+    <!-- 流水 列表 -->
+    <dimen name="main_order_icon_wh">48dp</dimen>
+
+    <!-- 收款  提交订单 -->
+    <dimen name="ordersubmit_btnSubmit_padding">8dp</dimen>
+    <dimen name="ordersubmit_foodnum_Wmin">40dp</dimen>
+    <dimen name="ordersubmit_foodMoney_Wmin">50dp</dimen>
+    <dimen name="ordersubmit_priceToNum">16dp</dimen>
+    <dimen name="ordersubmit_numToLeft">12dp</dimen>
+    <dimen name="ordersubmit_numToTop">12dp</dimen>
+    <dimen name="ordersubmit_sumTonum">8dp</dimen>
+    <dimen name="ordersubmit_member_paddingLR">16dp</dimen>
+    <dimen name="ordersubmit_member_del_WH">36dp</dimen>
+    <dimen name="ordersubmit_member_H">48dp</dimen>
+    <!-- 商品编辑 -->
+    <dimen name="foodedt_itempaddingLR">8dp</dimen>
+    <dimen name="foodedt_itemH">48dp</dimen>
+    <dimen name="foodedt_desc_Hmin">80dp</dimen>
+    <dimen name="foodedt_codeIcon_WH">40dp</dimen>
+    <dimen name="foodedt_codeIcon_padding">4dp</dimen>
+    <dimen name="foodedt_foodimg_WH">120dp</dimen>
+    <!-- 分类管理 -->
+    <dimen name="classesmanage_item_paddingLeft">16dp</dimen>
+    <dimen name="classesmanage_item_H">52dp</dimen>
+    <dimen name="classesmanage_item_del_W">60dp</dimen>
+    <dimen name="classesmanage_item_edit_pad">8dp</dimen>
+    <!-- 条形码扫描界面 -->
+    <dimen name="code_sao_WH">300dp</dimen>
+
+    <!-- 新增会员 -->
+    <dimen name="memberadd_paddingLR">12dp</dimen>
+    <dimen name="memberadd_H">48dp</dimen>
+    <dimen name="memberadd_Tel_H">68dp</dimen>
+
+    <!-- 订单详情 -->
+
+    <dimen name="orderdetail_card_margin">8dp</dimen>
+    <dimen name="orderdetail_card_Radius">8dp</dimen>
+    <dimen name="orderdetail_card_Elevation">8dp</dimen>
+    <dimen name="orderdetail_card_top_padd_TB">28dp</dimen>
+    <dimen name="orderdetail_card_totalToTop">12dp</dimen>
+    <dimen name="orderdetail_fooddetail_H">32dp</dimen>
+    <dimen name="orderdetail_bootom_LR">32dp</dimen>
+
+    <!-- 完成退款 -->
+    <dimen name="montyReturn_card_paddingTop">50dp</dimen>
+    <dimen name="montyReturn_card_paddingBottom">20dp</dimen>
+    <!-- 我的 -->
+    <dimen name="mainmy_top_padding">16dp</dimen>
+    <dimen name="mainmy_top_img_WH">56dp</dimen>
+    <!-- 账号设置 -->
+    <dimen name="account_item_H">48dp</dimen>
+    <dimen name="account_openclose_H">48dp</dimen>
+    <dimen name="account_item_paddingLR">12dp</dimen>
+    <!-- 修改密码 -->
+    <dimen name="changepassword_item_paddingLR">8dp</dimen>
+    <!-- 优惠 -->
+    <dimen name="coupon_item_H">48dp</dimen>
+    <dimen name="coupon_item2_H">80dp</dimen>
+    <dimen name="coupon_item2_valueTotop">30dp</dimen>
+    <dimen name="coupon_item2_W">120dp</dimen>
+    <dimen name="coupon_item2_padding">8dp</dimen>
+    <dimen name="coupon_item2_space">12dp</dimen>
+    <!-- 优惠折扣设置 -->
+    <dimen name="couponset_padding">8dp</dimen>
+    <dimen name="couponset_marginTopRight">12dp</dimen>
+    <dimen name="couponset_del_HW">30dp</dimen>
+    <dimen name="couponset_item_H">60dp</dimen>
+    <!-- 收入 -->
+    <dimen name="income_chartColumn_H">300dp</dimen>
+    <dimen name="income_chartColumnToTopMonth">36dp</dimen>
+    <dimen name="income_today_H">48dp</dimen>
+    <dimen name="income_today_paddingLR">12dp</dimen>
+
+    <!-- 蓝牙 -->
+    <dimen name="buletooth_manage_con_H">44dp</dimen>
+    <dimen name="buletooth_manage_ProgressBar_WH">24dp</dimen>
+    <dimen name="buletooth_manage_itme_btn_W">60dp</dimen>
+    <dimen name="buletooth_manage_itme_btn_H">36dp</dimen>
+    <!-- 关于我们 -->
+    <dimen name="aboutUs_icon_HW">60dp</dimen>
+    <dimen name="aboutUs_icon_toTop">60dp</dimen>
+    <dimen name="aboutUs_text_toIcon">12dp</dimen>
+    <!-- 定位 -->
+    <dimen name="map_local_HW">48dp</dimen>
+    <dimen name="map_local_addr_margin">8dp</dimen>
+    <dimen name="map_local_addr_padding">4dp</dimen>
+    <dimen name="map_local_addr_radius">4dp</dimen>
+    <dimen name="map_local_addr_elevation">4dp</dimen>
+    <!-- 店铺管理 -->
+    <dimen name="businessmanage_padding">12dp</dimen>
+    <dimen name="businessmanage_logo_WH">48dp</dimen>
+    <dimen name="businessmanage_drawableRight">8dp</dimen>
+    <dimen name="businessmanage_2barcode_WH">24dp</dimen>
+    <dimen name="businessaddress_H">48dp</dimen>
+    <dimen name="businessaddress_padding_LR">8dp</dimen>
+    <!-- 微信收款 -->
+    <dimen name="wechatpay_scantop">36dp</dimen>
+    <dimen name="wechatpay_code_Wh">240dp</dimen>
+    <dimen name="wechatpay_code_margin">20dp</dimen>
+    <dimen name="edit_content_Height">300dp</dimen>
+
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 开单-扫码选择 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <SurfaceView
+            android:id="@+id/preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <com.zxing.view.ViewfinderView
+            android:id="@+id/viewfinder_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bright_foreground_disabled_material_light" />
+
+        <EditText
+            android:id="@+id/edt_cashorder_code"
+            style="@style/edt_default"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cashOrder_code_edt_H"
+            android:layout_marginLeft="@dimen/cashOrder_code_edtToLeft"
+            android:layout_marginTop="@dimen/cashOrder_code_edtLightToTop"
+            android:layout_toLeftOf="@+id/btn_cashorder_light"
+            android:background="@drawable/d_line_orange_orange80bg"
+            android:gravity="left|center_vertical"
+            android:hint="@string/cashOrder_code_codeEdit"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingLeft="@dimen/default_8"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:windowSoftInputMode="stateVisible" />
+
+        <Button
+            android:id="@+id/btn_cashorder_light"
+            style="@style/button_default"
+            android:layout_width="@dimen/cashOrder_code_edt_H"
+            android:layout_height="@dimen/cashOrder_code_edt_H"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/cashOrder_code_edt_ToLight"
+            android:layout_marginRight="@dimen/cashOrder_code_lightToRight"
+            android:layout_marginTop="@dimen/cashOrder_code_edtLightToTop"
+            android:background="@drawable/selector_light_openoff"
+            android:text="" />
+    </RelativeLayout>
+
+</FrameLayout>

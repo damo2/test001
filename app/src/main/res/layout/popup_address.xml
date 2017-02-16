@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/edt_popupAddress_addr"
+        style="@style/edt_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_16"
+        android:background="@drawable/d_line_gray_whitebg"
+        android:padding="@dimen/default_8" />
+
+    <ListView
+        android:id="@+id/gv_popupAddress_addr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/edt_popupAddress_addr" />
+
+</RelativeLayout>

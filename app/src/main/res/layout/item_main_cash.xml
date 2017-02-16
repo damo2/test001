@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/main_cash_gridview_padding" >
+
+    <ImageView
+        android:id="@+id/iv_main_cash_gv_icon"
+        android:layout_width="@dimen/main_cash_gridview_imgWidthHeight"
+        android:layout_height="@dimen/main_cash_gridview_imgWidthHeight"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_manage_product" />
+
+    <TextView
+        android:id="@+id/tv_main_cash_gv_text"
+        style="@style/text_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_main_cash_gv_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/main_cash_gridview_imgToTextMagin"
+        android:text="商品管理"
+        android:textSize="14sp" />
+
+</RelativeLayout>

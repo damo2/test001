@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_income_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay" >
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_income_today"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/income_today_H"
+                android:background="@drawable/selector_bg_white"
+                android:paddingLeft="@dimen/income_today_paddingLR"
+                android:paddingRight="@dimen/income_today_paddingLR" >
+
+                <TextView
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/income_today" />
+
+                <TextView
+                    android:id="@+id/tv_income_today"
+                    style="@style/text_default_gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:gravity="center_vertical|right"
+                    android:text="" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_income_week"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/income_today_H"
+                android:layout_marginTop="@dimen/line_weight"
+                android:background="@drawable/selector_bg_white"
+                android:paddingLeft="@dimen/income_today_paddingLR"
+                android:paddingRight="@dimen/income_today_paddingLR" >
+
+                <TextView
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/income_week" />
+
+                <TextView
+                    android:id="@+id/tv_income_week"
+                    style="@style/text_default_gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:gravity="center_vertical|right"
+                    android:text="" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_income_month"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/income_today_H"
+                android:layout_marginTop="@dimen/line_weight"
+                android:background="@drawable/selector_bg_white"
+                android:paddingLeft="@dimen/income_today_paddingLR"
+                android:paddingRight="@dimen/income_today_paddingLR" >
+
+                <TextView
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/income_month" />
+
+                <TextView
+                    android:id="@+id/tv_income_month"
+                    style="@style/text_default_gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:gravity="center_vertical|right"
+                    android:text="" />
+            </RelativeLayout>
+
+            <TextView
+                style="@style/text_default"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/income_today_H"
+                android:layout_marginTop="@dimen/income_chartColumnToTopMonth"
+                android:background="@drawable/d_line_bottom_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/income_today_paddingLR"
+                android:text="@string/income_week_trend" />
+
+            <lecho.lib.hellocharts.view.ColumnChartView
+                android:id="@+id/chart_income"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/income_chartColumn_H"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/default_16"
+                android:paddingTop="@dimen/default_16" >
+            </lecho.lib.hellocharts.view.ColumnChartView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

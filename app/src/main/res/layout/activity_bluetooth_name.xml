@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/ll_bluetooth_rename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/default_8"
+        android:layout_toLeftOf="@+id/rl_bluetooth_right"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/default_8" >
+
+        <ImageView
+            android:id="@+id/iv_bluetooth_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_device_manage_icon" />
+
+        <TextView
+            android:id="@+id/tv_bluetooth_devicename"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_6"
+            android:text=""
+            android:textColor="@color/text_default"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bluetooth_right"
+        android:layout_width="@dimen/buletooth_manage_itme_btn_W"
+        android:layout_height="@dimen/buletooth_manage_itme_btn_H"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/default_8" >
+
+        <Button
+            android:id="@+id/btn_bluetooth_connection"
+            style="@style/button_default"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/d_line_green_whitebg"
+            android:padding="@dimen/default_8"
+            android:text="连接"
+            android:textColor="@color/bg_green"
+            android:textSize="14sp" />
+
+        <ProgressBar
+            android:id="@+id/pogressbar_bluetooth"
+            android:layout_width="@dimen/buletooth_manage_ProgressBar_WH"
+            android:layout_height="@dimen/buletooth_manage_ProgressBar_WH"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

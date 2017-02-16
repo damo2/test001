@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_item_ordersubmitcoupon_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/default_8"
+    android:layout_marginTop="@dimen/default_4" >
+
+    <TextView
+        android:id="@+id/tv_item_ordersubmitcoupon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_8"
+        android:background="@drawable/d_bg_round_orange_s"
+        android:paddingBottom="@dimen/default_6"
+        android:paddingLeft="@dimen/default_12"
+        android:paddingRight="@dimen/default_12"
+        android:paddingTop="@dimen/default_6"
+        android:text="Helloworld"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <ImageButton
+        android:id="@+id/ibtn_item_ordersubmitcoupon_del"
+        style="@style/imagebutton_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tv_item_ordersubmitcoupon"
+        android:layout_marginRight="-12dp"
+        android:background="@color/transparent"
+        android:padding="@dimen/default_2"
+        android:src="@drawable/ic_delete_member" />
+
+</RelativeLayout>

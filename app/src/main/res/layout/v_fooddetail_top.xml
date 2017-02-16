@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/d_line_top_yellow_whitebg"
+    android:paddingBottom="@dimen/default_4"
+    android:paddingLeft="@dimen/ordersubmit_numToLeft"
+    android:paddingRight="@dimen/ordersubmit_numToLeft"
+    android:paddingTop="@dimen/default_8" >
+
+    <TextView
+        style="@style/text_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/orderSubmit_foodname" />
+
+    <TextView
+        android:id="@+id/tv_ordersubmit_foodprice"
+        style="@style/text_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/ordersubmit_priceToNum"
+        android:layout_toLeftOf="@+id/tv_ordersubmit_foodnum"
+        android:text="@string/orderSubmit_foodprice" />
+
+    <TextView
+        android:id="@+id/tv_ordersubmit_foodnum"
+        style="@style/text_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/ordersubmit_priceToNum"
+        android:layout_toLeftOf="@+id/tv_ordersubmit_foodMoney"
+        android:gravity="center"
+        android:minWidth="@dimen/ordersubmit_foodnum_Wmin"
+        android:text="@string/orderSubmit_foodnum" />
+
+    <TextView
+        android:id="@+id/tv_ordersubmit_foodMoney"
+        style="@style/text_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:minWidth="@dimen/ordersubmit_foodMoney_Wmin"
+        android:text="@string/orderSubmit_foodMoney" />
+
+</RelativeLayout>

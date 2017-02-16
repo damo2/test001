@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_businessmanage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary" >
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/rl_businessmanage_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_8"
+        android:background="@drawable/selector_bg_white_linebottom"
+        android:padding="@dimen/businessmanage_padding" >
+
+        <TextView
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/businessmanage_logo" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/iv_businessmanage_logo"
+            android:layout_width="@dimen/businessmanage_logo_WH"
+            android:layout_height="@dimen/businessmanage_logo_WH"
+            android:layout_marginRight="@dimen/businessmanage_drawableRight"
+            android:layout_toLeftOf="@+id/iv_businessmanage_icon1"
+            android:src="@drawable/ic_launcher" >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/iv_businessmanage_icon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_arrow" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_businessmanage_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_bg_white_linebottom"
+        android:padding="@dimen/businessmanage_padding" >
+
+        <TextView
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/businessmanage_name" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_businessmanage_name"
+            style="@style/text_default_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="@dimen/businessmanage_drawableRight"
+            android:drawableRight="@drawable/icon_arrow"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_launcher"
+            android:text="" >
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_businessmanage_renzheng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_bg_white_linebottom"
+        android:padding="@dimen/businessmanage_padding" >
+
+        <TextView
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/businessmanage_renzheng" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_businessmanage_renzheng"
+            style="@style/text_default_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawablePadding="@dimen/businessmanage_drawableRight"
+            android:drawableRight="@drawable/icon_arrow"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_launcher"
+            android:text="@string/businessmanage_renzheng_no" >
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_businessmanage_2barcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_bg_white_linebottom"
+        android:padding="@dimen/businessmanage_padding" >
+
+        <TextView
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/businessmanage_taika" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/iv_businessmanage_2barcode"
+            android:layout_width="@dimen/businessmanage_2barcode_WH"
+            android:layout_height="@dimen/businessmanage_2barcode_WH"
+            android:layout_marginRight="@dimen/businessmanage_drawableRight"
+            android:layout_toLeftOf="@+id/iv_businessmanage_icon2"
+            android:src="@drawable/ic_shop_code" >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/iv_businessmanage_icon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_arrow" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_businessmanage_shop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_16"
+        android:background="@drawable/selector_bg_white_linebottom"
+        android:padding="@dimen/businessmanage_padding" >
+
+        <TextView
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/businessmanage_business" >
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_arrow" >
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_businessmanage_addr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_16"
+        android:background="@drawable/selector_bg_white_linebottom"
+        android:padding="@dimen/businessmanage_padding" >
+
+        <TextView
+            android:id="@+id/tv_businessmanage_dizhi"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/businessmanage_addr" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_businessmanage_addr"
+            style="@style/text_default_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_businessmanage_dizhi"
+            android:layout_marginTop="@dimen/default_8"
+            android:text="" >
+        </TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_arrow" >
+        </ImageView>
+    </RelativeLayout>
+
+</LinearLayout>

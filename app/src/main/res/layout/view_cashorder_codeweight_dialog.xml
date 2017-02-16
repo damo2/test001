@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/default_8"
+    android:paddingRight="@dimen/default_8"
+    android:paddingTop="@dimen/default_12" >
+
+    <EditText
+        android:id="@+id/edt_dialogweight_weight"
+        style="@style/edt_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/default_8"
+        android:layout_marginRight="@dimen/default_12"
+        android:layout_toLeftOf="@+id/btn_dialogweight_getWeight"
+        android:hint="@string/cashOrder_weight_hint"
+        android:inputType="numberDecimal|number" />
+
+    <Button
+        android:id="@+id/btn_dialogweight_getWeight"
+        style="@style/button_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingBottom="@dimen/default_8"
+        android:paddingLeft="@dimen/default_16"
+        android:paddingRight="@dimen/default_16"
+        android:paddingTop="@dimen/default_8"
+        android:text="@string/weight"
+        android:textSize="12sp" />
+
+</RelativeLayout>

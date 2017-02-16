@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_default" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_ordersubmit_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay" >
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollview_ordersubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_orderSubmit_bottom"
+        android:layout_below="@+id/toolbar_ordersubmit_top" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@+id/include_ordersubmit_member"
+                layout="@layout/include_member" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_16"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <com.shwm.freshmallpos.myview.MyFlowLayout
+                    android:id="@+id/tagview_ordersubmit_coupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </com.shwm.freshmallpos.myview.MyFlowLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_ordersubmit_suminfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/ordersubmit_numToTop"
+                    android:paddingLeft="@dimen/ordersubmit_numToLeft"
+                    android:paddingRight="@dimen/ordersubmit_numToLeft"
+                    android:paddingTop="@dimen/ordersubmit_numToTop" >
+
+                    <TextView
+                        android:id="@+id/tv_ordersubmit_sl"
+                        style="@style/text_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/orderSubmit_num" />
+
+                    <TextView
+                        android:id="@+id/tv_ordersubmit_numSum"
+                        style="@style/text_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/tv_ordersubmit_hj"
+                        style="@style/text_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_ordersubmit_sl"
+                        android:layout_marginTop="@dimen/ordersubmit_sumTonum"
+                        android:text="@string/orderSubmit_sum" />
+
+                    <TextView
+                        android:id="@+id/tv_ordersubmit_moneySum"
+                        style="@style/text_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/tv_ordersubmit_hj"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+
+                <include
+                    android:id="@+id/include_o_foodtop"
+                    layout="@layout/v_fooddetail_top" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_ordersubmit_food"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_orderSubmit_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:padding="@dimen/default_4" >
+
+        <TextView
+            android:id="@+id/tv_orderSubmit"
+            style="@style/text_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_orderSubmit_moneyAll"
+            android:layout_marginLeft="@dimen/default_8"
+            android:text="@string/orderSubmit_yingshou" />
+
+        <TextView
+            android:id="@+id/tv_orderSubmit_moneyAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/default_4"
+            android:layout_toRightOf="@+id/tv_orderSubmit"
+            android:textColor="@color/text_orange"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_ordersubmit_submit"
+            style="@style/button_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_bg_round_orange_s"
+            android:padding="@dimen/ordersubmit_btnSubmit_padding"
+            android:text="@string/orderSubmit_shoukuan"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

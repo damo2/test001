@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_foodedit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:theme="@style/AppTheme.AppBarOverlay" >
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_foodedit_submit"
+        android:layout_below="@+id/toolbar_foodedit" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/foodedt_itemH"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <TextView
+                    android:id="@+id/foodedit_foodname"
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/foodedit_foodname" />
+
+                <EditText
+                    android:id="@+id/edt_foodedit_foodname"
+                    style="@style/edt_foodedit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/foodedit_foodname"
+                    android:hint="@string/foodedit_foodname_hint"
+                    android:inputType="textPhonetic" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/foodedt_itemH"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <TextView
+                    android:id="@+id/foodedit_foodcode"
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/foodedit_foodcode" />
+
+                <EditText
+                    android:id="@+id/edt_foodedit_foodcode"
+                    style="@style/edt_foodedit"
+                    android:layout_alignParentRight="false"
+                    android:layout_toLeftOf="@+id/iv_foodedit_foodcodeIcon"
+                    android:layout_toRightOf="@+id/foodedit_foodcode"
+                    android:hint="@string/foodedit_foodcode_hint"
+                    android:inputType="number" />
+
+                <ImageView
+                    android:id="@+id/iv_foodedit_foodcodeIcon"
+                    style="@style/button_default"
+                    android:layout_width="@dimen/foodedt_codeIcon_WH"
+                    android:layout_height="@dimen/foodedt_codeIcon_WH"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/default_4"
+                    android:padding="@dimen/foodedt_codeIcon_padding"
+                    android:src="@drawable/ic_scan_gray" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/foodedt_itemH"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <TextView
+                    android:id="@+id/foodedit_foodclass"
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/foodedit_foodclass" />
+
+                <Button
+                    android:id="@+id/btn_foodedit_foodclass"
+                    style="@style/button_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/foodedit_foodclass"
+                    android:background="@color/transparent"
+                    android:drawablePadding="@dimen/default_4"
+                    android:drawableRight="@drawable/icon_arrow"
+                    android:gravity="right|center_vertical"
+                    android:text=""
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/foodedt_itemH"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <TextView
+                    android:id="@+id/foodedit_price"
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/foodedit_price" />
+
+                <EditText
+                    android:id="@+id/edt_foodedit_foodprice"
+                    style="@style/edt_foodedit"
+                    android:layout_toRightOf="@+id/foodedit_price"
+                    android:hint="@string/foodedit_price_hint"
+                    android:inputType="numberDecimal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/foodedt_itemH"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <TextView
+                    android:id="@+id/foodedit_priceMember"
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/foodedit_priceMember" />
+
+                <EditText
+                    android:id="@+id/edt_foodedit_foodpriceMember"
+                    style="@style/edt_foodedit"
+                    android:layout_toRightOf="@+id/foodedit_priceMember"
+                    android:hint="@string/foodedit_priceMember_hints"
+                    android:inputType="numberDecimal" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/foodedt_itemH"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <TextView
+                    android:id="@+id/foodedit_unit"
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/foodedit_unit" />
+
+                <EditText
+                    android:id="@+id/edt_foodedit_foodunit"
+                    style="@style/edt_foodedit"
+                    android:layout_toRightOf="@+id/foodedit_unit"
+                    android:hint="@string/foodedit_unit_hint"
+                    android:inputType="textPhonetic" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/foodedt_itemH"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <TextView
+                    android:id="@+id/foodedit_numsum"
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/foodedit_numsum" />
+
+                <EditText
+                    android:id="@+id/edt_foodedit_foodnumsum"
+                    style="@style/edt_foodedit"
+                    android:layout_toRightOf="@+id/foodedit_numsum"
+                    android:hint="@string/foodedit_numsum_hint"
+                    android:inputType="number" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/foodedt_itemH"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <TextView
+                    android:id="@+id/foodedit_from"
+                    style="@style/text_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/foodedit_from" />
+
+                <EditText
+                    android:id="@+id/edt_foodedit_foodfrom"
+                    style="@style/edt_foodedit"
+                    android:layout_toRightOf="@+id/foodedit_from"
+                    android:hint="@string/foodedit_from_hint"
+                    android:inputType="textPhonetic" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/foodedt_itemH"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <TextView
+                    style="@style/text_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/foodedit_type" />
+
+                <RadioGroup
+                    android:id="@+id/rg_foodedit_typeWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rb_foodedit_typeDefaule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:text="@string/foodedit_type_defaule" />
+
+                    <RadioButton
+                        android:id="@+id/rb_foodedit_typeWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/default_16"
+                        android:layout_marginRight="@dimen/default_8"
+                        android:background="@color/transparent"
+                        android:text="@string/foodedit_type_weight" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR"
+                android:visibility="gone" >
+
+                <TextView
+                    style="@style/text_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/foodedt_itemH"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                    android:paddingRight="@dimen/foodedt_itempaddingLR"
+                    android:text="@string/foodedit_desc" />
+
+                <EditText
+                    android:id="@+id/edt_foodedit_fooddesc"
+                    style="@style/edt_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/foodedit_desc_hint"
+                    android:inputType="textPhonetic"
+                    android:minHeight="@dimen/foodedt_desc_Hmin"
+                    android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                    android:paddingRight="@dimen/foodedt_itempaddingLR" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/d_line_top_grays_whitebg"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/foodedt_itempaddingLR"
+                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+
+                <ImageView
+                    android:id="@+id/iv_foodedit_img"
+                    android:layout_width="@dimen/foodedt_foodimg_WH"
+                    android:layout_height="@dimen/foodedt_foodimg_WH"
+                    android:src="@drawable/image_empty" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_foodedit_submit"
+        style="@style/button_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/default_16"
+        android:background="@drawable/selector_bg_round_orange_s"
+        android:gravity="center"
+        android:text="@string/save"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
