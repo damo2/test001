@@ -1,9 +1,12 @@
 package com.shwm.freshmallpos.base;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,32 +17,27 @@ import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.presenter.MBasePresenter;
 import com.shwm.freshmallpos.util.MyProgressDialog;
 import com.shwm.freshmallpos.util.StringFormatUtil;
+import com.shwm.freshmallpos.util.StringUtil;
 import com.shwm.freshmallpos.util.UL;
+import com.squareup.leakcanary.RefWatcher;
+import com.umeng.analytics.MobclickAgent;
 
 public abstract class BaseFragment<V, T extends MBasePresenter<V>> extends Fragment implements OnClickListener {
-    protected String TAG = getClass().getSimpleName();
     public T mPresenter;
-    protected Activity mActivity;
+    protected String TAG = getClass().getSimpleName();
+    protected BaseActivity mActivity;
     protected Context context;
-    /**
-     * 根view
-     */
-    protected View mRootView;
-    /**
-     * 是否对用户可见
-     */
-    protected boolean mIsVisible;
-    /**
-     * 是否加载完成 当执行完oncreatview,View的初始化方法后方法后即为true
-     */
-    protected boolean mIsPrepare;
-
-    private MyProgressDialog mDialogProgress;
+    protected View mRootView;//根view
+    protected boolean mIsVisible;//是否对用户可见
+    protected boolean mIsPrepare;// 是否加载完成 当执行完oncreatview,View的初始化方法后方法后即为true
+    private ProgressDialog mDialogProgress;
+    private boolean isAlive = false;
+    private boolean isRunning = false;
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        mActivity = activity;
+        mActivity = (BaseActivity) activity;
         context = mActivity.getApplicationContext();
     }
 
@@ -47,6 +45,7 @@ public abstract class BaseFragment<V, T extends MBasePresenter<V>> extends Fragm
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         UL.v(TAG, "onCreateView");
         mRootView = inflater.inflate(setLayoutResouceId(), container, false);
+        isAlive = true;
         mPresenter = initPresenter();
         initData(getArguments());
         init();
@@ -57,57 +56,63 @@ public abstract class BaseFragment<V, T extends MBasePresenter<V>> extends Fragm
         return mRootView;
     }
 
-    /**
-     * 设置根布局资源id
-     */
+    @Override
+    public void onResume() {
+        super.onResume();
+        isRunning = true;
+        MobclickAgent.onPageStart(TAG);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        isRunning = false;
+        MobclickAgent.onPageEnd(TAG);
+    }
+
+    @Override
+    public void onDestroy() {
+        // TODO Auto-generated method stub
+        UL.v(TAG, "onDestroy");
+        isAlive = false;
+        isRunning = false;
+        dismissDialogProgress();
+        super.onDestroy();
+        mRootView = null;
+        mDialogProgress = null;
+        context = null;
+        mActivity = null;
+        ApplicationMy.getRefWatcher().watch(this);//使用 RefWatcher 监控 Fragment 该被回收的对象
+    }
+
+    /** 设置根布局资源id */
 
     protected abstract int setLayoutResouceId();
 
     // 实例化presenter
     protected abstract T initPresenter();
 
-    /**
-     * 初始化数据
-     */
+    /** 初始化数据 */
     protected void init() {
-
     }
 
-    /**
-     * 初始化数据 @param arguments接收到的从其他地方传递过来的参数
-     */
+    /** 初始化数据 @param arguments接收到的从其他地方传递过来的参数 */
     protected void initData(Bundle arguments) {
     }
 
-    ;
-
-    /**
-     * 初始化View
-     */
+    /** 初始化View */
     protected void initView() {
     }
 
-    ;
-
-    /**
-     * View赋值
-     */
+    /** View赋值 */
     protected void setValue() {
-
     }
 
-    /**
-     * 设置监听事件
-     */
+    /** 设置监听事件 */
     protected void setListener() {
-
     }
 
-    ;
-
-    /**
-     * View点击onClick防止快速点击
-     **/
+    /** View点击onClick防止快速点击 */
     public abstract void mOnClick(View v);
 
     protected View findViewById(int id) {
@@ -132,50 +137,57 @@ public abstract class BaseFragment<V, T extends MBasePresenter<V>> extends Fragm
         }
     }
 
-    /**
-     * 用户可见时执行的操作
-     */
+    /** 用户可见时执行的操作 */
     protected void onVisibleToUser() {
         if (mIsPrepare && mIsVisible) {
             onLazyLoad();
         }
     }
 
-    /**
-     * 用户不可见时执行的操作
-     */
+    /** 用户不可见时执行的操作 */
     protected void onInVisibleToUser() {
         if (mIsPrepare && !mIsVisible) {
             onLazyClear();
         }
     }
 
-    /**
-     * 懒加载，仅当用户可见切view初始化结束后才会执行
-     */
+    /** 懒加载，仅当用户可见切view初始化结束后才会执行 */
     protected void onLazyLoad() {
         UL.d(TAG, "onLazyLoad()");
     }
 
-    /**
-     * 不可见时清理
-     */
+    /** 不可见时清理 */
     protected void onLazyClear() {
         UL.d(TAG, "onLazyClear()");
     }
 
     // 显示与关闭进度弹窗方法<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-    public void showDialogProgress(String message) {
-        if (mDialogProgress != null) {
-            mDialogProgress.dismiss();
-            mDialogProgress = null;
-        }
-        mDialogProgress = MyProgressDialog.show(mActivity, message, false, false, null);
+    public void showDialogProgress(final String title, final String message) {
+        runUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (mDialogProgress == null) {
+                    mDialogProgress = new ProgressDialog(mActivity);
+                    mDialogProgress.setProgressStyle(ProgressDialog.STYLE_SPINNER);//设置进度条风格，风格为圆形，旋转的
+                }
+                if (mDialogProgress.isShowing()) {
+                    mDialogProgress.dismiss();
+                }
+                if (!StringUtil.isEmpty(title, false)) {
+                    mDialogProgress.setTitle(title);
+                }
+                if (!StringUtil.isEmpty(message, false)) {
+                    mDialogProgress.setMessage(message);
+                }
+                mDialogProgress.setCanceledOnTouchOutside(false);
+                mDialogProgress.show();
+            }
+        });
     }
 
     public void showDialogProgress() {
-        showDialogProgress(null);
+        showDialogProgress(null, getString(R.string.loading));
     }
 
     /**
@@ -201,12 +213,41 @@ public abstract class BaseFragment<V, T extends MBasePresenter<V>> extends Fragm
     }
 
     // 显示与关闭进度弹窗方法>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //运行线程<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-    @Override
-    public void onDestroy() {
-        // TODO Auto-generated method stub
-        UL.v(TAG, "onDestroy");
-        super.onDestroy();
-        dismissDialogProgress();
+    /**
+     * 在UI线程中运行，建议用这个方法代替runOnUiThread
+     * @param action
+     */
+    public final void runUiThread(Runnable action) {
+        if (!isAlive()) {
+            Log.w(TAG, "runUiThread  isAlive() == false >> return;");
+            return;
+        }
+        mActivity.runUiThread(action);
     }
+
+    /**
+     * 运行线程
+     * @param name
+     * @param runnable
+     * @return
+     */
+    public final Handler runThread(String name, Runnable runnable) {
+        if (!isAlive()) {
+            Log.w(TAG, "runThread  isAlive() == false >> return null;");
+            return null;
+        }
+        return mActivity.runThread(name, runnable);//name, runnable;同一Activity出现多个同名Fragment可能会出错
+    }
+
+    //运行线程>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    public final boolean isAlive() {
+        return isAlive && context != null;// & ! isRemoving();导致finish，onDestroy内runUiThread不可用
+    }
+
+    public final boolean isRunning() {
+        return isRunning & isAlive();
+    }
+
 }

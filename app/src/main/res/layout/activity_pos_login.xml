@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                style="@style/BaseView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/rl_log_top"
         android:layout_width="match_parent"
         android:layout_height="@dimen/log_top_bg_h"
         android:background="@drawable/login_background"
-        android:paddingTop="@dimen/default_16" >
+        android:paddingTop="@dimen/default_16">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:drawablePadding="@dimen/default_16"
-            android:drawableTop="@drawable/ic_launcher"
+            android:drawableTop="@mipmap/ic_launcher"
             android:text="@string/app_name"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_log_top"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <!-- Name Label -->
 
@@ -39,7 +40,7 @@
             app:counterEnabled="true"
             app:counterOverflowTextAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             app:errorEnabled="true"
-            app:hintAnimationEnabled="true" >
+            app:hintAnimationEnabled="true">
 
             <EditText
                 android:id="@+id/edt_login_username"
@@ -47,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/log_username_hint"
                 android:inputType="textCapWords"
-                android:singleLine="true" />
+                android:singleLine="true"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -59,7 +60,7 @@
             app:counterEnabled="true"
             app:counterOverflowTextAppearance="@android:style/TextAppearance.DeviceDefault.Large"
             app:errorEnabled="true"
-            app:hintAnimationEnabled="true" >
+            app:hintAnimationEnabled="true">
 
             <EditText
                 android:id="@+id/edt_login_password"
@@ -68,7 +69,7 @@
                 android:layout_marginTop="@dimen/log_btn_name_pwd_space"
                 android:hint="@string/log_password_hint"
                 android:inputType="textPassword"
-                android:singleLine="true" />
+                android:singleLine="true"/>
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
@@ -79,7 +80,7 @@
         android:orientation="vertical"
         android:paddingBottom="@dimen/default_16"
         android:paddingLeft="@dimen/default_8"
-        android:paddingRight="@dimen/default_8" >
+        android:paddingRight="@dimen/default_8">
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_login_log"
@@ -90,7 +91,7 @@
             android:gravity="center"
             android:text="@string/log_login"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_login_reg"
@@ -102,7 +103,7 @@
             android:gravity="center"
             android:text="@string/log_reg"
             android:textColor="@color/text_orange"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
     </LinearLayout>
 
 </RelativeLayout>

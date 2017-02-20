@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/BaseView">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_bluetooth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:theme="@style/AppTheme.AppBarOverlay" >
+        app:theme="@style/AppTheme.AppBarOverlay">
     </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar_bluetooth" >
+        android:layout_below="@+id/toolbar_bluetooth">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -32,13 +32,13 @@
                     android:padding="@dimen/default_8"
                     android:text="连接的设备"
                     android:textColor="@color/text_gray"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"/>
 
                 <com.shwm.freshmallpos.myview.MyListViewScroll
                     android:id="@+id/connect_devices"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/d_line_top_grays_whitebg" />
+                    android:background="@drawable/d_line_top_grays_whitebg"/>
 
                 <!--
              <TextView
@@ -61,19 +61,19 @@
                     android:padding="@dimen/default_8"
                     android:text="匹配的设备"
                     android:textColor="@color/text_gray"
-                    android:visibility="visible" />
+                    android:visibility="visible"/>
 
                 <com.shwm.freshmallpos.myview.MyListViewScroll
                     android:id="@+id/paired_devices"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/d_line_top_grays_whitebg" />
+                    android:background="@drawable/d_line_top_grays_whitebg"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/title_new_devices"
@@ -82,20 +82,20 @@
                         android:padding="@dimen/default_8"
                         android:text="其他可用的设备"
                         android:textColor="@color/text_gray"
-                        android:visibility="visible" />
+                        android:visibility="visible"/>
 
                     <ProgressBar
                         android:id="@+id/pogressbar_more"
                         android:layout_width="@dimen/buletooth_manage_ProgressBar_WH"
                         android:layout_height="@dimen/buletooth_manage_ProgressBar_WH"
-                        android:visibility="gone" />
+                        android:visibility="gone"/>
                 </LinearLayout>
 
                 <com.shwm.freshmallpos.myview.MyListViewScroll
                     android:id="@+id/new_devices"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/d_line_top_grays_whitebg" />
+                    android:background="@drawable/d_line_top_grays_whitebg"/>
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
@@ -110,7 +110,7 @@
         android:minHeight="0dp"
         android:text="扫描"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/tv_bluetooth_no"
@@ -121,6 +121,6 @@
         android:text="您的设备不支持蓝牙"
         android:textColor="@color/text_gray"
         android:textSize="16sp"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
 </RelativeLayout>

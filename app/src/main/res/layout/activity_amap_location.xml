@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/BaseView">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_maplocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         app:theme="@style/AppTheme.AppBarOverlay">
     </android.support.v7.widget.Toolbar>
 
@@ -16,7 +16,7 @@
         android:id="@+id/amap_maplocation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_maplocation" />
+        android:layout_below="@+id/toolbar_maplocation"/>
 
     <ImageButton
         android:id="@+id/ibtn_maplocation_locat"
@@ -28,7 +28,7 @@
         android:background="@color/transparent"
         android:padding="@dimen/default_4"
         android:scaleType="fitCenter"
-        android:src="@drawable/ic_select_a" />
+        android:src="@drawable/ic_select_a"/>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -37,14 +37,14 @@
         android:layout_margin="@dimen/map_local_addr_margin"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/map_local_addr_radius"
-        app:cardElevation="@dimen/map_local_addr_elevation" >
+        app:cardElevation="@dimen/map_local_addr_elevation">
 
         <LinearLayout
             android:id="@+id/ll_maplocation_addr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/map_local_addr_padding" >
+            android:padding="@dimen/map_local_addr_padding">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="@string/amap_localtion_addrnow"
                 android:textColor="@color/text_orange"
-                android:textSize="12sp" />
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/tv_maplocation_addr"
@@ -62,7 +62,7 @@
                 android:layout_marginTop="@dimen/default_4"
                 android:drawableLeft="@drawable/search_addr"
                 android:drawablePadding="@dimen/default_4"
-                android:text="" />
+                android:text=""/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 

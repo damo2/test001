@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_orange" >
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                style="@style/BaseView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_orange">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_wechat_code"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:theme="@style/AppTheme.AppBarOverlay" >
+        app:theme="@style/AppTheme.AppBarOverlay">
     </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btn_wechat_scanCode"
-        android:layout_below="@+id/toolbar_wechat_code" >
+        android:layout_below="@+id/toolbar_wechat_code">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,13 +27,13 @@
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingBottom="@dimen/default_8"
-            android:paddingTop="@dimen/default_4" >
+            android:paddingTop="@dimen/default_4">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_16"
-                android:text="@string/wechatpay_money" />
+                android:text="@string/wechatpay_money"/>
 
             <TextView
                 android:id="@+id/tv_wechat_money"
@@ -41,14 +41,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_8"
                 android:textColor="@color/text_orange"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <ImageView
                 android:id="@+id/iv_wechat_code"
                 android:layout_width="@dimen/wechatpay_code_Wh"
                 android:layout_height="@dimen/wechatpay_code_Wh"
                 android:layout_marginTop="@dimen/default_12"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/ic_launcher"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
                 android:layout_margin="@dimen/default_8"
                 android:drawablePadding="@dimen/default_4"
                 android:drawableTop="@drawable/icon_bill_wechat"
-                android:text="@string/wechatpay_code_tag" />
+                android:text="@string/wechatpay_code_tag"/>
         </LinearLayout>
     </ScrollView>
 
@@ -69,6 +69,6 @@
         android:layout_marginLeft="@dimen/wechatpay_code_margin"
         android:layout_marginRight="@dimen/wechatpay_code_margin"
         android:drawableLeft="@drawable/printer_device_qr_scan"
-        android:text="@string/wechatpay_scancode" />
+        android:text="@string/wechatpay_scancode"/>
 
 </RelativeLayout>

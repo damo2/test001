@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                style="@style/BaseView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_reg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         app:theme="@style/AppTheme.AppBarOverlay">
     </android.support.v7.widget.Toolbar>
 
@@ -20,7 +20,7 @@
         android:orientation="vertical"
         android:paddingLeft="@dimen/default_8"
         android:paddingRight="@dimen/default_8"
-        android:visibility="gone" >
+        android:visibility="gone">
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/textInputLayout_mobi"
@@ -32,7 +32,7 @@
             app:counterMaxLength="11"
             app:counterOverflowTextAppearance="@style/text_hint_out"
             app:errorEnabled="true"
-            app:hintAnimationEnabled="true" >
+            app:hintAnimationEnabled="true">
 
             <EditText
                 android:id="@+id/edt_reg_mobi"
@@ -41,12 +41,12 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/log_regin_mobi_hint"
                 android:inputType="number"
-                android:singleLine="true" />
+                android:singleLine="true"/>
         </android.support.design.widget.TextInputLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/edt_reg_code"
@@ -57,7 +57,7 @@
                 android:layout_toLeftOf="@+id/btn_reg_getcode"
                 android:hint="@string/log_regin_code_hint"
                 android:inputType="number"
-                android:singleLine="true" />
+                android:singleLine="true"/>
 
             <Button
                 android:id="@+id/btn_reg_getcode"
@@ -73,7 +73,7 @@
                 android:paddingRight="@dimen/default_8"
                 android:paddingTop="@dimen/default_4"
                 android:text="@string/log_regin_btn_getcode"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
         </RelativeLayout>
 
         <Button
@@ -84,7 +84,7 @@
             android:layout_margin="@dimen/default_16"
             android:background="@drawable/selector_bg_round_orange_s"
             android:text="@string/next"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
     </LinearLayout>
 
     <LinearLayout
@@ -92,20 +92,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/regin_item_H"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/default_8"
-            android:paddingRight="@dimen/default_8" >
+            android:paddingRight="@dimen/default_8">
 
             <TextView
                 android:id="@+id/tv_reg_sjh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="手机号" />
+                android:text="手机号"/>
 
             <TextView
                 android:id="@+id/tv_reg_tel"
@@ -114,7 +114,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@+id/tv_reg_sjh"
                 android:gravity="right"
-                android:text="手机号" />
+                android:text="手机号"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -123,14 +123,14 @@
             android:layout_marginTop="@dimen/default_8"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/default_8"
-            android:paddingRight="@dimen/default_8" >
+            android:paddingRight="@dimen/default_8">
 
             <TextView
                 android:id="@+id/tv_reg_pwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="密码" />
+                android:text="密码"/>
 
             <EditText
                 android:id="@+id/edt_reg_password"
@@ -143,7 +143,7 @@
                 android:background="@color/transparent"
                 android:gravity="right|center_vertical"
                 android:hint="@string/log_regin_password_hint"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -152,14 +152,14 @@
             android:layout_marginTop="@dimen/default_8"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/default_8"
-            android:paddingRight="@dimen/default_8" >
+            android:paddingRight="@dimen/default_8">
 
             <TextView
                 android:id="@+id/tv_reg_dpmc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="店铺名称" />
+                android:text="店铺名称"/>
 
             <EditText
                 android:id="@+id/edt_reg_storeName"
@@ -172,7 +172,7 @@
                 android:background="@color/transparent"
                 android:gravity="right|center_vertical"
                 android:hint="@string/log_regin_storename_hint"
-                android:inputType="text" />
+                android:inputType="text"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -181,14 +181,14 @@
             android:layout_marginTop="@dimen/default_8"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/default_8"
-            android:paddingRight="@dimen/default_8" >
+            android:paddingRight="@dimen/default_8">
 
             <TextView
                 android:id="@+id/tv_reg_dpdz"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="店铺地址" />
+                android:text="店铺地址"/>
 
             <EditText
                 android:id="@+id/edt_reg_storeAddr"
@@ -200,7 +200,7 @@
                 android:layout_toRightOf="@+id/tv_reg_dpdz"
                 android:background="@color/transparent"
                 android:gravity="right|center_vertical"
-                android:hint="@string/log_regin_storename_hint" />
+                android:hint="@string/log_regin_storename_hint"/>
 
             <ImageButton
                 android:id="@+id/ibtn_reg_location"
@@ -211,7 +211,7 @@
                 android:background="@drawable/selector_bg_white"
                 android:paddingLeft="@dimen/default_8"
                 android:paddingRight="@dimen/default_8"
-                android:src="@drawable/ic_dingwei" />
+                android:src="@drawable/ic_dingwei"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -220,14 +220,14 @@
             android:layout_marginTop="@dimen/default_8"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/default_8"
-            android:paddingRight="@dimen/default_8" >
+            android:paddingRight="@dimen/default_8">
 
             <TextView
                 android:id="@+id/tv_reg_dpms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="店铺描述" />
+                android:text="店铺描述"/>
 
             <EditText
                 android:id="@+id/edt_reg_storeDesc"
@@ -240,7 +240,7 @@
                 android:background="@color/transparent"
                 android:gravity="right|center_vertical"
                 android:hint="@string/log_regin_storedesc_hint"
-                android:inputType="text" />
+                android:inputType="text"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -249,14 +249,14 @@
             android:layout_marginTop="@dimen/default_8"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/default_8"
-            android:paddingRight="@dimen/default_8" >
+            android:paddingRight="@dimen/default_8">
 
             <TextView
                 android:id="@+id/tv_reg_lxr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="联系人" />
+                android:text="联系人"/>
 
             <EditText
                 android:id="@+id/edt_reg_storeContacts"
@@ -269,7 +269,7 @@
                 android:background="@color/transparent"
                 android:gravity="right|center_vertical"
                 android:hint="@string/log_regin_storeContacts_hint"
-                android:inputType="text" />
+                android:inputType="text"/>
         </RelativeLayout>
 
         <Button
@@ -280,7 +280,7 @@
             android:layout_margin="@dimen/default_16"
             android:background="@drawable/selector_bg_round_orange_s"
             android:text="@string/log_regin_btn_reg"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </RelativeLayout>

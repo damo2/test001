@@ -23,6 +23,7 @@
       <w>codeno</w>
       <w>comefrom</w>
       <w>couponset</w>
+      <w>disallowable</w>
       <w>failinfo</w>
       <w>foodclass</w>
       <w>foodcode</w>
@@ -35,18 +36,22 @@
       <w>foodprice</w>
       <w>freshmall</w>
       <w>freshmallmanage</w>
+      <w>freshmallpos</w>
       <w>fromat</w>
       <w>getcode</w>
       <w>hashmap</w>
+      <w>listfood</w>
       <w>loadtype</w>
       <w>localtion</w>
       <w>mainmy</w>
       <w>maxmoney</w>
       <w>memberadd</w>
+      <w>meng</w>
       <w>mianmy</w>
       <w>mobi</w>
       <w>moneyfail</w>
       <w>namenocode</w>
+      <w>nocamera</w>
       <w>nocode</w>
       <w>numsum</w>
       <w>openclose</w>
@@ -56,6 +61,7 @@
       <w>paytype</w>
       <w>ptid</w>
       <w>regin</w>
+      <w>runnables</w>
       <w>scancode</w>
       <w>scanfail</w>
       <w>scantop</w>
@@ -64,6 +70,7 @@
       <w>statu</w>
       <w>storename</w>
       <w>tablayout</w>
+      <w>trimed</w>
       <w>viewpage</w>
       <w>wechat</w>
       <w>wechatpay</w>

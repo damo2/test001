@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_default"
-    android:orientation="vertical" >
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_default"
+              style="@style/BaseView"
+              android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_accountset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:theme="@style/AppTheme.AppBarOverlay" >
+        app:theme="@style/AppTheme.AppBarOverlay">
     </android.support.v7.widget.Toolbar>
 
     <RelativeLayout
@@ -20,7 +20,7 @@
         android:layout_marginTop="@dimen/account_item_paddingLR"
         android:background="@drawable/d_line_bottom_grays_whitebg"
         android:paddingLeft="@dimen/account_item_paddingLR"
-        android:paddingRight="@dimen/account_item_paddingLR" >
+        android:paddingRight="@dimen/account_item_paddingLR">
 
         <TextView
             android:id="@+id/tv_accountset_accountLogin"
@@ -29,7 +29,7 @@
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
-            android:text="@string/accountset_accountLogin" />
+            android:text="@string/accountset_accountLogin"/>
 
         <TextView
             android:id="@+id/tv_accountset_username"
@@ -42,7 +42,7 @@
             android:layout_toRightOf="@+id/tv_accountset_accountLogin"
             android:gravity="center_vertical|right"
             android:singleLine="true"
-            android:textColor="@color/text_gray" />
+            android:textColor="@color/text_gray"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -51,7 +51,7 @@
         android:layout_height="@dimen/account_item_H"
         android:background="@drawable/d_line_bottom_grays_whitebg"
         android:paddingLeft="@dimen/account_item_paddingLR"
-        android:paddingRight="@dimen/account_item_paddingLR" >
+        android:paddingRight="@dimen/account_item_paddingLR">
 
         <TextView
             android:id="@+id/tv_accountset_nick"
@@ -60,7 +60,7 @@
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
-            android:text="@string/accountset_nick" />
+            android:text="@string/accountset_nick"/>
 
         <TextView
             android:id="@+id/tv_accountset_nickname"
@@ -74,7 +74,7 @@
             android:drawableRight="@drawable/icon_arrow"
             android:gravity="center_vertical|right"
             android:singleLine="true"
-            android:textColor="@color/text_gray" />
+            android:textColor="@color/text_gray"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -83,7 +83,7 @@
         android:layout_height="@dimen/account_item_H"
         android:background="@drawable/d_line_bottom_grays_whitebg"
         android:paddingLeft="@dimen/account_item_paddingLR"
-        android:paddingRight="@dimen/account_item_paddingLR" >
+        android:paddingRight="@dimen/account_item_paddingLR">
 
         <TextView
             android:id="@+id/tv_accountset_changePwd"
@@ -92,7 +92,7 @@
             android:layout_height="match_parent"
             android:drawableRight="@drawable/icon_arrow"
             android:gravity="center_vertical"
-            android:text="@string/accountset_changePwd" />
+            android:text="@string/accountset_changePwd"/>
     </RelativeLayout>
 
     <Button
@@ -103,6 +103,6 @@
         android:layout_margin="@dimen/account_item_paddingLR"
         android:background="@drawable/selector_bg_round_orange_s"
         android:text="@string/accountset_exitLogin"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"/>
 
 </LinearLayout>

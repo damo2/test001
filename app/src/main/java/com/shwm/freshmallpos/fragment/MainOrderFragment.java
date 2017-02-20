@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.adapter.MainOrderAdapter;
+import com.shwm.freshmallpos.base.BaseActivity;
 import com.shwm.freshmallpos.been.OrderEntity;
 import com.shwm.freshmallpos.inter.IOnItemClickListener;
 import com.shwm.freshmallpos.presenter.MMainOrderPresenter;
@@ -110,6 +111,7 @@ public class MainOrderFragment extends BaseFragment<IMainOrderView, MMainOrderPr
 	protected void init() {
 		// TODO Auto-generated method stub
 		super.init();
+		findViewById(R.id.toolbar_main_order).setVisibility(View.GONE);
 	}
 
 	@Override
@@ -135,7 +137,6 @@ public class MainOrderFragment extends BaseFragment<IMainOrderView, MMainOrderPr
 	protected void setValue() {
 		// TODO Auto-generated method stub
 		super.setValue();
-		setToolbar();
 		setRecyclerView();
 		setSwiperefreshLayout();
 		tvNoData.setVisibility(View.GONE);
@@ -247,23 +248,6 @@ public class MainOrderFragment extends BaseFragment<IMainOrderView, MMainOrderPr
 		String format = getString(R.string.order_totalDay);
 		String money = UtilMath.currency(listOrder.get(mRecycleCurrentPosition).getTotalDay());
 		tvTotalDay.setText(String.format(format, money));
-	}
-
-	public void setToolbar() {
-		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main_order);
-		toolbar.setTitle("");
-		TextView tvTitle = (TextView) findViewById(R.id.toolbar_title);
-		tvTitle.setText(title);
-		toolbar.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-			@Override
-			public boolean onMenuItemClick(MenuItem item) {
-				// TODO Auto-generated method stub
-				return true;
-			}
-		});
-		setHasOptionsMenu(true);
-		((AppCompatActivity) mActivity).setSupportActionBar(toolbar);
-
 	}
 
 	@Override

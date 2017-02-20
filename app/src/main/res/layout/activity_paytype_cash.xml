@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_default"
-    android:orientation="vertical"
-    android:weightSum="2" >
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              style="@style/BaseView"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_default"
+              android:orientation="vertical"
+              android:weightSum="2">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_cashReceipt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:theme="@style/AppTheme.AppBarOverlay" >
+        app:theme="@style/AppTheme.AppBarOverlay">
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
@@ -22,7 +22,7 @@
         android:layout_weight="1"
         android:background="@color/white"
         android:orientation="vertical"
-        android:weightSum="2" >
+        android:weightSum="2">
 
         <TextView
             android:id="@+id/tv_paytype_cash_yingshoujine"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/default_16"
-            android:text="@string/paytype_cash_moneyReceivable" />
+            android:text="@string/paytype_cash_moneyReceivable"/>
 
         <TextView
             android:id="@+id/tv_paytype_cash_moneyReceivable"
@@ -41,7 +41,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/default_12"
             android:text=""
-            android:textSize="24sp" />
+            android:textSize="24sp"/>
 
         <RelativeLayout
             android:id="@+id/rl_paytype_cash_shishoujine"
@@ -51,7 +51,7 @@
             android:layout_weight="1"
             android:background="@drawable/d_line_top_grays_whitebg"
             android:paddingLeft="@dimen/default_8"
-            android:paddingRight="@dimen/default_8" >
+            android:paddingRight="@dimen/default_8">
 
             <TextView
                 android:id="@+id/tv_paytype_cash_shishoujine"
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="@string/paytype_cash_moneyPaid" />
+                android:text="@string/paytype_cash_moneyPaid"/>
 
             <TextView
                 android:id="@+id/tv_paytype_cash_moneyPaid"
@@ -70,7 +70,7 @@
                 android:layout_toRightOf="@+id/tv_paytype_cash_shishoujine"
                 android:gravity="right"
                 android:text=""
-                android:textSize="28sp" />
+                android:textSize="28sp"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -79,7 +79,7 @@
             android:layout_weight="1"
             android:background="@drawable/d_line_top_grays_whitebg"
             android:paddingLeft="@dimen/default_8"
-            android:paddingRight="@dimen/default_8" >
+            android:paddingRight="@dimen/default_8">
 
             <TextView
                 android:id="@+id/tv_paytype_cash_zhaolinjine"
@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="@string/paytype_cash_moneyChange" />
+                android:text="@string/paytype_cash_moneyChange"/>
 
             <TextView
                 android:id="@+id/tv_paytype_cash_moneyChange"
@@ -98,7 +98,7 @@
                 android:layout_toRightOf="@+id/tv_paytype_cash_zhaolinjine"
                 android:gravity="right"
                 android:text=""
-                android:textSize="28sp" />
+                android:textSize="28sp"/>
         </RelativeLayout>
     </LinearLayout>
 
@@ -107,7 +107,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/default_8"
         android:layout_weight="1"
-        android:background="@color/white" >
+        android:background="@color/white">
 
         <TableLayout
             android:id="@+id/table_orderno_num"
@@ -115,14 +115,14 @@
             android:layout_height="match_parent"
             android:background="@color/line_gray"
             android:orientation="vertical"
-            android:padding="0.5dp" >
+            android:padding="0.5dp">
 
-            <TableRow android:layout_weight="1" >
+            <TableRow android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/btn_paytype_cash_7"
@@ -130,7 +130,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="7" />
+                        android:text="7"/>
 
                     <Button
                         android:id="@+id/btn_paytype_cash_8"
@@ -138,7 +138,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="8" />
+                        android:text="8"/>
 
                     <Button
                         android:id="@+id/btn_paytype_cash_9"
@@ -146,7 +146,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="9" />
+                        android:text="9"/>
 
                     <Button
                         android:id="@+id/btn_paytype_cash_del"
@@ -154,16 +154,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="←" />
+                        android:text="←"/>
                 </LinearLayout>
             </TableRow>
 
-            <TableRow android:layout_weight="1" >
+            <TableRow android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/btn_paytype_cash_4"
@@ -171,7 +171,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="4" />
+                        android:text="4"/>
 
                     <Button
                         android:id="@+id/btn_paytype_cash_5"
@@ -179,7 +179,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="5" />
+                        android:text="5"/>
 
                     <Button
                         android:id="@+id/btn_paytype_cash_6"
@@ -187,7 +187,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="6" />
+                        android:text="6"/>
 
                     <Button
                         android:id="@+id/btn_paytype_cash_clear"
@@ -195,30 +195,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="C" />
+                        android:text="C"/>
                 </LinearLayout>
             </TableRow>
 
-            <TableRow android:layout_weight="2" >
+            <TableRow android:layout_weight="2">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <TableLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
                         android:orientation="vertical"
-                        android:stretchColumns="*" >
+                        android:stretchColumns="*">
 
-                        <TableRow android:layout_weight="1" >
+                        <TableRow android:layout_weight="1">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:orientation="horizontal" >
+                                android:orientation="horizontal">
 
                                 <Button
                                     android:id="@+id/btn_paytype_cash_1"
@@ -226,7 +226,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:text="1" />
+                                    android:text="1"/>
 
                                 <Button
                                     android:id="@+id/btn_paytype_cash_2"
@@ -234,7 +234,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:text="2" />
+                                    android:text="2"/>
 
                                 <Button
                                     android:id="@+id/btn_paytype_cash_3"
@@ -242,16 +242,16 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:text="3" />
+                                    android:text="3"/>
                             </LinearLayout>
                         </TableRow>
 
-                        <TableRow android:layout_weight="1" >
+                        <TableRow android:layout_weight="1">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:orientation="horizontal" >
+                                android:orientation="horizontal">
 
                                 <Button
                                     android:id="@+id/btn_paytype_cash_00"
@@ -259,7 +259,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:text="00" />
+                                    android:text="00"/>
 
                                 <Button
                                     android:id="@+id/btn_paytype_cash_0"
@@ -267,7 +267,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:text="0" />
+                                    android:text="0"/>
 
                                 <Button
                                     android:id="@+id/btn_paytype_cash_point"
@@ -275,7 +275,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:text="." />
+                                    android:text="."/>
                             </LinearLayout>
                         </TableRow>
                     </TableLayout>
@@ -289,7 +289,7 @@
                         android:background="@drawable/selector_bg_orange"
                         android:text="收款"
                         android:textColor="@color/white"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"/>
                 </LinearLayout>
             </TableRow>
         </TableLayout>
@@ -299,7 +299,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            android:visibility="gone" />
+            android:visibility="gone"/>
     </RelativeLayout>
 
 </LinearLayout>

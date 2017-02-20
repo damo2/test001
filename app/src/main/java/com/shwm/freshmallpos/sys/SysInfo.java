@@ -104,4 +104,6 @@ public class SysInfo {
 		  densityDpi = dm.densityDpi;	  
 	}
 
+
+
 }

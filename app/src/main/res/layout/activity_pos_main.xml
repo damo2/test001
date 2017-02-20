@@ -1,48 +1,42 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                style="@style/BaseView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activity.MainActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/rg_main" />
+        android:layout_height="wrap_content"
+        app:theme="@style/AppTheme.AppBarOverlay">
+
+        <TextView
+            android:id="@+id/toolbar_title_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+    </android.support.v7.widget.Toolbar>
 
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_bootom_tab_height"
         android:layout_alignParentBottom="true"
-       />
+        />
 
-    <RadioGroup
-        android:id="@+id/rg_main"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/d_line_top_grays_whitebg"
-        android:orientation="horizontal"
-        android:padding="@dimen/main_tab_paddingTop">
-
-        <RadioButton
-            android:id="@+id/rb_main_channel"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/selector_main_tab_cash"
-            android:text="@string/main_tab_cash" />
-
-        <RadioButton
-            android:id="@+id/rb_main_order"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/selector_main_tab_order"
-            android:text="@string/main_tab_order" />
-
-        <RadioButton
-            android:id="@+id/rb_main_my"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/selector_main_tab_my"
-            android:text="@string/main_tab_my" />
-    </RadioGroup>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_main"
+        android:layout_above="@+id/bottom_navigation_bar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

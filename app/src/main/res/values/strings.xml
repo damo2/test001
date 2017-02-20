@@ -85,7 +85,7 @@
     <string name="btn_sure">确定</string>
     <string name="btn_cancel">取消</string>
     <string name="execute_asyncTask">onPostExecute hashmap is null</string>
-    <string name="loading">加载中...</string>
+    <string name="loading">加载中&#8230;</string>
     <string name="loadover">加载完成</string>
     <string name="loadoverAll">全部加载完成</string>
     <string name="loadfail">加载失败</string>
@@ -310,7 +310,7 @@
 
     <!-- 关于我们 -->
     <string name="aboutus_tag">本产品由上海为梦信息科技有限公司开发运营</string>
-    <string name="aboutus_copyright">Copyright©2012-2017</string>
+    <string name="aboutus_copyright">Copyright©2012&#8230;2017</string>
     <string name="aboutus_companyname">上海为梦信息科技有限公司</string>
     <string name="aboutus_update">检测更新</string>
 
@@ -341,4 +341,8 @@
     <!--编辑内容-->
     <string name="edit_content">请输入内容</string>
 
+
+
+    <!--Image-->
+    <string name="img_welcome">引导页</string>
 </resources>

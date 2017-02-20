@@ -84,7 +84,7 @@ public class MLogRegPresenter extends MBasePresenter<IReginView>{
 		lng = mView.getLng();
 
 		iLoginListener.regin(mobi, code, password, storeName, storeAddr, storeDesc, storeContacts, lat, lng,
-				new IRequestListener<HashMap<String, Object>>() {
+				new IRequestListener<Boolean>() {
 					@Override
 					public void onPreExecute(int type) {
 						// TODO Auto-generated method stub
@@ -92,7 +92,7 @@ public class MLogRegPresenter extends MBasePresenter<IReginView>{
 					}
 
 					@Override
-					public void onSuccess(HashMap<String, Object> hashmap) {
+					public void onSuccess(Boolean isSuc) {
 						// TODO Auto-generated method stub
 						mView.dismissDialogProgress();
 						mView.reginSuccess();

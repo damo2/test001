@@ -53,7 +53,7 @@ public class BluetoothService {
 																									// jinou
 	// Member fields
 	private final BluetoothAdapter mAdapter;
-	private static Handler mHandler;
+	private  Handler mHandler;
 	private AcceptThread mAcceptThread;
 	private ConnectThread mConnectThread;
 	private static ConnectedThread mConnectedThread;// static
@@ -176,20 +176,19 @@ public class BluetoothService {
 	 * @param handler
 	 *            A Handler to send messages back to the UI Activity
 	 */
-	private BluetoothService(Context context) {
+	private BluetoothService(Context context,Handler handler) {
 		mAdapter = BluetoothAdapter.getDefaultAdapter();
 		mState = STATE_NONE;
 		this.context = context;
+		this.mHandler = handler;
 	}
 
 	public static BluetoothService getInstance(Context context, Handler handler) {
-		if (handler != null) {
-			mHandler = handler;
-		}
+
 		if (bluetoothService == null) {
 			synchronized (BluetoothService.class) {
 				if (bluetoothService == null) {
-					bluetoothService = new BluetoothService(context);
+					bluetoothService = new BluetoothService(context, handler);
 				}
 			}
 		}
@@ -634,7 +633,6 @@ public class BluetoothService {
 					e.printStackTrace();
 				}
 			}
-
 		}
 
 		/**

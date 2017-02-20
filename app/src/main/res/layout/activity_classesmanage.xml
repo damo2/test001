@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/BaseView">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_classesmanage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:theme="@style/AppTheme.AppBarOverlay" >
+        app:theme="@style/AppTheme.AppBarOverlay">
 
     </android.support.v7.widget.Toolbar>
 
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/btn_classesmanage_submit"
-        android:layout_below="@+id/toolbar_classesmanage" />
+        android:layout_below="@+id/toolbar_classesmanage"/>
 
     <Button
         android:id="@+id/btn_classesmanage_submit"
@@ -27,6 +27,6 @@
         android:layout_height="@dimen/btnSubmit_height"
         android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/default_16"
-        android:text="@string/classesmanage_add" />
+        android:text="@string/classesmanage_add"/>
 
 </RelativeLayout>

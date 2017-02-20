@@ -187,4 +187,7 @@
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
+    <style name="BaseView">
+    </style>
+
 </resources>

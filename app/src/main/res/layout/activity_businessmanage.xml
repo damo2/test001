@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              style="@style/BaseView"
+              android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_businessmanage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary" >
+        app:theme="@style/AppTheme.AppBarOverlay">
     </android.support.v7.widget.Toolbar>
 
     <RelativeLayout
@@ -18,14 +19,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_8"
         android:background="@drawable/selector_bg_white_linebottom"
-        android:padding="@dimen/businessmanage_padding" >
+        android:padding="@dimen/businessmanage_padding">
 
         <TextView
             style="@style/text_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="@string/businessmanage_logo" >
+            android:text="@string/businessmanage_logo">
         </TextView>
 
         <ImageView
@@ -34,7 +35,7 @@
             android:layout_height="@dimen/businessmanage_logo_WH"
             android:layout_marginRight="@dimen/businessmanage_drawableRight"
             android:layout_toLeftOf="@+id/iv_businessmanage_icon1"
-            android:src="@drawable/ic_launcher" >
+            android:src="@drawable/ic_launcher">
         </ImageView>
 
         <ImageView
@@ -43,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/icon_arrow" >
+            android:src="@drawable/icon_arrow">
         </ImageView>
     </RelativeLayout>
 
@@ -52,14 +53,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_bg_white_linebottom"
-        android:padding="@dimen/businessmanage_padding" >
+        android:padding="@dimen/businessmanage_padding">
 
         <TextView
             style="@style/text_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="@string/businessmanage_name" >
+            android:text="@string/businessmanage_name">
         </TextView>
 
         <TextView
@@ -73,7 +74,7 @@
             android:drawableRight="@drawable/icon_arrow"
             android:gravity="center_vertical"
             android:src="@drawable/ic_launcher"
-            android:text="" >
+            android:text="">
         </TextView>
     </RelativeLayout>
 
@@ -82,14 +83,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_bg_white_linebottom"
-        android:padding="@dimen/businessmanage_padding" >
+        android:padding="@dimen/businessmanage_padding">
 
         <TextView
             style="@style/text_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="@string/businessmanage_renzheng" >
+            android:text="@string/businessmanage_renzheng">
         </TextView>
 
         <TextView
@@ -103,7 +104,7 @@
             android:drawableRight="@drawable/icon_arrow"
             android:gravity="center_vertical"
             android:src="@drawable/ic_launcher"
-            android:text="@string/businessmanage_renzheng_no" >
+            android:text="@string/businessmanage_renzheng_no">
         </TextView>
     </RelativeLayout>
 
@@ -112,14 +113,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_bg_white_linebottom"
-        android:padding="@dimen/businessmanage_padding" >
+        android:padding="@dimen/businessmanage_padding">
 
         <TextView
             style="@style/text_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="@string/businessmanage_taika" >
+            android:text="@string/businessmanage_taika">
         </TextView>
 
         <ImageView
@@ -128,7 +129,7 @@
             android:layout_height="@dimen/businessmanage_2barcode_WH"
             android:layout_marginRight="@dimen/businessmanage_drawableRight"
             android:layout_toLeftOf="@+id/iv_businessmanage_icon2"
-            android:src="@drawable/ic_shop_code" >
+            android:src="@drawable/ic_shop_code">
         </ImageView>
 
         <ImageView
@@ -137,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/icon_arrow" >
+            android:src="@drawable/icon_arrow">
         </ImageView>
     </RelativeLayout>
 
@@ -147,14 +148,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_16"
         android:background="@drawable/selector_bg_white_linebottom"
-        android:padding="@dimen/businessmanage_padding" >
+        android:padding="@dimen/businessmanage_padding">
 
         <TextView
             style="@style/text_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="@string/businessmanage_business" >
+            android:text="@string/businessmanage_business">
         </TextView>
 
         <ImageView
@@ -162,7 +163,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/icon_arrow" >
+            android:src="@drawable/icon_arrow">
         </ImageView>
     </RelativeLayout>
 
@@ -172,14 +173,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_16"
         android:background="@drawable/selector_bg_white_linebottom"
-        android:padding="@dimen/businessmanage_padding" >
+        android:padding="@dimen/businessmanage_padding">
 
         <TextView
             android:id="@+id/tv_businessmanage_dizhi"
             style="@style/text_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/businessmanage_addr" >
+            android:text="@string/businessmanage_addr">
         </TextView>
 
         <TextView
@@ -189,7 +190,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_businessmanage_dizhi"
             android:layout_marginTop="@dimen/default_8"
-            android:text="" >
+            android:text="">
         </TextView>
 
         <ImageView
@@ -197,7 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/icon_arrow" >
+            android:src="@drawable/icon_arrow">
         </ImageView>
     </RelativeLayout>
 

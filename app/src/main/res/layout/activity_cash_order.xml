@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 style="@style/BaseView">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar_cashOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_cashOrder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                app:theme="@style/AppTheme.AppBarOverlay" >
+                app:theme="@style/AppTheme.AppBarOverlay">
             </android.support.v7.widget.Toolbar>
 
             <android.support.design.widget.TabLayout
@@ -35,7 +35,7 @@
                 app:tabMode="fixed"
                 app:tabSelectedTextColor="@android:color/holo_blue_dark"
                 app:tabTextAppearance="@style/MyTablayoutTextAppearance"
-                app:tabTextColor="@android:color/black" />
+                app:tabTextColor="@android:color/black"/>
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.view.ViewPager
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/rl_cashOrder_cart"
-            android:layout_below="@+id/appbar_cashOrder" />
+            android:layout_below="@+id/appbar_cashOrder"/>
 
         <RelativeLayout
             android:id="@+id/rl_cashOrder_cart"
@@ -51,21 +51,21 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@drawable/d_line_top_grays_whitebg"
-            android:padding="@dimen/default_4" >
+            android:padding="@dimen/default_4">
 
             <RelativeLayout
                 android:id="@+id/rl_cashOrder_bottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/btn_cashOrer_tosubmitOrder"
-                android:minHeight="@dimen/cashOrder_cart_bottom_Hmin" >
+                android:minHeight="@dimen/cashOrder_cart_bottom_Hmin">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/cashOrder_bottom_priceToLeft"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/tv_cashOrder_heji"
@@ -73,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/cashOrder_bottom_sumT"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"/>
 
                     <TextView
                         android:id="@+id/tv_cashOrder_priceSum"
@@ -83,7 +83,7 @@
                         android:layout_marginLeft="@dimen/default_4"
                         android:text="0.00"
                         android:textColor="@color/text_orange"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"/>
                 </LinearLayout>
             </RelativeLayout>
 
@@ -96,7 +96,7 @@
                 android:background="@drawable/selector_bg_round_orange_s"
                 android:padding="@dimen/cashOrder_bottom_btnPadding"
                 android:text="@string/cashOrder_bottom_chooseOk"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/rl_cashOrder_cart"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="-24dp" >
+            android:layout_marginBottom="-24dp">
 
             <ImageView
                 android:id="@+id/btn_cashOrder_cart"
@@ -114,7 +114,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/default_8"
                 android:layout_marginTop="@dimen/default_2"
-                android:src="@drawable/ic_placeorder_cart" />
+                android:src="@drawable/ic_placeorder_cart"/>
 
             <TextView
                 android:id="@+id/tv_cashOrder_numSum"
@@ -125,7 +125,7 @@
                 android:background="@drawable/red_point"
                 android:gravity="center"
                 android:text="0"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
         </RelativeLayout>
     </RelativeLayout>
 

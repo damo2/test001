@@ -140,7 +140,7 @@ public class MainCashFragment extends BaseFragment {
                     break;
                 case 1:
                     Intent intent1 = new Intent(mActivity, IncomeActivity.class);
-                    intent1.putExtra(ValueKey.TITLE, getString(R.string.title_member_main));
+                    intent1.putExtra(ValueKey.TITLE, getString(R.string.main_cash_gv_myincome));
                     startActivity(intent1);
                     break;
                 case 5:

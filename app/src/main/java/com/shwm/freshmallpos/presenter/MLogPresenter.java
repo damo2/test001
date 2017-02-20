@@ -23,9 +23,9 @@ public class MLogPresenter extends MBasePresenter<ILoginView> {
 	}
 
 	public void login() {
-		iLoginListener.login(mView.getUserName(), mView.getPassword(), new IRequestListener<HashMap<String, Object>>() {
+		iLoginListener.login(mView.getUserName(), mView.getPassword(), new IRequestListener<Boolean>() {
 			@Override
-			public void onSuccess(HashMap<String, Object> hashmap) {
+			public void onSuccess(Boolean isSuc) {
 				// TODO Auto-generated method stub
 				mView.dismissDialogProgress();
 				mView.showSuccess("登录成功");

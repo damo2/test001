@@ -11,7 +11,7 @@ import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothDevice;
 import android.text.TextUtils;
 
-import com.shwm.freshmallpos.manage.FileUtil;
+import com.shwm.freshmallpos.util.FileUtil;
 import com.shwm.freshmallpos.util.UL;
 
 @SuppressLint("NewApi")

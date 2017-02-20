@@ -17,7 +17,7 @@ public class OnLoginListener implements ILoginListener {
 	private static final String TAG = "OnLoginListener";
 
 	@Override
-	public void login(final String username, final String password, final IRequestListener iRequestListener) {
+	public void login(final String username, final String password, final IRequestListener<Boolean> iRequestListener) {
 		// TODO Auto-generated method stub
 		new MyAsyncTaskUtil(new IAsyncListener() {
 			@Override
@@ -40,7 +40,7 @@ public class OnLoginListener implements ILoginListener {
 					UtilSPF.putString(ValueKey.Business_LOGO, shop.getImg());
 					UtilSPF.putBoolean(ValueKey.IsLoginAuto, true);
 					UtilSPF.putBoolean(ValueKey.IsLogin, true);
-					iRequestListener.onSuccess(hashmap);
+					iRequestListener.onSuccess(true);
 				} else {
 					iRequestListener.onFail(code, new ExceptionUtil(msg));
 				}
@@ -105,7 +105,7 @@ public class OnLoginListener implements ILoginListener {
 
 	@Override
 	public void regin(final String mobi, final String code, final String password, final String storeName, final String storeAddr,
-			final String storeDesc, final String storeContact, final double lat, final double lng, final IRequestListener iRequestListener) {
+			final String storeDesc, final String storeContact, final double lat, final double lng, final IRequestListener<Boolean> iRequestListener) {
 		// TODO Auto-generated method stub
 		new MyAsyncTaskUtil(new IAsyncListener() {
 			@Override
@@ -128,7 +128,7 @@ public class OnLoginListener implements ILoginListener {
 					UtilSPF.putString(ValueKey.Business_LOGO, shop.getImg());
 					UtilSPF.putBoolean(ValueKey.IsLoginAuto, true);
 					UtilSPF.putBoolean(ValueKey.IsLogin, true);
-					iRequestListener.onSuccess(hashmap);
+					iRequestListener.onSuccess(true);
 				} else {
 					iRequestListener.onFail(code, new ExceptionUtil(msg));
 				}

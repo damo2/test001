@@ -122,3 +122,19 @@
 -dontwarn okio.**
 -keep class okio.** { *;}
 
+
+#友盟
+-keepclassmembers class * {
+    public <init> (org.json.JSONObject);
+}
+-keep public class com.shwm.freshmallpos.R$*{
+    public static final int *;
+}
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+# LeakCanary
+-keep class org.eclipse.mat.** { *; }
+-keep class com.squareup.leakcanary.** { *; }

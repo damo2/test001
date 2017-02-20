@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/BaseView">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_aboutus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         app:theme="@style/AppTheme.AppBarOverlay"/>
 
     <ImageView
@@ -18,7 +18,7 @@
         android:layout_below="@+id/toolbar_aboutus"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/aboutUs_icon_toTop"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/ic_launcher"/>
 
     <TextView
         android:id="@+id/tv_aboutus_tag"
@@ -28,7 +28,7 @@
         android:layout_below="@+id/iv_aboutus_icon"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/aboutUs_text_toIcon"
-        android:text="@string/aboutus_tag" />
+        android:text="@string/aboutus_tag"/>
 
     <Button
         android:id="@+id/btn_aboutus_update"
@@ -41,7 +41,7 @@
         android:background="@drawable/d_line_grays_whitebg"
         android:gravity="left"
         android:padding="@dimen/default_8"
-        android:text="@string/aboutus_update" />
+        android:text="@string/aboutus_update"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,14 +56,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/aboutus_copyright" />
+            android:text="@string/aboutus_copyright"/>
 
         <TextView
             style="@style/text_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/aboutus_companyname" />
+            android:text="@string/aboutus_companyname"/>
     </LinearLayout>
 
 </RelativeLayout>

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.BaseActivity;
 import com.shwm.freshmallpos.manage.BusinessInfo;
 import com.shwm.freshmallpos.presenter.MBasePresenter;
 import com.shwm.freshmallpos.util.ImageLoadUtil;
@@ -90,7 +91,6 @@ public class MainMyFragment extends BaseFragment {
 	protected void initView() {
 		// TODO Auto-generated method stub
 		super.initView();
-		setToolbar();
 		tvNickname = (TextView) findViewById(R.id.tv_my_nickname);
 		tvUsesrname = (TextView) findViewById(R.id.tv_my_username);
 		ivLogo=(ImageView) findViewById(R.id.iv_my_img);
@@ -103,12 +103,6 @@ public class MainMyFragment extends BaseFragment {
 		tvCashSet = (TextView) findViewById(R.id.tv_my_cashSet);
 		tvAbout = (TextView) findViewById(R.id.tv_my_aboutWe);
 		viewUserInfo = findViewById(R.id.rl_my_userinfo);
-	}
-
-	public void setToolbar() {
-		Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_my);
-		TextView tvTitle = (TextView) findViewById(R.id.toolbar_title);
-		tvTitle.setText(title);
 	}
 
 	@Override

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                style="@style/BaseView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_foodedit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:theme="@style/AppTheme.AppBarOverlay" >
+        app:theme="@style/AppTheme.AppBarOverlay">
     </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/btn_foodedit_submit"
-        android:layout_below="@+id/toolbar_foodedit" >
+        android:layout_below="@+id/toolbar_foodedit">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                 android:background="@drawable/d_line_top_grays_whitebg"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <TextView
                     android:id="@+id/foodedit_foodname"
@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/foodedit_foodname" />
+                    android:text="@string/foodedit_foodname"/>
 
                 <EditText
                     android:id="@+id/edt_foodedit_foodname"
@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/foodedit_foodname"
                     android:hint="@string/foodedit_foodname_hint"
-                    android:inputType="textPhonetic" />
+                    android:inputType="textPhonetic"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -57,7 +57,7 @@
                 android:background="@drawable/d_line_top_grays_whitebg"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <TextView
                     android:id="@+id/foodedit_foodcode"
@@ -65,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/foodedit_foodcode" />
+                    android:text="@string/foodedit_foodcode"/>
 
                 <EditText
                     android:id="@+id/edt_foodedit_foodcode"
@@ -74,7 +74,7 @@
                     android:layout_toLeftOf="@+id/iv_foodedit_foodcodeIcon"
                     android:layout_toRightOf="@+id/foodedit_foodcode"
                     android:hint="@string/foodedit_foodcode_hint"
-                    android:inputType="number" />
+                    android:inputType="number"/>
 
                 <ImageView
                     android:id="@+id/iv_foodedit_foodcodeIcon"
@@ -85,7 +85,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/default_4"
                     android:padding="@dimen/foodedt_codeIcon_padding"
-                    android:src="@drawable/ic_scan_gray" />
+                    android:src="@drawable/ic_scan_gray"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -94,7 +94,7 @@
                 android:background="@drawable/d_line_top_grays_whitebg"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <TextView
                     android:id="@+id/foodedit_foodclass"
@@ -102,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/foodedit_foodclass" />
+                    android:text="@string/foodedit_foodclass"/>
 
                 <Button
                     android:id="@+id/btn_foodedit_foodclass"
@@ -117,7 +117,7 @@
                     android:drawableRight="@drawable/icon_arrow"
                     android:gravity="right|center_vertical"
                     android:text=""
-                    android:textSize="14sp" />
+                    android:textSize="14sp"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -126,7 +126,7 @@
                 android:background="@drawable/d_line_top_grays_whitebg"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <TextView
                     android:id="@+id/foodedit_price"
@@ -134,14 +134,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/foodedit_price" />
+                    android:text="@string/foodedit_price"/>
 
                 <EditText
                     android:id="@+id/edt_foodedit_foodprice"
                     style="@style/edt_foodedit"
                     android:layout_toRightOf="@+id/foodedit_price"
                     android:hint="@string/foodedit_price_hint"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -150,7 +150,7 @@
                 android:background="@drawable/d_line_top_grays_whitebg"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <TextView
                     android:id="@+id/foodedit_priceMember"
@@ -158,14 +158,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/foodedit_priceMember" />
+                    android:text="@string/foodedit_priceMember"/>
 
                 <EditText
                     android:id="@+id/edt_foodedit_foodpriceMember"
                     style="@style/edt_foodedit"
                     android:layout_toRightOf="@+id/foodedit_priceMember"
                     android:hint="@string/foodedit_priceMember_hints"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -174,7 +174,7 @@
                 android:background="@drawable/d_line_top_grays_whitebg"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <TextView
                     android:id="@+id/foodedit_unit"
@@ -182,14 +182,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/foodedit_unit" />
+                    android:text="@string/foodedit_unit"/>
 
                 <EditText
                     android:id="@+id/edt_foodedit_foodunit"
                     style="@style/edt_foodedit"
                     android:layout_toRightOf="@+id/foodedit_unit"
                     android:hint="@string/foodedit_unit_hint"
-                    android:inputType="textPhonetic" />
+                    android:inputType="textPhonetic"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -198,7 +198,7 @@
                 android:background="@drawable/d_line_top_grays_whitebg"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <TextView
                     android:id="@+id/foodedit_numsum"
@@ -206,14 +206,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/foodedit_numsum" />
+                    android:text="@string/foodedit_numsum"/>
 
                 <EditText
                     android:id="@+id/edt_foodedit_foodnumsum"
                     style="@style/edt_foodedit"
                     android:layout_toRightOf="@+id/foodedit_numsum"
                     android:hint="@string/foodedit_numsum_hint"
-                    android:inputType="number" />
+                    android:inputType="number"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -222,7 +222,7 @@
                 android:background="@drawable/d_line_top_grays_whitebg"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <TextView
                     android:id="@+id/foodedit_from"
@@ -230,14 +230,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/foodedit_from" />
+                    android:text="@string/foodedit_from"/>
 
                 <EditText
                     android:id="@+id/edt_foodedit_foodfrom"
                     style="@style/edt_foodedit"
                     android:layout_toRightOf="@+id/foodedit_from"
                     android:hint="@string/foodedit_from_hint"
-                    android:inputType="textPhonetic" />
+                    android:inputType="textPhonetic"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -246,14 +246,14 @@
                 android:background="@drawable/d_line_top_grays_whitebg"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <TextView
                     style="@style/text_default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/foodedit_type" />
+                    android:text="@string/foodedit_type"/>
 
                 <RadioGroup
                     android:id="@+id/rg_foodedit_typeWeight"
@@ -261,14 +261,14 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal">
 
                     <RadioButton
                         android:id="@+id/rb_foodedit_typeDefaule"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/transparent"
-                        android:text="@string/foodedit_type_defaule" />
+                        android:text="@string/foodedit_type_defaule"/>
 
                     <RadioButton
                         android:id="@+id/rb_foodedit_typeWeight"
@@ -277,7 +277,7 @@
                         android:layout_marginLeft="@dimen/default_16"
                         android:layout_marginRight="@dimen/default_8"
                         android:background="@color/transparent"
-                        android:text="@string/foodedit_type_weight" />
+                        android:text="@string/foodedit_type_weight"/>
                 </RadioGroup>
             </RelativeLayout>
 
@@ -289,7 +289,7 @@
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
                 android:paddingRight="@dimen/foodedt_itempaddingLR"
-                android:visibility="gone" >
+                android:visibility="gone">
 
                 <TextView
                     style="@style/text_default"
@@ -299,7 +299,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/foodedt_itempaddingLR"
                     android:paddingRight="@dimen/foodedt_itempaddingLR"
-                    android:text="@string/foodedit_desc" />
+                    android:text="@string/foodedit_desc"/>
 
                 <EditText
                     android:id="@+id/edt_foodedit_fooddesc"
@@ -310,7 +310,7 @@
                     android:inputType="textPhonetic"
                     android:minHeight="@dimen/foodedt_desc_Hmin"
                     android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                    android:paddingRight="@dimen/foodedt_itempaddingLR" />
+                    android:paddingRight="@dimen/foodedt_itempaddingLR"/>
             </LinearLayout>
 
             <LinearLayout
@@ -320,13 +320,13 @@
                 android:gravity="center_vertical"
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/foodedt_itempaddingLR"
-                android:paddingRight="@dimen/foodedt_itempaddingLR" >
+                android:paddingRight="@dimen/foodedt_itempaddingLR">
 
                 <ImageView
                     android:id="@+id/iv_foodedit_img"
                     android:layout_width="@dimen/foodedt_foodimg_WH"
                     android:layout_height="@dimen/foodedt_foodimg_WH"
-                    android:src="@drawable/image_empty" />
+                    android:src="@drawable/image_empty"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -341,6 +341,6 @@
         android:background="@drawable/selector_bg_round_orange_s"
         android:gravity="center"
         android:text="@string/save"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

@@ -11,7 +11,7 @@ import android.text.TextUtils;
 
 import com.shwm.freshmallpos.been.CouponEntity;
 import com.shwm.freshmallpos.inter.IGetCouponListener;
-import com.shwm.freshmallpos.manage.FileUtil;
+import com.shwm.freshmallpos.util.FileUtil;
 import com.shwm.freshmallpos.util.ConfigUtil;
 import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.value.ValueKey;
