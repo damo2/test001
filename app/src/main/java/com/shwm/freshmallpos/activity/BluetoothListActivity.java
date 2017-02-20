@@ -19,10 +19,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -119,7 +116,7 @@ public class BluetoothListActivity extends BaseActivity {
 		// Get the local Bluetooth adapter
 		mBtAdapter = BluetoothAdapter.getDefaultAdapter();
 		if (mBtAdapter == null) {
-			Toast.makeText(this, "您的设备不支持蓝牙", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, "您的设备不支持蓝牙", Toast.LENGTH_SHORT).show();
 			tvNo.setVisibility(View.VISIBLE);
 			return;
 		}
@@ -139,7 +136,7 @@ public class BluetoothListActivity extends BaseActivity {
 			Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
 			startActivityForResult(enableIntent, UtilBluetoothValue.REQUEST_ENABLE_BT);
 		}
-		mService = BluetoothService.getInstance(this, mHandler);
+		mService = BluetoothService.getInstance(context, mHandler);
 		bluetoothSave = new BluetoothSave();
 		listBluetoothSaveConnect = bluetoothSave.getBluetoothDataFromFile();
 	}
@@ -611,9 +608,9 @@ public class BluetoothListActivity extends BaseActivity {
 				e.printStackTrace();
 			} //
 		} else if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
-			Toast.makeText(BluetoothListActivity.this, device.getName() + "已经配对成功", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, device.getName() + "已经配对成功", Toast.LENGTH_SHORT).show();
 		} else if (device.getBondState() != BluetoothDevice.BOND_BONDING) {
-			Toast.makeText(BluetoothListActivity.this, device.getName() + "正在配对中", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, device.getName() + "正在配对中", Toast.LENGTH_SHORT).show();
 		}
 		// else {
 		// Log.d("mylog", "HAS BOND_BONDED");

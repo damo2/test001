@@ -57,7 +57,6 @@ import com.zxing.fragment.CaptureFragment;
 
 /**
  * 开单
- * 
  * @author wr 2016-12-2
  */
 public class CashOrderActivity extends BaseActivity implements SearchView.OnQueryTextListener, IOnCartListener {
@@ -150,7 +149,7 @@ public class CashOrderActivity extends BaseActivity implements SearchView.OnQuer
 
 		setDialogBottom();
 		if (mService == null) {
-			mService = BluetoothService.getInstance(getApplicationContext(), null);
+			mService = BluetoothService.getInstance(context, null);
 		}
 	}
 

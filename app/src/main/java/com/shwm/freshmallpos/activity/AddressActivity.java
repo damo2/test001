@@ -46,7 +46,6 @@ public class AddressActivity extends BaseActivity {
         // TODO Auto-generated method stub
         super.init();
         title = getIntent().getExtras().getString(ValueKey.TITLE);
-
         iBusinessListener = new OnBusinessListener();
     }
 

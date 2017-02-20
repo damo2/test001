@@ -60,7 +60,7 @@ public class OrderDetailActivity extends BaseActivity<IOrderDetailView, MOrderDe
 	private Button btnRefund;
 	private Button btnPrint;
 
-	public static BluetoothService mService;
+	public BluetoothService mService;
 
 	@Override
 	protected void onCreate(Bundle arg0) {

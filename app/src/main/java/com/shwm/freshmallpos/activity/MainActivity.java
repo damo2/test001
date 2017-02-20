@@ -1,13 +1,16 @@
 package com.shwm.freshmallpos.activity;
 
 import android.os.Bundle;
+import android.support.transition.Visibility;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -20,6 +23,8 @@ import com.shwm.freshmallpos.fragment.MainCashFragment;
 import com.shwm.freshmallpos.fragment.MainMyFragment;
 import com.shwm.freshmallpos.fragment.MainOrderFragment;
 import com.shwm.freshmallpos.presenter.MBasePresenter;
+import com.shwm.freshmallpos.util.UtilSPF;
+import com.shwm.freshmallpos.value.ValueKey;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,18 +36,18 @@ public class MainActivity extends BaseActivity {
     private ViewPager mViewPager;
     private List<Fragment> listFragment;
 
-    private RadioGroup mRadioGroup;
-    private RadioButton rbCash, rbOrder, rbMy;
     //	 定义菜单项的ItemId
     private final int NEWS = 00;
 
     private BottomNavigationBar bottomNavigationBar;
 
+    private Toolbar toolbar;
+    private TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initActionBarAndViewpager();
+        initViewpager();
         initBottom();
         changeTab(0);
         changeFragment(0);
@@ -61,6 +66,15 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    protected void initToolbar() {
+        super.initToolbar();
+        toolbar=setToolbar(R.id.toolbar_main,"");
+        toolbar.setNavigationIcon(null);
+        tvTitle= (TextView) findViewById(R.id.toolbar_title_main);
+
+    }
+
+    @Override
     protected void init() {
         // TODO Auto-generated method stub
         super.init();
@@ -74,10 +88,6 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         // TODO Auto-generated method stub
         super.initView();
-        mRadioGroup = (RadioGroup) findViewById(R.id.rg_main);
-        rbCash = (RadioButton) findViewById(R.id.rb_main_channel);
-        rbOrder = (RadioButton) findViewById(R.id.rb_main_order);
-        rbMy = (RadioButton) findViewById(R.id.rb_main_my);
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
     }
 
@@ -103,14 +113,6 @@ public class MainActivity extends BaseActivity {
     protected void setListener() {
         // TODO Auto-generated method stub
         super.setListener();
-        mRadioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                // TODO Auto-generated method stub
-                changeTab(getItemByCheckedId(checkedId));
-                changeFragment(getItemByCheckedId(checkedId));
-            }
-        });
         bottomNavigationBar.setTabSelectedListener(onTabSelectedListener);
     }
 
@@ -133,7 +135,8 @@ public class MainActivity extends BaseActivity {
         }
     };
 
-    private void initActionBarAndViewpager() {
+
+    private void initViewpager() {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mSectionsPagerAdapter.setListFragment(listFragment, null);
@@ -146,44 +149,24 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    // 通过Check的Id 得到item
-    private int getItemByCheckedId(int checkedId) {
-        int item = 0;
-        if (checkedId == rbCash.getId()) {
-            item = 0;
-        } else if (checkedId == rbOrder.getId()) {
-            item = 1;
-        } else if (checkedId == rbMy.getId()) {
-            item = 2;
-        }
-        return item;
-    }
 
     // 0是收银 1是流水 2是我的
     private void changeTab(int item) {
         bottomNavigationBar.selectTab(item);
+        switch (item){
+            case 0:
+                toolbar.setVisibility(View.GONE);
+                break;
+            case 1:
+                toolbar.setVisibility(View.VISIBLE);
+                tvTitle.setText(getString(R.string.main_tab_order));
+                break;
+            case 2:
+                toolbar.setVisibility(View.VISIBLE);
+                tvTitle.setText(getString(R.string.main_tab_my));
+                break;
+        }
     }
-//	private void changeTab(int item) {
-//		switch (item) {
-//		case 0:
-//			if (!rbCash.isChecked()) {
-//				mRadioGroup.check(rbCash.getId());
-//			}
-//			break;
-//		case 1:
-//			if (!rbOrder.isChecked()) {
-//				mRadioGroup.check(rbOrder.getId());
-//			}
-//			break;
-//		case 2:
-//			if (!rbMy.isChecked()) {
-//				mRadioGroup.check(rbMy.getId());
-//			}
-//			break;
-//		default:
-//			break;
-//		}
-//	}
 
     private void changeFragment(int item) {
         mViewPager.setCurrentItem(item);

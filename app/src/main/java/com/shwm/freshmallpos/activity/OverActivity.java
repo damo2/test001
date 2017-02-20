@@ -95,11 +95,12 @@ public class OverActivity extends BaseActivity {
 
 		}
 		if (v.getId() == btnGo.getId()) {
-			go();
+			onBack();
 		}
 	}
 
-	private void go() {
+	@Override
+	protected void onBack() {
 		setResult(RESULT_OK);
 		finish();
 	}
