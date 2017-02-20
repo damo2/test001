@@ -1,47 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shwm.freshmallpos">
+          package="com.shwm.freshmallpos">
 
     <!-- Normal Permissions -->
     <!-- 访问网络连接 -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
     <!-- 修改系统设置 -->
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <!-- Dangerous Permissions -->
     <!-- 这个权限用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <!-- 这个权限用于访问GPS定位 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <!-- 写入扩展存储 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!-- 添加可以向外拨打电话的权限 -->
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <!-- 允许访问摄像头进行拍照 -->
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <!-- other -->
     <!-- SD卡读取权限，用户写入离线定位数据 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-
+    <!-- 友盟需要 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!-- zxing start -->
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
     <!-- zxing end -->
 
 
     <!-- bluetooth start -->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <!-- bluetooth end -->
 
 
@@ -72,20 +73,61 @@
     <application
         android:name=".base.ApplicationMy"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <service android:name=".service.MyUpdateService"/>
+
+        <!-- 高德地图start -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="4e751dec3468106dd148aae8b6cf6849"/>
+
+        <service android:name="com.amap.api.location.APSService"/>
+        <!-- 高德地图end -->
+        <!-- 友盟分享start -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58a689e3677baa38140016fc"/>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="shwm"/>
+        <!-- 友盟分享end -->
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+            App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
+
         <activity
-            android:name=".activity.LogActivity"
+            android:name=".activity.WelcomeActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:taskAffinity="">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="schemePos"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.LogActivity"
+                  android:screenOrientation="portrait"
+                  android:taskAffinity="">
         </activity>
         <activity
             android:name=".activity.LogReginCodeActivity"
@@ -216,21 +258,6 @@
             android:name=".activity.EditContentActivity"
             android:screenOrientation="portrait"
             android:taskAffinity=""/>
-
-        <service android:name=".service.MyUpdateService"/>
-
-        <!-- 高德地图start -->
-        <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="4e751dec3468106dd148aae8b6cf6849"/>
-
-        <service android:name="com.amap.api.location.APSService"/><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <!-- 高德地图end -->
-
     </application>
 
 </manifest>
