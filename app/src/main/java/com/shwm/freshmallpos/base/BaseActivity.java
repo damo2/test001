@@ -22,6 +22,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.manage.ActivityCollector;
 import com.shwm.freshmallpos.manage.ThreadManager;
 import com.shwm.freshmallpos.presenter.MBasePresenter;
 import com.shwm.freshmallpos.util.CommonUtil;
@@ -58,7 +59,7 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         super.onCreate(arg0);
         mActivity = BaseActivity.this;
         isAlive = true;
-        ActivityCollector.addActivity(this);
+        ActivityCollector.addActivity(TAG,this);
         context = getApplicationContext();
         mViewParent = LayoutInflater.from(this).inflate(bindLayout(), null);
         setContentView(mViewParent);
@@ -110,7 +111,7 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         }
         MobclickAgent.onKillProcess(mActivity);
         super.onDestroy();
-        ActivityCollector.removeActivity(mActivity);
+        ActivityCollector.removeActivity(TAG);
         mViewParent = null;
         mToolbar = null;
         mDialogProgress = null;
@@ -189,18 +190,20 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         }
         return result;
     }
+
     /**
      * 获取顶部导航栏高度
      */
     public int getAppBarHeight() {
-        int resourceId=0;
+        int resourceId = 0;
         int rid = getResources().getIdentifier("config_showNavigationBar", "bool", "android");
-        if (rid!=0){
+        if (rid != 0) {
             resourceId = getResources().getIdentifier("navigation_bar_height", "dimen", "android");
             return getResources().getDimensionPixelSize(resourceId);
-        }else
+        } else
             return 0;
     }
+
     /**
      * 初始化控件
      */
@@ -419,14 +422,23 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         return super.onTouchEvent(event);
     }
 
+//    @Override
+//    public boolean dispatchKeyEvent(KeyEvent event) {
+//        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+//            onBack();
+//            return true;
+//        }
+//        return super.dispatchKeyEvent(event);
+//    }
     @Override
-    public boolean dispatchKeyEvent(KeyEvent event) {
-        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            onBack();
-            return true;
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                onBack();
+                return true;
+            }
         }
-        return super.dispatchKeyEvent(event);
+        return super.onKeyDown(keyCode, event);
     }
-
 
 }

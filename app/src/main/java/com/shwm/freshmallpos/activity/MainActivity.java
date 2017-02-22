@@ -1,15 +1,11 @@
 package com.shwm.freshmallpos.activity;
 
 import android.os.Bundle;
-import android.support.transition.Visibility;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,14 +13,12 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.adapter.SectionsPagerAdapter;
-import com.shwm.freshmallpos.base.ActivityCollector;
+import com.shwm.freshmallpos.manage.ActivityCollector;
 import com.shwm.freshmallpos.base.BaseActivity;
 import com.shwm.freshmallpos.fragment.MainCashFragment;
 import com.shwm.freshmallpos.fragment.MainMyFragment;
 import com.shwm.freshmallpos.fragment.MainOrderFragment;
 import com.shwm.freshmallpos.presenter.MBasePresenter;
-import com.shwm.freshmallpos.util.UtilSPF;
-import com.shwm.freshmallpos.value.ValueKey;
 
 import java.util.ArrayList;
 import java.util.List;

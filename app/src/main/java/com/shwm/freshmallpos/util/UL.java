@@ -18,7 +18,6 @@ public class UL {
 	public static void i(String msg) {
 		if (isDebug)
 			Log.i(TAG, msg);
-
 	}
 
 	public static void d(String msg) {

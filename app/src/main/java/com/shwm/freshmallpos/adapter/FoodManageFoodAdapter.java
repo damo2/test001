@@ -221,8 +221,9 @@ public class FoodManageFoodAdapter extends RecyclerView.Adapter<ViewHolder> {
 
 	@Override
 	public int getItemCount() {
-		int temp = isShowFoot ? 1 : 0;
-		return listFood == null ? temp : listFood.size() + temp;
+	//	int temp = isShowFoot ? 1 : 0;
+	//	return listFood == null ? temp : listFood.size() + temp;
+		return listFood == null ? 1 : listFood.size() + 1;
 	}
 
 	/** 是否显示底部 */

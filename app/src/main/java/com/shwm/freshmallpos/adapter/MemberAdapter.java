@@ -14,10 +14,12 @@ import android.widget.TextView;
 import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.been.MemberEntity;
 import com.shwm.freshmallpos.inter.IOnItemClickListener;
+import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.value.ValueType;
 import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class MemberAdapter extends Adapter<ViewHolder> {
+	private static final String TAG="MemberAdapter";
 	private Context context;
 	private List<MemberEntity> listMember;
 	// 设置底部布局
@@ -25,7 +27,6 @@ public class MemberAdapter extends Adapter<ViewHolder> {
 	// 设置默认布局
 	private static final int TYPE_DEFAULT = 1;
 
-	private boolean isShowFoot = false;
 
 	private int loadType = ValueType.LOAD_OVER;
 
@@ -41,7 +42,7 @@ public class MemberAdapter extends Adapter<ViewHolder> {
 	}
 
 	public void setLoadType(int loadType) {
-		if (isShowFoot && this.loadType != loadType) {
+		if (this.loadType != loadType) {
 			this.loadType = loadType;
 			notifyItemChanged(getItemCount());
 		}
@@ -54,20 +55,13 @@ public class MemberAdapter extends Adapter<ViewHolder> {
 	@Override
 	public int getItemCount() {
 		// TODO Auto-generated method stub
-		int temp = isShowFoot ? 1 : 0;
-		return listMember == null ? 0 : listMember.size() + temp;
-	}
-
-	/** 是否显示底部 */
-	public boolean isShowFoot() {
-		return isShowFoot;
+		return listMember == null ?  1 : listMember.size()+1;
 	}
 
 	@Override
 	public int getItemViewType(int position) {
 		// TODO Auto-generated method stub
-		if (position + 1 == getItemCount()) {
-			isShowFoot = true;
+		if (position+1  == getItemCount()) {
 			return TYPE_FOOTER;
 		} else {
 			return TYPE_DEFAULT;
@@ -116,7 +110,6 @@ public class MemberAdapter extends Adapter<ViewHolder> {
 			View view = LayoutInflater.from(context).inflate(R.layout.view_recycle_bottom, parent, false);
 			return new FootViewHolder(view);
 		}
-
 	}
 
 	private class MyViewHolder extends ViewHolder implements OnClickListener {
@@ -147,7 +140,6 @@ public class MemberAdapter extends Adapter<ViewHolder> {
 
 	private class FootViewHolder extends ViewHolder {
 		private TextView tvTag;
-
 		public FootViewHolder(View view) {
 			super(view);
 			tvTag = (TextView) view.findViewById(R.id.tv_recycle_bottom_tag);

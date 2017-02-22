@@ -179,4 +179,10 @@ public class ChangeNameActivity extends BaseActivity {
 			}
 		});
 	}
+
+	@Override
+	protected void onBack() {
+		setResult(RESULT_CANCELED);
+		super.onBack();
+	}
 }

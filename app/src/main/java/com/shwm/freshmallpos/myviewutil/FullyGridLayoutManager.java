@@ -5,7 +5,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.shwm.freshmallpos.util.UL;
+
 public class FullyGridLayoutManager extends GridLayoutManager {
+	private  static final String TAG=FullyGridLayoutManager.class.getSimpleName();
 	public FullyGridLayoutManager(Context context, int spanCount) {
 		super(context, spanCount);
 	}
@@ -90,7 +94,8 @@ public class FullyGridLayoutManager extends GridLayoutManager {
 					recycler.recycleView(view);
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+//				e.printStackTrace();
+				UL.e(TAG,e.getMessage());
 			}
 		}
 	}

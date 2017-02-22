@@ -88,7 +88,7 @@ public class CheckUpdateInfo {
 	}
 
 	private void notNewVersionShow() {
-		if (mActivity.get() != null) {
+		if (mActivity.get() != null&&!mActivity.get().isFinishing()) {
 			android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(mActivity.get());
 			builder.setTitle(mActivity.get().getString(R.string.update_version));
 			builder.setMessage(mActivity.get().getString(R.string.update_nonew) + " " + version.getName());

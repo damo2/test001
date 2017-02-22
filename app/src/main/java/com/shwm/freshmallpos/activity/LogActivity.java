@@ -43,8 +43,8 @@ public class LogActivity extends BaseActivity<ILoginView, MLogPresenter> impleme
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		edtUsername.setText(UtilSPF.getString(ValueKey.ADMIN_USERNAME, "").toString());
-		edtPassword.setText(UtilSPF.getString(ValueKey.ADMIN_PASSWORD, "").toString());
+		edtUsername.setText(UtilSPF.getString(ValueKey.ADMIN_USERNAME, ""));
+		edtPassword.setText(UtilSPF.getString(ValueKey.ADMIN_PASSWORD, ""));
 	}
 
 	@Override
@@ -183,6 +183,7 @@ public class LogActivity extends BaseActivity<ILoginView, MLogPresenter> impleme
 		// TODO Auto-generated method stub
 		Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
 		startActivity(new Intent(getApplicationContext(), MainActivity.class));
+		finish();
 	}
 
 	@Override
