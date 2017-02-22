@@ -86,7 +86,8 @@ public class MainOrderFragment extends BaseFragment<IMainOrderView, MMainOrderPr
 	protected void onLazyLoad() {
 		// TODO Auto-generated method stub
 		super.onLazyLoad();
-		mPresenter.getListOrder(dayNear);
+		mPresenter.getListOrder(dayNear);//加载数据
+		mSwiperefreshlayout.setRefreshing(true);
 	}
 
 	@Override
@@ -291,6 +292,7 @@ public class MainOrderFragment extends BaseFragment<IMainOrderView, MMainOrderPr
 		mAdapter.setData(listOrder);
 		mAdapter.notifyDataSetChanged();
 		if (pageType == ValueType.PAGE_DEFAULT || pageType == ValueType.PAGE_REFRESH) {
+			mSwiperefreshlayout.setRefreshing(false);
 			if (listOrder != null && listOrder.size() > 0) {
 				updateRecycleBar();
 			}
@@ -307,7 +309,6 @@ public class MainOrderFragment extends BaseFragment<IMainOrderView, MMainOrderPr
 		// TODO Auto-generated method stub
 		if (loadType >= 0) {
 			mAdapter.setLoadType(loadType);
-
 		}
 	}
 

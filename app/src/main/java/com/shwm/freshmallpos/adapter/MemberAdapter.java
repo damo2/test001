@@ -78,25 +78,8 @@ public class MemberAdapter extends Adapter<ViewHolder> {
 			mViewHolder.tvTel.setText(member.getTel());
 		}
 
-		if (viewholder instanceof FootViewHolder) {
-			FootViewHolder viewHolder = (FootViewHolder) viewholder;
-			switch (loadType) {
-			case ValueType.LOAD_LOADING:
-				viewHolder.tvTag.setText(ApplicationMy.getContext().getString(R.string.loading));
-				break;
-			case ValueType.LOAD_OVER:
-				viewHolder.tvTag.setText(ApplicationMy.getContext().getString(R.string.loadover));
-				break;
-			case ValueType.LOAD_OVERALL:
-				viewHolder.tvTag.setText(ApplicationMy.getContext().getString(R.string.loadoverAll));
-				break;
-			case ValueType.LOAD_FAIL:
-				viewHolder.tvTag.setText(ApplicationMy.getContext().getString(R.string.loadfail));
-				break;
-			default:
-				viewHolder.tvTag.setVisibility(View.GONE);
-				break;
-			}
+		if (viewholder instanceof FooterViewHolder) {
+			FooterViewUtil.setFooterViewStatu(viewholder,loadType);
 		}
 	}
 
@@ -104,11 +87,11 @@ public class MemberAdapter extends Adapter<ViewHolder> {
 	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		// TODO Auto-generated method stub
 		if (viewType == TYPE_DEFAULT) {
-			View view = LayoutInflater.from(context).inflate(R.layout.item_member, null);
+			View view = LayoutInflater.from(context).inflate(R.layout.item_member, parent,false);
 			return new MyViewHolder(view, iOnItemClickListener);
 		} else {
 			View view = LayoutInflater.from(context).inflate(R.layout.view_recycle_bottom, parent, false);
-			return new FootViewHolder(view);
+			return new FooterViewHolder(view);
 		}
 	}
 
@@ -135,14 +118,6 @@ public class MemberAdapter extends Adapter<ViewHolder> {
 			if (iOnItemClickListener != null) {
 				iOnItemClickListener.onItemClick(view, null, getPosition());
 			}
-		}
-	}
-
-	private class FootViewHolder extends ViewHolder {
-		private TextView tvTag;
-		public FootViewHolder(View view) {
-			super(view);
-			tvTag = (TextView) view.findViewById(R.id.tv_recycle_bottom_tag);
 		}
 	}
 }

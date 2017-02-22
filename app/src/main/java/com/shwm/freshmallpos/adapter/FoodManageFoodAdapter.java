@@ -97,7 +97,7 @@ public class FoodManageFoodAdapter extends RecyclerView.Adapter<ViewHolder> {
 			return new CartViewHolder(view, iCashOrderFoodAddSub);
 		} else {
 			View view = LayoutInflater.from(context).inflate(R.layout.view_recycle_bottom, parent, false);
-			return new FootViewHolder(view);
+			return new FooterViewHolder(view);
 		}
 	}
 
@@ -156,7 +156,6 @@ public class FoodManageFoodAdapter extends RecyclerView.Adapter<ViewHolder> {
 					}
 				}
 			}
-
 		}
 		if (viewholder instanceof CartViewHolder) {
 			FoodEntity food = listFood.get(position);
@@ -192,37 +191,15 @@ public class FoodManageFoodAdapter extends RecyclerView.Adapter<ViewHolder> {
 				}
 			}
 		}
-
-		if (viewholder instanceof FootViewHolder) {
-			FootViewHolder holderFooter = (FootViewHolder) viewholder;
-			switch (loadType) {
-			case ValueType.LOAD_LOADING:
-				holderFooter.tvTag.setVisibility(View.VISIBLE);
-				holderFooter.tvTag.setText(ApplicationMy.getContext().getString(R.string.loading));
-				break;
-			case ValueType.LOAD_OVER:
-				holderFooter.tvTag.setVisibility(View.VISIBLE);
-				holderFooter.tvTag.setText(ApplicationMy.getContext().getString(R.string.loadover));
-				break;
-			case ValueType.LOAD_OVERALL:
-				holderFooter.tvTag.setVisibility(View.VISIBLE);
-				holderFooter.tvTag.setText(ApplicationMy.getContext().getString(R.string.loadoverAll));
-				break;
-			case ValueType.LOAD_FAIL:
-				holderFooter.tvTag.setVisibility(View.VISIBLE);
-				holderFooter.tvTag.setText(ApplicationMy.getContext().getString(R.string.loadfail));
-				break;
-			default:
-				holderFooter.tvTag.setVisibility(View.GONE);
-				break;
-			}
+		if (viewholder instanceof FooterViewHolder) {
+			FooterViewUtil.setFooterViewStatu(viewholder,loadType);
 		}
 	}
 
 	@Override
 	public int getItemCount() {
-	//	int temp = isShowFoot ? 1 : 0;
-	//	return listFood == null ? temp : listFood.size() + temp;
+		//	int temp = isShowFoot ? 1 : 0;
+		//	return listFood == null ? temp : listFood.size() + temp;
 		return listFood == null ? 1 : listFood.size() + 1;
 	}
 
@@ -462,15 +439,6 @@ public class FoodManageFoodAdapter extends RecyclerView.Adapter<ViewHolder> {
 			}
 		}
 
-	}
-
-	private class FootViewHolder extends ViewHolder {
-		private TextView tvTag;
-
-		public FootViewHolder(View view) {
-			super(view);
-			tvTag = (TextView) view.findViewById(R.id.tv_recycle_bottom_tag);
-		}
 	}
 
 }

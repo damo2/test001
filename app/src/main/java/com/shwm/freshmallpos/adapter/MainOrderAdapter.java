@@ -119,27 +119,7 @@ public class MainOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 		}
 
 		if (holder instanceof FooterViewHolder) {
-			FooterViewHolder viewHolder = (FooterViewHolder) holder;
-			switch (loadType) {
-			case ValueType.LOAD_LOADING:
-				viewHolder.tvTag.setVisibility(View.VISIBLE);
-				viewHolder.tvTag.setText(ApplicationMy.getContext().getString(R.string.loading));
-				break;
-			case ValueType.LOAD_OVER:
-				viewHolder.tvTag.setVisibility(View.VISIBLE);
-				viewHolder.tvTag.setText(ApplicationMy.getContext().getString(R.string.loadover));
-				break;
-			case ValueType.LOAD_OVERALL:
-				viewHolder.tvTag.setVisibility(View.VISIBLE);
-				viewHolder.tvTag.setText(ApplicationMy.getContext().getString(R.string.loadoverAll));
-				break;
-			case ValueType.LOAD_FAIL:
-				viewHolder.tvTag.setText(ApplicationMy.getContext().getString(R.string.loadfail));
-				break;
-			default:
-				viewHolder.tvTag.setVisibility(View.GONE);
-				break;
-			}
+			FooterViewUtil.setFooterViewStatu(holder,loadType);
 		}
 	}
 
@@ -147,13 +127,14 @@ public class MainOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 	@Override
 	public int getItemCount() {
 		// 判断是不是显示底部，是就返回1，不是返回0
-		int begin = mShowFooter ? 1 : 0;
-		// 没有数据的时候，直接返回begin
-		if (listOrder == null) {
-			return begin;
-		}
-		// 因为底部布局要占一个位置，所以总数目要+1
-		return listOrder.size() + begin;
+//		int begin = mShowFooter ? 1 : 0;
+//		// 没有数据的时候，直接返回begin
+//		if (listOrder == null) {
+//			return begin;
+//		}
+//		// 因为底部布局要占一个位置，所以总数目要+1
+//		return listOrder.size() + begin;
+		return listOrder == null?1:listOrder.size()+1;
 	}
 
 	// 设置是否显示底部加载提示（将值传递给全局变量）
@@ -166,16 +147,6 @@ public class MainOrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 		return this.mShowFooter;
 	}
 
-	// 底部布局的ViewHolder
-	private class FooterViewHolder extends RecyclerView.ViewHolder {
-		TextView tvTag;
-
-		public FooterViewHolder(View view) {
-			super(view);
-			tvTag = (TextView) view.findViewById(R.id.tv_recycle_bottom_tag);
-		}
-
-	}
 
 	// 默认布局的ViewHolder
 	protected class DefaultViewHolder extends RecyclerView.ViewHolder {

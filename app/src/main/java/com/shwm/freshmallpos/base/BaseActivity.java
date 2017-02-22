@@ -157,14 +157,6 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         if (mToolbar != null) {
             mToolbar.setTitle(title);// 设置主标题
             mToolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-//            {
-//                mToolbar.getLayoutParams().height = getAppBarHeight();
-//                mToolbar.setPadding(mToolbar.getPaddingLeft(),
-//                        getStatusBarHeight(),
-//                        mToolbar.getPaddingRight(),
-//                        mToolbar.getPaddingBottom());
-//            }
             setSupportActionBar(mToolbar);
             if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -180,30 +172,7 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         return mToolbar;
     }
 
-    /**
-     * 获取顶部状态栏高度
-     */
-    public int getStatusBarHeight() {
-        int result = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = getResources().getDimensionPixelSize(resourceId);
-        }
-        return result;
-    }
 
-    /**
-     * 获取顶部导航栏高度
-     */
-    public int getAppBarHeight() {
-        int resourceId = 0;
-        int rid = getResources().getIdentifier("config_showNavigationBar", "bool", "android");
-        if (rid != 0) {
-            resourceId = getResources().getIdentifier("navigation_bar_height", "dimen", "android");
-            return getResources().getDimensionPixelSize(resourceId);
-        } else
-            return 0;
-    }
 
     /**
      * 初始化控件
@@ -423,14 +392,6 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         return super.onTouchEvent(event);
     }
 
-//    @Override
-//    public boolean dispatchKeyEvent(KeyEvent event) {
-//        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-//            onBack();
-//            return true;
-//        }
-//        return super.dispatchKeyEvent(event);
-//    }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {

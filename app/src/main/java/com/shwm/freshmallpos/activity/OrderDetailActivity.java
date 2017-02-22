@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -169,9 +170,9 @@ public class OrderDetailActivity extends BaseActivity<IOrderDetailView, MOrderDe
 			public void convert(ViewHolder viewHolder, FoodEntity item, int position) {
 				// TODO Auto-generated method stub
 				viewHolder.setText(R.id.tv_item_ordersumit_foodname, item.getName());
-				viewHolder.setText(R.id.tv_item_ordersumit_foodunit, item.getUnit());
+				viewHolder.setText(R.id.tv_item_ordersumit_foodunit, StringUtil.isEmpty(item.getBarcode(),true)?" - ":item.getBarcode());
 				viewHolder.setText(R.id.tv_item_ordersumit_foodnum, item.getNum());
-				viewHolder.setText(R.id.tv_item_ordersumit_foodprice, item.getPrice());
+				viewHolder.setText(R.id.tv_item_ordersumit_foodprice, item.getPrice()+"/"+item.getUnit());
 				double money = UtilMath.mul(item.getPrice(), item.getNum());
 				viewHolder.setText(R.id.tv_item_ordersumit_foodMoney, UtilMath.currency(money));
 			}
@@ -192,7 +193,17 @@ public class OrderDetailActivity extends BaseActivity<IOrderDetailView, MOrderDe
 			}
 		}
 		if (v.getId() == btnRefund.getId()) {
-			mPresenter.orderRefund();
+			android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(mActivity);
+			builder.setTitle(title);
+			builder.setMessage(getString(R.string.is_refund));
+			builder.setPositiveButton(getString(R.string.sure), new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					mPresenter.orderRefund();
+				}
+			});
+			builder.setNegativeButton(getString(R.string.cancel),null);
+			builder.show();
 		}
 		if (v.getId() == btnPrint.getId()) {
 			if (BluetoothService.getState() == BluetoothService.STATE_CONNECTED) {

@@ -569,16 +569,20 @@ public class CashReceiptActivity extends BaseActivity<ICashMoneyView, MOrdersubm
     }
     @Override
     protected void onBack() {
-        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(mActivity);
-        builder.setTitle(getString(R.string.tig));
-        builder.setMessage(getString(R.string.is_exit_cash));
-        builder.setPositiveButton(getString(R.string.sure), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
-        });
-        builder.setNegativeButton(getString(R.string.cancel),null);
-        builder.show();
+        if(mPresenter.getMoneyReceivable()>0) {
+            android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(mActivity);
+            builder.setTitle(getString(R.string.tig));
+            builder.setMessage(getString(R.string.is_exit_cash));
+            builder.setPositiveButton(getString(R.string.sure), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                }
+            });
+            builder.setNegativeButton(getString(R.string.cancel), null);
+            builder.show();
+        }else{
+            finish();
+        }
     }
 }
