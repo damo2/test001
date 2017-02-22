@@ -25,6 +25,7 @@ import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.manage.ActivityCollector;
 import com.shwm.freshmallpos.manage.ThreadManager;
 import com.shwm.freshmallpos.presenter.MBasePresenter;
+import com.shwm.freshmallpos.sys.StatusBarCompat;
 import com.shwm.freshmallpos.util.CommonUtil;
 import com.shwm.freshmallpos.util.StringFormatUtil;
 import com.shwm.freshmallpos.util.StringUtil;
@@ -64,6 +65,7 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         mViewParent = LayoutInflater.from(this).inflate(bindLayout(), null);
         setContentView(mViewParent);
         mPresenter = initPresenter();
+        StatusBarCompat.compat(this);//沉浸状态栏
         init();
         initToolbar();
         initView();
@@ -155,7 +157,6 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         if (mToolbar != null) {
             mToolbar.setTitle(title);// 设置主标题
             mToolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(), R.color.white));
-
 //            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
 //            {
 //                mToolbar.getLayoutParams().height = getAppBarHeight();
