@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- ToolBar颜色 -->
-    <color name="colorPrimary">#FF03A9F4</color>
+    <color name="colorPrimary">#424959</color>
     <!-- 状态栏颜色 -->
-    <color name="colorPrimaryDark">#00000000</color>
+    <color name="colorPrimaryDark">#424959</color>
     <!-- 控制各个控件被选中时的颜色 -->
-    <color name="colorAccent">#DD8811</color>
+    <color name="colorAccent">#B5B3B3</color>
     <!-- 波纹 -->
     <color name="rippelColor">#B5B3B3</color>
 </resources>

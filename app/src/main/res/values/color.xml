@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-
-    
     <color name="white">#FEFEFE</color>
     <color name="text_default">#333333</color>
     <color name="text_gray">#888888</color>

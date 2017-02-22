@@ -76,6 +76,7 @@
     <string name="storage_camcel_coupon_title">文件读写权限被禁止，无法使用优惠劵功能!</string>
     <string name="is_exit_edit">是否退出编辑?</string>
     <string name="is_exit_cash">是否结束本次收银?</string>
+    <string name="is_refund">是否确定退款?</string>
     <!-- 提示信息 -->
     <string name="statu_success">成功</string>
     <string name="statu_fail">失败</string>

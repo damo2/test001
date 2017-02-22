@@ -8,7 +8,6 @@
         <!-- 控制各个控件被选中时的颜色 -->
         <item name="colorAccent">@color/colorAccent</item>
 
-        
         <!-- toobar menu颜色 -->
         <item name="actionMenuTextColor">@color/white</item>
         <!-- Edit  hint 的颜色 -->

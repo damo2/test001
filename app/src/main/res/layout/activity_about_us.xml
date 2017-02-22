@@ -5,12 +5,6 @@
                 android:layout_height="match_parent"
                 style="@style/BaseView">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_aboutus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:theme="@style/AppTheme.AppBarOverlay"/>
-
     <ImageView
         android:id="@+id/iv_aboutus_icon"
         android:layout_width="@dimen/aboutUs_icon_HW"
@@ -65,5 +59,14 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/aboutus_companyname"/>
     </LinearLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_aboutus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/AppTheme.AppBarOverlay"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>
