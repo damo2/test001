@@ -23,9 +23,7 @@ public class StringFormatUtil {
 		return resurnInfo;
 	}
 
-	private static final int ColorBlack = Color.argb(255, 51, 51, 51);
-	private static final int ColorOrange = Color.argb(255, 238, 153, 0);
-	private static final int ColorRed = Color.argb(255, 236, 111, 85);
+
 
 	/** “20.00” 转成“￥20.00” ￥为黑色0.6小字、 “20.00” 为黄色 */
 	public static SpannableString moneyFormat(double money) {
@@ -44,16 +42,16 @@ public class StringFormatUtil {
 			moneyStr = ValueFuhao.FUHAO_RMB + moneyStr;
 		}spannableString = new SpannableString(moneyStr);
 
-		spannableString.setSpan(new ForegroundColorSpan(ColorBlack), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+		spannableString.setSpan(new ForegroundColorSpan(ColorUtil.ColorBlack), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		spannableString.setSpan(new RelativeSizeSpan(0.6f), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		if (spannableString.length() > 1) {
-			ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(ColorBlack);
+			ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(ColorUtil.ColorBlack);
 			if (moneyColor == EnumMoneyColor.ORANGE) {
-				foregroundColorSpan = new ForegroundColorSpan(ColorOrange);
+				foregroundColorSpan = new ForegroundColorSpan(ColorUtil.ColorOrange);
 			} else if (moneyColor == EnumMoneyColor.RED) {
-				foregroundColorSpan = new ForegroundColorSpan(ColorRed);
+				foregroundColorSpan = new ForegroundColorSpan(ColorUtil.ColorRed);
 			} else if (moneyColor == EnumMoneyColor.BLACK) {
-				foregroundColorSpan = new ForegroundColorSpan(ColorBlack);
+				foregroundColorSpan = new ForegroundColorSpan(ColorUtil.ColorBlack);
 			}
 			spannableString.setSpan(foregroundColorSpan, 1, moneyStr.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 		}

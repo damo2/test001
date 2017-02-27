@@ -10,6 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:background="@color/bg_default" />
 
     <android.support.v4.widget.SwipeRefreshLayout
@@ -17,10 +18,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="5" >
-        <android.support.v7.widget.RecyclerView
+
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_cashorder_food_right"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:background="@color/white" />
     </android.support.v4.widget.SwipeRefreshLayout>
 

@@ -130,5 +130,4 @@ public class ApplicationMy extends Application {
         }
         return mOkHttpClient;
     }
-
 }

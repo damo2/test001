@@ -116,7 +116,7 @@ public class MemberAdapter extends Adapter<ViewHolder> {
 		public void onClick(View view) {
 			// TODO Auto-generated method stub
 			if (iOnItemClickListener != null) {
-				iOnItemClickListener.onItemClick(view, null, getPosition());
+				iOnItemClickListener.onItemClick(view, null, getAdapterPosition());
 			}
 		}
 	}

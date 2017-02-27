@@ -96,7 +96,8 @@ public class MainActivity extends BaseActivity {
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         bottomNavigationBar
                 .setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.selector_main_tab_cash, getString(R.string.main_tab_cash)).setActiveColorResource(R.color.bg_orange))
+        bottomNavigationBar
+                .addItem(new BottomNavigationItem(R.drawable.selector_main_tab_cash, getString(R.string.main_tab_cash)).setActiveColorResource(R.color.bg_orange))
                 .addItem(new BottomNavigationItem(R.drawable.selector_main_tab_order, getString(R.string.main_tab_order)).setActiveColorResource(R.color.bg_orange))
                 .addItem(new BottomNavigationItem(R.drawable.selector_main_tab_my, getString(R.string.main_tab_my)).setActiveColorResource(R.color.bg_orange))
                 .setFirstSelectedPosition(0)
