@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -52,6 +53,10 @@ public class FoodEditActivity extends BaseActivity<IFoodEditView, MFoodEditPrese
     private RadioGroup rgroupWeight;
     private RadioButton rbtnDefault;
     private RadioButton rbtnWeidght;
+
+    private  CollapsingToolbarLayout collapsingToolbarLayout;
+    private ImageView ivImgTop;
+
 
     private Uri bitmapUri;
     private GetPhotoUtil utilPhoto;
@@ -101,7 +106,6 @@ public class FoodEditActivity extends BaseActivity<IFoodEditView, MFoodEditPrese
                 foodIdEdit = foodEdit.getId();
             }
         }
-
         utilPhoto = new GetPhotoUtil(FoodEditActivity.this, ConfigUtil.FoodImageWH, ConfigUtil.FoodImageWH);
     }
 
@@ -120,6 +124,8 @@ public class FoodEditActivity extends BaseActivity<IFoodEditView, MFoodEditPrese
         btnClasses = (Button) findViewById(R.id.btn_foodedit_foodclass);
         ivCodeIcon = (ImageView) findViewById(R.id.iv_foodedit_foodcodeIcon);
         ivImg = (ImageView) findViewById(R.id.iv_foodedit_img);
+        ivImgTop= (ImageView) findViewById(R.id.img_food_top);
+        collapsingToolbarLayout= (CollapsingToolbarLayout) findViewById(R.id.collapsintToolbar_foodedit);
 
         rgroupWeight = (RadioGroup) findViewById(R.id.rg_foodedit_typeWeight);
         rbtnDefault = (RadioButton) findViewById(R.id.rb_foodedit_typeDefaule);
@@ -129,6 +135,7 @@ public class FoodEditActivity extends BaseActivity<IFoodEditView, MFoodEditPrese
     @Override
     protected void setValue() {
         super.setValue();
+        collapsingToolbarLayout.setTitle(title);
         if (classes != null) {
             btnClasses.setText(classes.getName());
         } else {
@@ -136,8 +143,11 @@ public class FoodEditActivity extends BaseActivity<IFoodEditView, MFoodEditPrese
         }
         if (editType == ValueType.EDIT && foodEdit != null) {
             ImageLoadUtil.displayImage(ivImg, foodEdit.getImg(), ImageLoadUtil.getOptionsImgFood());
+            ivImgTop.setVisibility(View.VISIBLE);
+            ImageLoadUtil.displayImage(ivImgTop, foodEdit.getImg(), ImageLoadUtil.getOptionsImgFood());
         }
         if (editType == ValueType.ADD) {
+            ivImgTop.setVisibility(View.GONE);
             rgroupWeight.check(rbtnDefault.getId());
         }
     }

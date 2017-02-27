@@ -43,6 +43,7 @@
     <dimen name="cash_foodmanage_bottomBtnMargin">8dp</dimen>
 
     <!-- 开单 -->
+    <dimen name="cashOrder_cart_Height">48dp</dimen>
     <dimen name="cashOrder_tabLayout_Height">48dp</dimen>
     <dimen name="cashOrder_bottom_btnPadding">8dp</dimen>
     <dimen name="cashOrder_bottom_priceToLeft">60dp</dimen>
