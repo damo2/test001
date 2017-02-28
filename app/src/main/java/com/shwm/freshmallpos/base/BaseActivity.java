@@ -67,8 +67,8 @@ public abstract class BaseActivity<V, T extends MBasePresenter<V>> extends AppCo
         mPresenter = initPresenter();
         StatusBarCompat.compat(this);//沉浸状态栏
         init();
-        initToolbar();
         initView();
+		initToolbar();
         setValue();
         setListener();
     }

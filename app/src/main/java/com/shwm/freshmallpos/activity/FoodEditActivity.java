@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +19,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.nineoldandroids.view.ViewHelper;
 import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.been.ClassesEntity;
 import com.shwm.freshmallpos.been.FoodEntity;
@@ -31,6 +33,7 @@ import com.shwm.freshmallpos.util.StringFormatUtil;
 import com.shwm.freshmallpos.util.StringUtil;
 import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.util.UT;
+import com.shwm.freshmallpos.util.UtilMath;
 import com.shwm.freshmallpos.value.ValueFinal;
 import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.value.ValueRequest;
@@ -55,6 +58,7 @@ public class FoodEditActivity extends BaseActivity<IFoodEditView, MFoodEditPrese
     private RadioButton rbtnWeidght;
 
     private  CollapsingToolbarLayout collapsingToolbarLayout;
+	private AppBarLayout mAppBar;
     private ImageView ivImgTop;
 
 
@@ -126,6 +130,7 @@ public class FoodEditActivity extends BaseActivity<IFoodEditView, MFoodEditPrese
         ivImg = (ImageView) findViewById(R.id.iv_foodedit_img);
         ivImgTop= (ImageView) findViewById(R.id.img_food_top);
         collapsingToolbarLayout= (CollapsingToolbarLayout) findViewById(R.id.collapsintToolbar_foodedit);
+		mAppBar = (AppBarLayout) findViewById(R.id.appbar_foodedit);
 
         rgroupWeight = (RadioGroup) findViewById(R.id.rg_foodedit_typeWeight);
         rbtnDefault = (RadioButton) findViewById(R.id.rb_foodedit_typeDefaule);
@@ -135,7 +140,6 @@ public class FoodEditActivity extends BaseActivity<IFoodEditView, MFoodEditPrese
     @Override
     protected void setValue() {
         super.setValue();
-        collapsingToolbarLayout.setTitle(title);
         if (classes != null) {
             btnClasses.setText(classes.getName());
         } else {
@@ -167,8 +171,44 @@ public class FoodEditActivity extends BaseActivity<IFoodEditView, MFoodEditPrese
         // TODO Auto-generated method stub
         super.initToolbar();
         setToolbar(R.id.toolbar_foodedit,title);
+        collapsingToolbarLayout.setTitle(title);
+        collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppBar);//伸展
+        collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBar);//收缩
+		mAppBar.addOnOffsetChangedListener(onOffsetChangedListener);
     }
+private AppBarLayout.OnOffsetChangedListener onOffsetChangedListener = new AppBarLayout.OnOffsetChangedListener() {
 
+		@Override
+		public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+			// TODO Auto-generated method stub
+            int heightButton = btnSubmit.getHeight();
+            if (editType == ValueType.ADD) {
+                ViewHelper.setTranslationY(btnSubmit, -heightButton);
+                return;
+            }
+            int scrollRangle = appBarLayout.getTotalScrollRange();
+            float alpha = 1.0f;
+            // 初始verticalOffset为0，不能参与计算。
+            if (verticalOffset == 0) {
+            } else {
+                // 滚动长度除以总长度
+                alpha = 1 - (float) Math.abs(UtilMath.div(verticalOffset + "", scrollRangle + "", 2));// 保留2位小数
+            }
+            // 让ivImgTop总有透明度
+            if (alpha > 0.2) {
+                alpha = alpha - 0.2f;
+            } else if (alpha > 0.1) {
+                alpha = alpha - 0.1f;
+            }
+
+            if (Math.abs(verticalOffset) <= heightButton) {
+                ViewHelper.setTranslationY(btnSubmit, verticalOffset);
+            } else if (verticalOffset < -heightButton) {
+                ViewHelper.setTranslationY(btnSubmit, -heightButton);
+            }
+            ivImgTop.setAlpha(alpha);
+		}
+	};
     private RadioGroup.OnCheckedChangeListener onCheckedChange = new RadioGroup.OnCheckedChangeListener() {
 
         @Override
