@@ -13,12 +13,17 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.adapter.SectionsPagerAdapter;
+import com.shwm.freshmallpos.contentprovider.Admin;
+import com.shwm.freshmallpos.contentprovider.FreshPosHelper;
+import com.shwm.freshmallpos.contentprovider.FreshmallPosContent;
 import com.shwm.freshmallpos.manage.ActivityCollector;
 import com.shwm.freshmallpos.base.BaseActivity;
 import com.shwm.freshmallpos.fragment.MainCashFragment;
 import com.shwm.freshmallpos.fragment.MainMyFragment;
 import com.shwm.freshmallpos.fragment.MainOrderFragment;
+import com.shwm.freshmallpos.manage.BusinessInfo;
 import com.shwm.freshmallpos.presenter.MBasePresenter;
+import com.shwm.freshmallpos.util.UL;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,8 +50,35 @@ public class MainActivity extends BaseActivity {
         initBottom();
         changeTab(0);
         changeFragment(0);
+        contentProviderUpdateData();
     }
-
+    private void contentProviderUpdateData() {
+        // ContentProvider共享数据
+        Admin admin = new Admin();
+        admin.setId(BusinessInfo.getAdminID());
+        admin.setUsername(BusinessInfo.getAdminName());
+        admin.setPassword(BusinessInfo.getPassword());
+        admin.setImg(BusinessInfo.getBusinessLogo());
+        admin.setType(BusinessInfo.getAdminType());
+        admin.setNickname(BusinessInfo.getAdminNickname());
+        admin.setTime(FreshmallPosContent.getDBCurrentTime());
+        FreshPosHelper freshPosHelper = new FreshPosHelper(getApplicationContext());
+        if (freshPosHelper.queryByAdminId(BusinessInfo.getAdminID()) == null) {
+            UL.d(TAG, "不存在 insert"+BusinessInfo.getAdminName());
+            freshPosHelper.insert(admin);
+        } else {
+            UL.d(TAG, "已经存在 update"+BusinessInfo.getAdminName());
+            freshPosHelper.updateByAdminId(BusinessInfo.getAdminID(), admin);
+        }
+        Admin adminLast = freshPosHelper.queryLast();
+        UL.d(TAG+"admin", "LAST _id=" + adminLast.get_id() + " adId=" + adminLast.getId() + " adNm=" + adminLast.getUsername() + " adPw="
+                + adminLast.getPassword() + " adImg=" + adminLast.getImg() + " adTm=" + adminLast.getTime());
+        List<Admin> listAdmin = freshPosHelper.queryAll();
+        for (Admin ad : listAdmin) {
+            UL.d(TAG+"admin", "_id=" + ad.get_id() + " adId=" + ad.getId() + " adNm=" + ad.getUsername() + " adPw=" + ad.getPassword() + " adImg="
+                    + ad.getImg() + " adTm=" + ad.getTime());
+        }
+    }
     @Override
     public int bindLayout() {
         // TODO Auto-generated method stub

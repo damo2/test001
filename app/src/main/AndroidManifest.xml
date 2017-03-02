@@ -68,8 +68,8 @@
     <!-- 用于申请获取蓝牙信息进行室内定位 -->
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-
     <!-- 高德地图end -->
+
     <application
         android:name=".base.ApplicationMy"
         android:allowBackup="true"
@@ -80,6 +80,12 @@
         android:theme="@style/AppTheme">
 
         <service android:name=".service.MyUpdateService"/>
+
+        <provider
+            android:name="com.shwm.freshmallpos.contentprovider.FreshmallPosContentProvider"
+            android:authorities="com.shwm.freshmallpos.authority"
+            android:exported="true"
+            android:multiprocess="false" />
 
         <!-- 高德地图start -->
         <meta-data
