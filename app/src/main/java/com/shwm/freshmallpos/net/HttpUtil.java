@@ -7,7 +7,6 @@ import android.text.TextUtils;
 
 import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.manage.BusinessInfo;
-import com.shwm.freshmallpos.manage.HttpRequestFactory;
 import com.shwm.freshmallpos.manage.UpImageRequestFactory;
 import com.shwm.freshmallpos.sys.SysInfo;
 import com.shwm.freshmallpos.value.ValueType;

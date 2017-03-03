@@ -1,4 +1,4 @@
-package com.shwm.freshmallpos.sys;
+package com.shwm.freshmallpos.update;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.net.Uri;
 
 import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.been.VersionEntity;
@@ -16,8 +15,7 @@ import com.shwm.freshmallpos.inter.IAsyncListener;
 import com.shwm.freshmallpos.net.AppConfig;
 import com.shwm.freshmallpos.net.MyAsyncTaskUtil;
 import com.shwm.freshmallpos.request.AppRequest;
-import com.shwm.freshmallpos.service.MyUpdateService;
-import com.shwm.freshmallpos.util.ConfigUtil;
+import com.shwm.freshmallpos.sys.AppPackageInfo;
 import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.value.ValueKey;
 
@@ -29,6 +27,8 @@ public class CheckUpdateInfo {
 	private static VersionEntity version;
 	// 文件存储
 	private File updateFile = null;
+
+	// private MyUpdateService mService;
 
 	public CheckUpdateInfo(Activity activity) {
 		this.mActivity = new WeakReference<Activity>(activity);
@@ -44,13 +44,11 @@ public class CheckUpdateInfo {
 
 	public void checkUpdateInfo() {
 		new MyAsyncTaskUtil(new IAsyncListener() {
-
 			@Override
 			public void onSuccess(HashMap<String, Object> hashmap) {
 				// TODO Auto-generated method stub
 				version = (VersionEntity) hashmap.get(ValueKey.Version);
-				updateFile = ConfigUtil.getFilePathUpdate(version.getName());
-				UL.d(TAG, "update文件下载目录：" + updateFile.getPath());
+				updateFile = UpdateUtil.getFilePathUpdate(version.getName());
 				showUpdate();
 			}
 
@@ -72,23 +70,23 @@ public class CheckUpdateInfo {
 		}).execute();
 	}
 
-	public void showUpdate() {
-		if (version.getCode() > curVerCode) {
-			if (version.getOpt() == 3) {
-				if (mActivity.get() != null) {
-					Intent serviceIntent = new Intent(mActivity.get(), MyUpdateService.class);
-					mActivity.get().startService(serviceIntent);
-				}
-			} else {
-				showNoticeDialog();
-			}
-		} else {
-			notNewVersionShow();
-		}
+	private void showUpdate() {
+		showNoticeDialog();
+		// if (version.getCode() > curVerCode) {
+		// if (version.getOpt() == 3) {
+		// if (mActivity.get() != null) {
+		// startDownService();
+		// }
+		// } else {
+		// showNoticeDialog();
+		// }
+		// } else {
+		// notNewVersionShow();
+		// }
 	}
 
 	private void notNewVersionShow() {
-		if (mActivity.get() != null&&!mActivity.get().isFinishing()) {
+		if (mActivity.get() != null) {
 			android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(mActivity.get());
 			builder.setTitle(mActivity.get().getString(R.string.update_version));
 			builder.setMessage(mActivity.get().getString(R.string.update_nonew) + " " + version.getName());
@@ -98,18 +96,17 @@ public class CheckUpdateInfo {
 	}
 
 	private void showNoticeDialog() {
+		UL.d(TAG, "update文件下载目录：" + updateFile.getPath());
 		if (mActivity.get() != null) {
 			String sure = "";
 			android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(mActivity.get());
 			if (updateFile.exists()) {
 				sure = mActivity.get().getString(R.string.update_install);
-
 				builder.setNegativeButton(mActivity.get().getString(R.string.update_again), new OnClickListener() {
 					@Override
 					public void onClick(DialogInterface arg0, int arg1) {
 						// TODO Auto-generated method stub
-						Intent serviceIntent = new Intent(mActivity.get(), MyUpdateService.class);
-						mActivity.get().startService(serviceIntent);
+						startDownService();
 					}
 				});
 			} else {
@@ -123,17 +120,42 @@ public class CheckUpdateInfo {
 				public void onClick(DialogInterface arg0, int arg1) {
 					// TODO Auto-generated method stub
 					if (updateFile.exists()) {
-						Intent intent = new Intent(Intent.ACTION_VIEW);
-						intent.setDataAndType(Uri.parse("file://" + updateFile.getPath()), "application/vnd.android.package-archive");
-						mActivity.get().startActivity(intent);
+						UpdateUtil.installApk(mActivity.get(), updateFile);
 					} else {
-						Intent serviceIntent = new Intent(mActivity.get(), MyUpdateService.class);
-						mActivity.get().startService(serviceIntent);
+						startDownService();
 					}
 				}
 			});
 			builder.setNeutralButton(mActivity.get().getString(R.string.cancel), null);
 			builder.show();
 		}
+	}
+
+	public void startDownService() {
+		if (mActivity.get() != null) {
+			Intent serviceIntent = new Intent(mActivity.get().getApplicationContext(), MyUpdateService.class);
+			// mActivity.get().getApplicationContext().bindService(serviceIntent, mConnection,
+			// Context.BIND_AUTO_CREATE);
+			mActivity.get().getApplicationContext().startService(serviceIntent);
+		}
+	}
+
+	/** 定义service绑定的回调，传给bindService() 的 */
+	// private ServiceConnection mConnection = new ServiceConnection() {
+	// @Override
+	// public void onServiceConnected(ComponentName className, IBinder service) {
+	// // 我们已经绑定到了LocalService，把IBinder进行强制类型转换并且获取LocalService实例．
+	// DownBinder binder = (DownBinder) service;
+	// mService = binder.getService();
+	// }
+	//
+	// @Override
+	// public void onServiceDisconnected(ComponentName arg0) {
+	//
+	// }
+	// };
+
+	public void onDestoryCheckUpdate() {
+		// mActivity.get().unbindService(mConnection);
 	}
 }

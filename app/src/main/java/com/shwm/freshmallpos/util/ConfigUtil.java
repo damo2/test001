@@ -30,9 +30,4 @@ public class ConfigUtil {
 
 	public static final int Weight_Size = 1;// 称重商品精确到1位
 
-	/***/
-	public static File getFilePathUpdate(String versionName) {
-		return new File(new File(SDPathUtil.getSDCardPrivateCacheDir(ApplicationMy.getContext())).getPath(), AppConfig.apkName
-				+ versionName + AppConfig.apkNameSuffix);
-	}
 }

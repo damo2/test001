@@ -1,7 +1,6 @@
-package com.shwm.freshmallpos.manage;
+package com.shwm.freshmallpos.net;
 
 import com.shwm.freshmallpos.inter.IHttpRequest;
-import com.shwm.freshmallpos.net.HttpOkRequest;
 
 
 public class HttpRequestFactory {

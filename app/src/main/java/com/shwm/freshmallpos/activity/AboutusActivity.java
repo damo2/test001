@@ -1,9 +1,6 @@
 package com.shwm.freshmallpos.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +9,7 @@ import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.base.BaseActivity;
 import com.shwm.freshmallpos.presenter.MBasePresenter;
 import com.shwm.freshmallpos.sys.AppPackageInfo;
-import com.shwm.freshmallpos.sys.CheckUpdateInfo;
-import com.shwm.freshmallpos.util.UL;
+import com.shwm.freshmallpos.update.CheckUpdateInfo;
 import com.shwm.freshmallpos.value.ValueKey;
 
 public class AboutusActivity extends BaseActivity {

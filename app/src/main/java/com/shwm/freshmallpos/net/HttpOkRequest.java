@@ -1,5 +1,6 @@
 package com.shwm.freshmallpos.net;
 
+import android.os.RecoverySystem;
 import android.text.TextUtils;
 
 import com.shwm.freshmallpos.R;
@@ -13,13 +14,17 @@ import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.value.ValueStatu;
 import com.shwm.freshmallpos.value.ValueType;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
 import okhttp3.CacheControl;
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.FormBody.Builder;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -145,6 +150,50 @@ public class HttpOkRequest implements IHttpRequest {
     public HashMap<String, Object> requestByGet(String url) {
         // TODO Auto-generated method stub
         return requestByPostOrGet(HttpGet, url, null);
+    }
+
+    public void downFile(String url, final File saveFile, final ProgressResponseBody.ProgressListener progressListener) {
+        // 添加拦截器，在 OkHttpClient build时添加
+        Request request = new Request.Builder().url(url).tag(url).build();
+        OkHttpClient client = new OkHttpClient.Builder().addNetworkInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Interceptor.Chain chain) throws IOException {
+                Response originalResponse = chain.proceed(chain.request());
+                return originalResponse.newBuilder().body(new ProgressResponseBody(originalResponse.body(), progressListener)).build();
+            }
+        }).build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                // TODO Auto-generated method stub
+                FileUtil.inputStream2File(response.body().byteStream(), saveFile);
+            }
+
+            @Override
+            public void onFailure(Call call, IOException exception) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+    }
+
+    /**
+     * 取消任务
+     * 这里tag 我设置的是url
+     * @param tag url
+     */
+    public void cancelByTag(Object tag) {
+        for (Call call : mOkHttpClient.dispatcher().queuedCalls()) {
+            if (tag.equals(call.request().tag())) {
+                call.cancel();
+            }
+        }
+
+        for (Call call : mOkHttpClient.dispatcher().runningCalls()) {
+            if (tag.equals(call.request().tag())) {
+                call.cancel();
+            }
+        }
     }
 
 }

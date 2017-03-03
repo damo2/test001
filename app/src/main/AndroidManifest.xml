@@ -79,7 +79,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <service android:name=".service.MyUpdateService"/>
+        <service android:name=".update.MyUpdateService"/>
 
         <provider
             android:name="com.shwm.freshmallpos.contentprovider.FreshmallPosContentProvider"
