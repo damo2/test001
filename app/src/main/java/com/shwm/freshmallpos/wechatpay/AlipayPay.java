@@ -8,7 +8,6 @@ import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.alipay.api.request.AlipayTradePrecreateRequest;
 import com.alipay.api.response.AlipayTradePrecreateResponse;
-import com.shwm.freshmallpos.manage.HttpRequestFactory;
 import com.shwm.freshmallpos.model.biz.IPayWechatListener;
 import com.shwm.freshmallpos.model.biz.IRequestListener;
 import com.shwm.freshmallpos.net.HttpUrlRequest;
