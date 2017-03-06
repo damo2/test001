@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.been.MemberEntity;
 import com.shwm.freshmallpos.inter.IAsyncListener;
 import com.shwm.freshmallpos.net.MyAsyncTaskUtil;
@@ -12,7 +13,6 @@ import com.shwm.freshmallpos.util.ExceptionUtil;
 import com.shwm.freshmallpos.util.StringUtil;
 import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.value.ValueStatu;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class OnMemberManageListener implements IMemberManageListener {
 

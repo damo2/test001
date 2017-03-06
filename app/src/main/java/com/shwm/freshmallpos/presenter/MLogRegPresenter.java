@@ -1,10 +1,9 @@
 package com.shwm.freshmallpos.presenter;
 
-import java.util.HashMap;
-
 import android.text.TextUtils;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.model.biz.ILoginListener;
 import com.shwm.freshmallpos.model.biz.IRequestListener;
 import com.shwm.freshmallpos.model.biz.OnLoginListener;
@@ -12,7 +11,6 @@ import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.util.UtilSPF;
 import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.view.IReginView;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class MLogRegPresenter extends MBasePresenter<IReginView>{
 	private String TAG = "MLogRegPresenter";

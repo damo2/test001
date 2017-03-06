@@ -7,6 +7,7 @@ import java.util.List;
 import android.text.TextUtils;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.been.ClassesEntity;
 import com.shwm.freshmallpos.manage.FoodListData;
 import com.shwm.freshmallpos.model.biz.IDeleteContentListener;
@@ -17,7 +18,6 @@ import com.shwm.freshmallpos.model.biz.OnDeleteContentListenter;
 import com.shwm.freshmallpos.model.biz.OnFoodListener;
 import com.shwm.freshmallpos.net.ContentTypeUtil;
 import com.shwm.freshmallpos.view.IClassesManageView;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 /**
  * 分类管理

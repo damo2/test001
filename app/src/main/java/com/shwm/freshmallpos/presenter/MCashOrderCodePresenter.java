@@ -3,6 +3,7 @@ package com.shwm.freshmallpos.presenter;
 import android.text.TextUtils;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.been.FoodEntity;
 import com.shwm.freshmallpos.inter.IOnCartListener;
 import com.shwm.freshmallpos.manage.FoodListData;
@@ -10,7 +11,6 @@ import com.shwm.freshmallpos.model.biz.IFoodListener;
 import com.shwm.freshmallpos.model.biz.IRequestListener;
 import com.shwm.freshmallpos.model.biz.OnFoodListener;
 import com.shwm.freshmallpos.view.ICashOrderCodeView;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class MCashOrderCodePresenter extends MBasePresenter<ICashOrderCodeView> {
 	private ICashOrderCodeView mView;

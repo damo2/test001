@@ -7,12 +7,12 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.inter.IAsyncListener;
 import com.shwm.freshmallpos.manage.BusinessInfo;
 import com.shwm.freshmallpos.net.MyAsyncTaskUtil;
 import com.shwm.freshmallpos.request.MemberRequest;
 import com.shwm.freshmallpos.view.IMemberAddView;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class MMemberAddPresenter extends MBasePresenter<IMemberAddView>{
 	private IMemberAddView mView;

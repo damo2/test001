@@ -30,8 +30,8 @@ import android.os.Handler;
 import android.view.SurfaceHolder;
 import android.widget.Toast;
 
-import com.shwm.freshmallpos.util.UtilPx;
 import com.shwm.freshmallpos.base.ApplicationMy;
+import com.shwm.freshmallpos.util.UtilPx;
 
 /**
  * This object wraps the Camera service object and expects to be the only one talking to it. The implementation

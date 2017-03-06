@@ -11,20 +11,18 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.inter.IHttpRequest;
 import com.shwm.freshmallpos.util.ConfigUtil;
 import com.shwm.freshmallpos.util.NetUtil;
 import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.value.ValueStatu;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 /**
  * HttpURLConnection网络请求

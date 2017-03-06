@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.been.ClassesEntity;
 import com.shwm.freshmallpos.been.FoodEntity;
 import com.shwm.freshmallpos.inter.IAsyncListener;
@@ -23,7 +24,6 @@ import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.value.ValueStatu;
 import com.shwm.freshmallpos.view.IFoodEditView;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class MFoodEditPresenter extends MBasePresenter<IFoodEditView> {
 	private static final String TAG = "MFoodEditPresenter";

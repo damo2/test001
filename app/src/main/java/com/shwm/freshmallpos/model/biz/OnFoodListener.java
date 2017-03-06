@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.been.ClassesEntity;
 import com.shwm.freshmallpos.been.FoodEntity;
 import com.shwm.freshmallpos.inter.IAsyncListener;
@@ -13,7 +14,6 @@ import com.shwm.freshmallpos.request.FoodRequest;
 import com.shwm.freshmallpos.util.ExceptionUtil;
 import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.value.ValueStatu;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class OnFoodListener implements IFoodListener {
 	private static final String TAG = "OnGetClassesAndFoodListener";

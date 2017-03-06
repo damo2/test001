@@ -1,11 +1,8 @@
 package com.shwm.freshmallpos;
 
-import android.app.Application;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
-
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

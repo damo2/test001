@@ -7,8 +7,8 @@ import java.util.Map;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.base.ApplicationMy;
+import com.shwm.freshmallpos.value.ValueKey;
 
 public class UtilSPF {
 	/**

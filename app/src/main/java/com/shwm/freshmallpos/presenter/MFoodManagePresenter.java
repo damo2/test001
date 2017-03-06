@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.been.ClassesEntity;
 import com.shwm.freshmallpos.been.FoodEntity;
 import com.shwm.freshmallpos.inter.IAsyncListener;
@@ -23,7 +24,6 @@ import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.value.ValueStatu;
 import com.shwm.freshmallpos.value.ValueType;
 import com.shwm.freshmallpos.view.IFoodManageView;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 /**
  * 商品管理

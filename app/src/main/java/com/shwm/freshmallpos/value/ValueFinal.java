@@ -1,8 +1,8 @@
 package com.shwm.freshmallpos.value;
 
 import com.shwm.freshmallpos.R;
-import com.shwm.freshmallpos.util.ExceptionUtil;
 import com.shwm.freshmallpos.base.ApplicationMy;
+import com.shwm.freshmallpos.util.ExceptionUtil;
 
 public class ValueFinal {
 

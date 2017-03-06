@@ -14,9 +14,7 @@ import android.widget.TextView;
 import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.been.MemberEntity;
 import com.shwm.freshmallpos.inter.IOnItemClickListener;
-import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.value.ValueType;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class MemberAdapter extends Adapter<ViewHolder> {
 	private static final String TAG="MemberAdapter";

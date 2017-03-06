@@ -7,10 +7,8 @@ import java.util.List;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,13 +19,13 @@ import android.widget.Toast;
 import com.shwm.freshmallpos.R;
 import com.shwm.freshmallpos.adapter.ClassesManageAdapter;
 import com.shwm.freshmallpos.adapter.ClassesManageAdapter.IOnClassesManage;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.been.ClassesEntity;
 import com.shwm.freshmallpos.myviewutil.MyLinearLayoutManager;
 import com.shwm.freshmallpos.presenter.MClassesManagePresenter;
 import com.shwm.freshmallpos.value.ValueKey;
 import com.shwm.freshmallpos.value.ValueType;
 import com.shwm.freshmallpos.view.IClassesManageView;
-import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.base.BaseActivity;
 
 /**

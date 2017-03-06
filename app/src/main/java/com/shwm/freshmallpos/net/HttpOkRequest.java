@@ -1,6 +1,5 @@
 package com.shwm.freshmallpos.net;
 
-import android.os.RecoverySystem;
 import android.text.TextUtils;
 
 import com.shwm.freshmallpos.R;

@@ -7,9 +7,9 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 
 import com.shwm.freshmallpos.R;
+import com.shwm.freshmallpos.base.ApplicationMy;
 import com.shwm.freshmallpos.value.EnumMoneyColor;
 import com.shwm.freshmallpos.value.ValueFuhao;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class StringFormatUtil {
 	private static final String strFail = ApplicationMy.getContext().getResources().getString(R.string.statu_fail_info_statu);

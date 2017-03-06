@@ -1,10 +1,6 @@
 package com.shwm.freshmallpos.util;
 
-import java.io.File;
-
 import com.shwm.freshmallpos.manage.BusinessInfo;
-import com.shwm.freshmallpos.net.AppConfig;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class ConfigUtil {
 	public static final int TimeOut = 8000;

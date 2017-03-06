@@ -25,10 +25,8 @@ import com.shwm.freshmallpos.util.CommonUtil;
 import com.shwm.freshmallpos.util.ConfigUtil;
 import com.shwm.freshmallpos.util.ImageLoadUtil;
 import com.shwm.freshmallpos.util.StringUtil;
-import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.value.ValueFinal;
 import com.shwm.freshmallpos.value.ValueType;
-import com.shwm.freshmallpos.base.ApplicationMy;
 
 public class FoodManageFoodAdapter extends RecyclerView.Adapter<ViewHolder> {
 	private String TAG = getClass().getSimpleName();
