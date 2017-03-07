@@ -10,6 +10,7 @@ import com.shwm.freshmallpos.base.BaseActivity;
 import com.shwm.freshmallpos.presenter.MBasePresenter;
 import com.shwm.freshmallpos.sys.AppPackageInfo;
 import com.shwm.freshmallpos.update.CheckUpdateInfo;
+import com.shwm.freshmallpos.util.UT;
 import com.shwm.freshmallpos.value.ValueKey;
 
 public class AboutusActivity extends BaseActivity {
@@ -61,7 +62,7 @@ public class AboutusActivity extends BaseActivity {
     protected void setValue() {
         // TODO Auto-generated method stub
         super.setValue();
-        btnUpdate.setText(getString(R.string.update_version) + "  " + AppPackageInfo.getCurVerName(context, getPackageName()));
+        btnUpdate.setText(getString(R.string.update_version) + "dsfsf" + AppPackageInfo.getCurVerName(context, getPackageName()));
     }
 
     @Override

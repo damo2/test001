@@ -8,9 +8,30 @@ android {
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "1.01"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+
+    }
+
+    //配置keystore签名
+    signingConfigs {
+        release {
+            storeFile file("D://打包/shwm")
+            storePassword "shwm2016"
+            keyAlias "freshmallpos"
+            keyPassword "shwm2016"
+        }
+        debug {
+            storeFile file("D://打包/shwm")
+            storePassword "shwm2016"
+            keyAlias "freshmallpos"
+            keyPassword "shwm2016"
+        }
     }
     buildTypes {
         release {
@@ -20,6 +41,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
             debuggable true
@@ -39,6 +61,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.0.1'
     compile 'com.android.support:cardview-v7:25.0.1'
@@ -61,6 +84,27 @@ dependencies {
 
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+
+    compile 'com.tencent.bugly:crashreport_upgrade:latest.release' // bugly 升级SDK
+
 }
+
+//bugly
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        // tinkersupport插件, 其中lastest.release指拉取最新版本，也可以指定明确版本号，例如1.0.4
+        classpath "com.tencent.bugly:tinker-support:1.0.4"
+    }
+}
+// 依赖插件脚本
+apply from: 'tinker-support.gradle'
+
+
+
+
+
 
 

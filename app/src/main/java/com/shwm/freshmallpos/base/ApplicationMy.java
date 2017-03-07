@@ -1,7 +1,10 @@
 package com.shwm.freshmallpos.base;
 
+import android.annotation.TargetApi;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.support.multidex.MultiDex;
 
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
@@ -18,6 +21,9 @@ import com.shwm.freshmallpos.util.UL;
 import com.shwm.freshmallpos.util.UtilPx;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+import com.tencent.bugly.Bugly;
+import com.tencent.bugly.beta.Beta;
+import com.tencent.tinker.loader.app.DefaultApplicationLike;
 import com.umeng.analytics.MobclickAgent;
 
 import java.io.File;
@@ -26,21 +32,53 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 
-public class ApplicationMy extends Application {
-    private static Context context;
-    private static ApplicationMy mApplication;
-    private static OkHttpClient mOkHttpClient;
-    private RefWatcher refWatcher;//使用 RefWatcher 监控那些本该被回收的对象。
+/**
+ * Created by as on 2017/3/6.
+ */
 
-    public static ApplicationMy getInstance() {
-        if (mApplication == null) {
-            synchronized (ApplicationMy.class) {
-                if (mApplication == null) {
-                    mApplication = new ApplicationMy();
-                }
-            }
-        }
-        return mApplication;
+public class ApplicationMy extends DefaultApplicationLike {
+    private Application application;
+    private static Context context;
+    private static OkHttpClient mOkHttpClient;
+    private static RefWatcher refWatcher;//使用 RefWatcher 监控那些本该被回收的对象。
+    public static final String TAG = "Tinker.SampleApplicationLike";
+
+    public ApplicationMy(Application application, int tinkerFlags,
+                                 boolean tinkerLoadVerifyFlag, long applicationStartElapsedTime,
+                                 long applicationStartMillisTime, Intent tinkerResultIntent) {
+        super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        application=getApplication();
+        context = application.getApplicationContext();
+
+        ImageLoaderConfig(context);
+        UMengConfig();
+        refWatcher = LeakCanary.install(application);//监测内存泄漏
+
+        // 这里实现SDK初始化，appId替换成你的在Bugly平台,申请的appId调试时，将第三个参数改为true
+        Bugly.init(application, "e26f1fef03", false);
+    }
+
+
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+    @Override
+    public void onBaseContextAttached(Context base) {
+        super.onBaseContextAttached(base);
+        // you must install multiDex whatever tinker is installed!
+        MultiDex.install(base);
+
+        // 安装tinker
+        // TinkerManager.installTinker(this); 替换成下面Bugly提供的方法
+        Beta.installTinker(this);
+    }
+
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+    public void registerActivityLifecycleCallback(Application.ActivityLifecycleCallbacks callbacks) {
+        getApplication().registerActivityLifecycleCallbacks(callbacks);
     }
 
     public static Context getContext() {
@@ -57,25 +95,7 @@ public class ApplicationMy extends Application {
     }
 
     public static RefWatcher getRefWatcher() {
-        return ((ApplicationMy) getContext()).refWatcher;
-    }
-
-    /**
-     * 分割 Dex 支持
-     * @param base Context
-     */
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
-    }
-
-    @Override
-    public void onCreate() {
-        context = getApplicationContext();
-        ImageLoaderConfig(this);
-        UMengConfig();
-        refWatcher = LeakCanary.install(this);//监测内存泄漏
+        return refWatcher;
     }
 
     private void UMengConfig() {
@@ -114,7 +134,7 @@ public class ApplicationMy extends Application {
         com.nostra13.universalimageloader.utils.L.writeDebugLogs(false);
     }
 
-    public OkHttpClient getOkHttpClient() {
+    public static OkHttpClient getOkHttpClient() {
         if (mOkHttpClient == null) {
             synchronized (HttpOkRequest.class) {
                 if (mOkHttpClient == null) {
@@ -130,4 +150,5 @@ public class ApplicationMy extends Application {
         }
         return mOkHttpClient;
     }
+
 }

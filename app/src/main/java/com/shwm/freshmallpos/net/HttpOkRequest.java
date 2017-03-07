@@ -46,7 +46,7 @@ public class HttpOkRequest implements IHttpRequest {
 
     /** 异步和同步post */
     public HashMap<String, Object> requestByPostOrGet(int type, String url, HashMap<String, Object> map) {
-        this.mOkHttpClient = ApplicationMy.getInstance().getOkHttpClient();
+        this.mOkHttpClient = ApplicationMy.getOkHttpClient();
         HashMap<String, Object> hashmapResult = new HashMap<String, Object>();
         Builder builder = new Builder();
         // 遍历map中所有参数到builder

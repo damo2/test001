@@ -70,8 +70,11 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <!-- 高德地图end -->
 
+    <!-- Bugly -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
     <application
-        android:name=".base.ApplicationMy"
+        android:name=".base.SampleApplication"
         android:allowBackup="true"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
@@ -102,6 +105,25 @@
             android:name="UMENG_CHANNEL"
             android:value="shwm"/>
         <!-- 友盟分享end -->
+
+        <!-- Bugly start -->
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!--API 24以上配置-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.tencent.bugly.hotfix.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <!-- Bugly end-->
+
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
