@@ -168,7 +168,7 @@ public class MainActivity extends BaseActivity {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mSectionsPagerAdapter.setListFragment(listFragment, null);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+        mViewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
                 changeTab(position);
