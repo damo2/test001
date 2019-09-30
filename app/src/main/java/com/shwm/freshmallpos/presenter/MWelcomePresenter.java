@@ -80,7 +80,7 @@ public class MWelcomePresenter extends MBasePresenter<IWelcomeView> {
             if (isLoginSuccess) {
                 getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
             } else {
-                getActivity().startActivity(new Intent(getActivity(), LogActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
             }
         }
         getActivity().finish();

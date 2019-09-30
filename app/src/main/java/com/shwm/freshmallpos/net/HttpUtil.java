@@ -34,8 +34,8 @@ public class HttpUtil {
 
     // 取到serverIp
     private static String getServerIp() {
-        return BusinessInfo.getServerIp();
-        // return "http://m.vidream.cn/freshmall";
+//        return BusinessInfo.getServerIp();
+         return AppConfig.SERVER_IP;
     }
 
     private static String getSysInfoUrl() {

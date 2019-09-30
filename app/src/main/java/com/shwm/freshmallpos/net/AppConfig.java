@@ -6,8 +6,8 @@ public final class AppConfig {
 	public static final String apkNameSuffix = ".apk";
 	public static final String PT_ID = "SHWM";
 
-	// public static final String SERVER_IP = "http://172.16.1.84/freshmall3";
-	public static final String SERVER_IP = "http://m.vidream.cn/freshmall";
+	 public static final String SERVER_IP = "http://172.16.1.84/freshmall3";
+//	public static final String SERVER_IP = "http://m.vidream.cn/freshmall";
 
 	public static final String SLASH = "/";
 	public static final String ROOT_PATH = "/freshmall" + SLASH;

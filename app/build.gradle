@@ -21,16 +21,16 @@ android {
     //配置keystore签名
     signingConfigs {
         release {
-            storeFile file("D://打包/shwm")
-            storePassword "shwm2016"
-            keyAlias "freshmallpos"
-            keyPassword "shwm2016"
+//            storeFile file("D://打包/shwm")
+//            storePassword "shwm2016"
+//            keyAlias "freshmallpos"
+//            keyPassword "shwm2016"
         }
         debug {
-            storeFile file("D://打包/shwm")
-            storePassword "shwm2016"
-            keyAlias "freshmallpos"
-            keyPassword "shwm2016"
+//            storeFile file("D://打包/shwm")
+//            storePassword "shwm2016"
+//            keyAlias "freshmallpos"
+//            keyPassword "shwm2016"
         }
     }
     buildTypes {

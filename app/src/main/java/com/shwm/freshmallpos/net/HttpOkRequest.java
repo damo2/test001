@@ -88,8 +88,12 @@ public class HttpOkRequest implements IHttpRequest {
                 builderCache.onlyIfCached();
             }
             CacheControl cache = builderCache.build();
-            request = new Request.Builder().cacheControl(cache).url(urlAllGet)// 地址 get 用拼接的urlAllGet
-                    .build();
+            try {
+                request = new Request.Builder().cacheControl(cache).url(urlAllGet)// 地址 get 用拼接的urlAllGet
+                        .build();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         try {
             response = mOkHttpClient.newCall(request).execute();
@@ -120,6 +124,9 @@ public class HttpOkRequest implements IHttpRequest {
             }
             hashmapResult.put(ValueKey.HTTP_STATU, statuException);
             hashmapResult.put(ValueKey.HTTP_FAILINFO, e.getMessage());
+            return hashmapResult;
+        } catch (Exception e){
+            UL.i(TAG + "  Execute", e.getMessage());
             return hashmapResult;
         }
     }

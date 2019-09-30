@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">新鲜收银</string>
+    <string name="app_name">新鲜收银test</string>
     <string name="hello_world">Hello world!Hello world!Hello world!Hello world!</string>
     <string name="main_tab_cash">收银</string>
     <string name="main_tab_order">流水</string>

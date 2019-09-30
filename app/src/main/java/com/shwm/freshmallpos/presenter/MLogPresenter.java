@@ -36,6 +36,7 @@ public class MLogPresenter extends MBasePresenter<ILoginView> {
 				// TODO Auto-generated method stub
 				mView.dismissDialogProgress();
 				mView.showFailInfo(statu, exception);
+				mView.showSuccess("登录失败");
 			}
 
 			@Override
